@@ -1,0 +1,62 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipapi.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipapi.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Look up multiple IP addresses in bulk.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "http://api.ipapi.com/api/{{input}}?access_key={{key}}",
+            "name": "bulk lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Look up the IP address the current API request is coming from.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "http://api.ipapi.com/api/check?access_key={{key}}",
+            "name": "origin lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Look up any given IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "http://api.ipapi.com/api/{{input}}?access_key={{key}}",
+            "name": "standard lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "ipapi provides an easy-to-use API interface allowing customers to look various pieces of information IPv4 and IPv6 addresses are associated with",
+        "documentation": "https://ipapi.com/documentation",
+        "link": "https://ipapi.com/",
+        "name": "IpApi"
+    }
+}

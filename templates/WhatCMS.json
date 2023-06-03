@@ -1,0 +1,100 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://whatcms.org/API",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://whatcms.org/API",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Fetch WhatCMS.org data with curl, guzzle or your favorite HTTP client.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://whatcms.org/API/CMS?key={{key}}&url={{input}}",
+            "name": "CMS Detection",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Fetch Who-Hosts-This.com data with curl, guzzle or your favorite HTTP client.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://www.who-hosts-this.com/API/Host?key={{key}}&url={{input}}",
+            "name": "Host Detection",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can use the status endpoint for checking your account totals.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://whatcms.org/API/Status?key={{key}}",
+            "name": "Status Endpoint",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The technology endpoint provides a more complete picture of the software powering webpages. In addition to detecting the CMS, this endpoint will return the programming language, database, web server and more of the requested url.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://whatcms.org/API/Tech?key={{key}}&url={{input}}",
+            "name": "Technology Detection",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "List Of Technologies.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://whatcms.org/API/List",
+            "name": "Technology List",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Fetch ThemeDetect.com data with curl, guzzle or your favorite HTTP client.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://www.themedetect.com/API/Theme?key={{key}}&url={{input}}",
+            "name": "WordPress Theme Detection",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "WhatCMS.org handles requests from users around the world seeking to find out more about the websites they're using.  There are hundreds of content management systems in use on the web with significantly different amounts of usage.",
+        "documentation": "https://whatcms.org/Documentation",
+        "link": "https://whatcms.org/",
+        "name": "WhatCMS"
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "authentication": {
+        "authHeader": "key",
+        "authType": "HEADER",
+        "link": "https://clearbit.com",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "key",
+        "authType": "HEADER",
+        "link": "https://clearbit.com",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The Enrichment API lets you look up person and company data based on an email. For example, you could retrieve a person’s name, location and social handles from an email",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://person-stream.clearbit.com/v2/combined/find?email={{input}}",
+            "name": "Enrichment API Email",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The Enrichment API lets you look up person and company data based on a domain. For example,  you could lookup a company’s location, headcount or logo based on their domain name.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://person-stream.clearbit.com/v2/combined/find?domain={{input}}",
+            "name": "Enrichment API Domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "A common use-case is looking up a person and company simultaneously based on a email address. To save you making two requests to do this, we offer a combined lookup API. This endpoint expects an email address, and will return an object containing both the person and company (if found)",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://person-stream.clearbit.com/v2/combined/find?email={{input}}",
+            "name": "Combined API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Check for names, addresses, domains and more based on lookups of e-mail addresses on clearbit.com",
+        "documentation": "https://clearbit.com/docs",
+        "link": "https://clearbit.com/",
+        "name": "Clearbit"
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "authentication": {
+        "authHeader": "x-api-key",
+        "authType": "HEADER",
+        "link": "https://emailcrawlr.com/#pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "x-api-key",
+        "authType": "HEADER",
+        "link": "https://emailcrawlr.com/#pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "This call does not count towards your usage.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.emailcrawlr.com/v2/account",
+            "name": "Account",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Look up a domain name and get back information such as email addresses, people, job titles, phone numbers, addresses and more…",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.emailcrawlr.com/v2/domain?domain={{input}}",
+            "name": "Domain Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Look up a domain name and get back information such as email addresses, people, job titles, phone numbers, addresses and more…",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.emailcrawlr.com/v2/email?email={{input}}",
+            "name": "Email Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Check/Validate an email address's deliverability. Checks MX records as well as email receipt.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.emailcrawlr.com/v2/email/verify?email={{input}}",
+            "name": "Email Verification",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "By using the EmailCrawlr JSON API you can: Get key information about company websites. Find all email addresses associated with a domain. Get social accounts associated with an email. Verify email address deliverability.",
+        "documentation": "https://emailcrawlr.com/docs",
+        "link": "https://emailcrawlr.com/",
+        "name": "EmailCrawlr"
+    }
+}

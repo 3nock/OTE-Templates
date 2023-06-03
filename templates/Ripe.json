@@ -1,0 +1,815 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "This data call shows general informations about an ASN like its announcement status and the name of its holder according to the WHOIS service.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/as-overview/data.json?resource={{input}}",
+            "name": "AS Overview",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns AS-path metrics (e.g. shortest or longest AS-path to other ASNs we are peering with) for the queried ASN.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/as-path-length/data.json?resource={{input}}",
+            "name": "AS Path Length",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call shows the difference between the routing and the registration state of an ASN. A filter for BGP routes is applied removing non-globally visible prefixes that are not seen by at least 10 RIS full-table peers.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/as-routing-consistency/data.json?resource={{input}}",
+            "name": "AS Routing Consistency",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call shows information on the network neighbours for a given ASN. This includes statistical information as well as the list of observed ASN neighbours.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\" neighbours\":[{\" $$asn$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/asn-neighbours/data.json?resource={{input}}",
+            "name": "ASN Neighbours",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns information about neigbouring ASNs of a queried ASN extended with history.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/asn-neighbours-history/data.json?resource={{input}}",
+            "name": "ASN Neighbours History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The main purpose of this data call is to return abuse contact informations for a Internet number resource. Note that this information is not guaranteed to be correct to reach the approriate resource holder.",
+            "extractors": [
+                {
+                    "name": "email",
+                    "script": "{\"data\":{\"abuse_contacts\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "ip",
+                "asn",
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/abuse-contact-finder/data.json?resource={{input}}",
+            "name": "Abuse Contact Finder",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns address space objects (inetnum, inet6num...) from the RIPE DB (whois) related (exact, more- and less-specific) to the queried resource. Less- and more-specific results are first-level only, further levels would have to be retrieved iteratively.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/address-space-hierarchy/data.json?resource={{input}}",
+            "name": "Address Space Hierarchy",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call shows the usage ratio of this prefix or IP range according to the objects currently present in the RIPE Whois database. The data is represented as assignments, allocations and statistic on the distribution of the IPs covered by the queried resource.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/address-space-usage/data.json?resource={{input}}",
+            "name": "Address Space Usage",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns blocklist related data for a queried resource.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/blocklist/data.json?resource={{input}}",
+            "name": "Blocklist",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides information on a country's registered and routed ASNs. Registered ASNs are based on registration information made public by the Regional Internet Registries. The routing information is based on the data collected with the RIPE NCC's RIS system, https://ris.ripe.net.The data call supports history, with data points being aligned to times dumps are created in RIS (00:00, 08:00 and 16:00 UTC). Input is 2-digit ISO-3166 country code (e.g. \"at\",\"de\"...) ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "country code"
+            ],
+            "link": "https://stat.ripe.net/data/country-asns/data.json?resource={{input}}&lod=1",
+            "name": "Country ASNs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call lists the Internet resources associated with a country, including ASNs, IPv4 ranges and IPv4/6 CIDR prefixes. Input is 2-digit ISO-3166 country code (e.g. \"at\",\"de\"...) ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "country code"
+            ],
+            "link": "https://stat.ripe.net/data/country-resource-list/data.json?resource={{input}}",
+            "name": "Country Resource List",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns statistics on Internet resources for a country. Input is 2-digit ISO-3166 country code (e.g. \"at\",\"de\"...) ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "country code"
+            ],
+            "link": "https://stat.ripe.net/data/country-resource-stats/data.json?resource={{input}}",
+            "name": "Country Resource Stats",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns the recursive chain of DNS forward (A/AAAA/CNAME) and reverse (PTR) records starting form either a hostname or an IP address.",
+            "extractors": [
+                {
+                    "name": "nameserver",
+                    "script": "{\"data\":{\"authoritative_nameservers\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "domain",
+                "ip"
+            ],
+            "link": "https://stat.ripe.net/data/dns-chain/data.json?resource={{input}}",
+            "name": "DNS Chain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides information on objects that are stored in the RIPE DB. The result is aligned to a specific object, which is identified by an object type and an object key, which is similar to the Whois data call. In contrast to the Whois data call, this data call puts a focus on historical changes of an object and its related objects.Historical changes are given in the form of versions, one version - by default the latest version - is presented with details. Related objects are separated into referencing and referenced objects. Referencing objects are objects that have a reference to the object in focus and referenced objects are referenced from the object in focus.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "ip",
+                "cidr",
+                "organization"
+            ],
+            "link": "https://stat.ripe.net/data/historical-whois/data.json?resource={{input}}",
+            "name": "Historical Whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call gives access to various data sources maintained by IANA",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip",
+                "asn",
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/iana-registry-info/data.json?resource={{input}}",
+            "name": "IANA Registry Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns information commonly coming from a Looking Glass. The data is based on a data feed from the RIPE NCC's network of BGP route collectorsThe data processing usually happens with a small delay and can be considered near real-time. The output is structured by collector node (RRC) accompanied by the location and the BGP peers which provide the routing information.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip",
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/looking-glass/data.json?resource={{input}}",
+            "name": "Looking Glass",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns geolocation information for the given IP space based on MaxMind's GeoLite2 data source.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip",
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/maxmind-geo-lite/data.json?resource={{input}}",
+            "name": "Maxmind Geo Lite",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns geolocation information for prefixes that are announced by an autonomous system. Annoucement information is based on RIS (http://ris.ripe.net), geolocation information is based on MaxMind's GeoLite2 data.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/maxmind-geo-lite-announced-by-as/data.json?resource={{input}}",
+            "name": "Maxmind Geo Lite Announced By AS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns the containing prefix and announcing ASN of a given IP address.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"asns\":[\"$$\"]}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"$$prefix$$\":\"\"}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://stat.ripe.net/data/network-info/data.json?resource={{input}}",
+            "name": "Network Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call gives a summary of the given prefix, including whether and by whom it is announced.",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"data\":{\"related_prefixes\":[\"$$\"]}}"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\"asns\":[{\"$$asn$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/prefix-overview/data.json?resource={{input}}",
+            "name": "Prefix Overview",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call compares the given routes (prefix originating from an ASN) between Routing Registries and actual routing behaviour as seen by the RIPE NCC route collectors (RIS).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/prefix-routing-consistency/data.json?resource={{input}}",
+            "name": "Prefix Routing Consistency",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call shows which RIR(s) allocated/assigned a resource. Include additional information like registration status or country of registration. The data is based on RIR stats files, see ftp://ftp.ripe.net/pub/stats/.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip",
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/rir/data.json?resource={{input}}&lod=2",
+            "name": "RIR",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns the number of allocations and assignments (below the queried resource) according to registration data provided by Regional Internet Registries.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/rir-prefix-size-distribution/data.json?resource={{input}}",
+            "name": "RIR Prefix Size Distribution",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns geographical information for Internet resources based on RIR Statistics data",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip",
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/rir-stats-country/data.json?resource={{input}}",
+            "name": "RIR Stats Country",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides information on when a prefix or ASN was first and last seen in RIS data. The data generally goes back to 2000.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr",
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/ris-first-last-seen/data.json?resource={{input}}",
+            "name": "RIS First-Last-Seen",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns routes for advertisements of a given IP resource, or that are originated from a given ASN, as seen by the RIPE NCC route collectors.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://stat.ripe.net/data/ris-peerings/data.json?resource={{input}}",
+            "name": "RIS Peerings",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides information on prefixes related to an ASN. The data call distinguishes prefixes in the originated and transited ASN.\nNote that this distinction is purely based on the perspective of the RIPE NCC's RIS system and does NOT imply the underlying (business) relationships between networks!",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/ris-prefixes/data.json?resource={{input}}&list_prefixes=true",
+            "name": "RIS Prefixes",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides (meta) information on collector nodes (RRCs) of the RIS network (http://ris.ripe.net). This includes geographical and topological location and information on collectors' peers.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://stat.ripe.net/data/rrc-info/data.json?resource={{input}}",
+            "name": "RRC Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns prefixes that overlap or are adjacent to the specified IP resource.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\"prefixes\":[{\"$$origin_asn$$\":\"\"}]}}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"data\":{\"prefixes\":[{\"$$prefix$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/related-prefixes/data.json?resource={{input}}",
+            "name": "Related Prefixes",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns details of reverse DNS delegations for IP prefixes in the RIPE region.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/reverse-dns/data.json?resource={{input}}",
+            "name": "Reverse DNS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This is just a simple lookup for the reverse DNS info against a single IP address.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"result\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://stat.ripe.net/data/reverse-dns-ip/data.json?resource={{input}}",
+            "name": "Reverse DNS IP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call shows the history of announcements for prefixes, including the origin ASN and the first hop. The data comes from the RIS route collectors.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr",
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/routing-history/data.json?resource={{input}}",
+            "name": "Routing History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns a summary of the current BGP routing state of a given IP prefix or ASN, as observed by the RIS route collectors. Historical lookups are supported - a query has to be aligned to the times (00:00, 08:00 and 16:00 UTC) when RIS data has been collected.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "ip",
+                "cidr",
+                "organization"
+            ],
+            "link": "https://stat.ripe.net/data/routing-status/data.json?resource={{input}}",
+            "name": "Routing Status",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides information on the visibility of a resource as observed from RIS (http://ris.ripe.net).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip",
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/visibility/data.json?resource={{input}}",
+            "name": "Visibility",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "his data call returns the IP address of the requestor.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://stat.ripe.net/data/whats-my-ip/data.json",
+            "name": "Whats My Ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns whois information from the relevant Regional Internet Registry and Routing Registry.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "ip",
+                "cidr",
+                "organization"
+            ],
+            "link": "https://stat.ripe.net/data/whois/data.json?resource={{input}}",
+            "name": "Whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns all announced prefixes for a given ASN. The results can be restricted to a specific time period.",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"data\":{\"prefixes\":[{\"$$prefix$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS{{input}}",
+            "name": "Announced Prefixes",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides information on the number of RIPE Atlas probes in a region, a country or network (ASN). It supports history, with a general start in 2014. The information is based on data from the RIPE Atlas probe archive, ftp://ftp.ripe.net/ripe/atlas/probes/archive/, which is processed once a day. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "country code"
+            ],
+            "link": "https://stat.ripe.net/data/atlas-probe-deployment/data.json?resource={{input}}",
+            "name": "Atlas Probe Deployment",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides information on the RIPE Atlas probes in an network (ASN), a prefix or a country.\nThe information is based on data coming from the RIPE Atlas REST API, https://atlas.ripe.net/docs/api/v2/manual/.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "cidr",
+                "country code"
+            ],
+            "link": "https://stat.ripe.net/data/atlas-probes/data.json?resource={{input}}",
+            "name": "Atlas Probes",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides information on the RIPE Atlas measurements that target an network (ASN), a prefix or a hostname. The information is based on data coming from the RIPE Atlas REST API, https://atlas.ripe.net/docs/api/v2/manual/.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "cidr",
+                "hostname"
+            ],
+            "link": "https://stat.ripe.net/data/atlas-targets/data.json?resource={{input}}",
+            "name": "Atlas Targets",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call represents the scenario of what occurred to the BGP routes of a resource over a period of time. It includes data that defines the initial BGP state at the start time of the query, and all the BGP updates observed from then until the end time, as well as a description of all the AS nodes, and RIS BGP peers involved in the result.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "cidr",
+                "ip"
+            ],
+            "link": "https://stat.ripe.net/data/bgplay/data.json?resource={{input}}",
+            "name": "BGPlay",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns the state of BGP routes for a resource at a certain point in time, as observed by all the RIS collectors. This is derived by applying a computation of state to the RIB dump (granularity=8h) that occurred exactly before that time, using the BGP updates observed between the RIB time and the query time. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "cidr",
+                "ip"
+            ],
+            "link": "https://stat.ripe.net/data/bgp-state/data.json?resource={{input}}",
+            "name": "BGP State",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns the BGP updates observed for a resource over a certain period of time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "cidr",
+                "ip"
+            ],
+            "link": "https://stat.ripe.net/data/bgp-updates/data.json?resource={{input}}",
+            "name": "BGP Updates",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns the number of BGP updates seen over time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn",
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/bgp-update-activity/data.json?resource={{input}}",
+            "name": "BGP Update Activity",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns a count of all the hosts within a certain resource for which any network tests occurred. The data is based on active host measurements collected by the Measurement Lab platform (M-Lab). \nThe measurements are commonly ran using the M-Lab Network Detection Tool (NDT), available as a stand-alone network speed test application, and also included in a popular BitTorrent client. Note that due to the nature the data is processed data can be delayed for around two days at the beginning of each month!",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4",
+                "ipv4 cidr",
+                "country code"
+            ],
+            "link": "https://stat.ripe.net/data/mlab-activity-count/data.json?resource={{input}}",
+            "name": "M-lab Activity Count",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns a set of all the measured network bandwidths for a certain resource. The data is based on active host measurements collected by the Measurement Lab platform (M-Lab). ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4",
+                "ipv4 cidr",
+                "country code"
+            ],
+            "link": "https://stat.ripe.net/data/mlab-bandwidth/data.json?resource={{input}}",
+            "name": "M-lab Bandwidth",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns a set of all the hosts within a certain resource for which any network tests occurred. The data is based on active host measurements collected by the Measurement Lab platform (M-Lab). \nThe measurements are commonly ran using the M-Lab Network Detection Tool (NDT), available as a stand-alone network speed test application, and also included in a popular BitTorrent client. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4",
+                "ipv4 cidr",
+                "country code"
+            ],
+            "link": "https://stat.ripe.net/data/mlab-clients/data.json?resource={{input}}",
+            "name": "M-lab Clients",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call shows the number of prefixes announced by a given ASN over time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/prefix-count/data.json?resource=AS{{input}}",
+            "name": "Prefix Count",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns the total amount of prefixes announced by a given ASN per subnet size and IP version.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://stat.ripe.net/data/prefix-size-distribution/data.json?resource=AS{{input}}",
+            "name": "Prefix Size Distribution",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call provides high-level information on ASNs in RIS, including: total number of ASNs & listing of all ASNs\nThe data call supports history, with each data point being aligned to times a dump is created in RIS (00:00, 08:00 and 16:00 UTC). By default, the data call returns the total number of ASNs; more details can be obtained using parameters.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ISO8601 or linux timestamp"
+            ],
+            "link": "https://stat.ripe.net/data/ris-asns/data.json?query_time={{input}}",
+            "name": "RIS Asns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns details on the reverse DNS delegations and its consistency with routed and registered IP space. The input can be a single prefix or an ASN, in which case all routed and registered prefixes for this ASN are used as an input.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"prefixes\":{\"ipv4\":{\"*\":{\"domains\":[{\"$$domain$$\":\"\"}]}}}}}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"data\":{\"prefixes\":{\"ipv4\":{\"*\":{\"domains\":[{\"$$prefix$$\":\"\"}]}}}}}"
+                }
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/reverse-dns-consistency/data.json?resource={{input}}",
+            "name": "Reverse DNS Consistency",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This data call returns example resource that are directly or indirectly related to the given input.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://stat.ripe.net/data/searchcomplete/data.json?resource={{input}}",
+            "name": "Searchcomplete",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Speedchecker Bandwidth Measurements. This data call provides bandwidth measurement results collected on the Speedchecker platform. The bandwith is measured with HTML5 clients (e.g. https://www.broadbandspeedchecker.co.uk) as well as with Speedchecker's mobile applications. The unit of measurement is kilobits per second (Kbps).\nSince 2018-05-28 data is synchronized live between Speedchecker and RIPEstat, which means that every measurement done on the Speedchecker platform will show up in this data call after a few seconds.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://stat.ripe.net/data/speedchecker-bandwidth-measurements/data.json?resource={{input}}",
+            "name": "Speedchecker Bandwidth",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The main purpose for this data call is to power the DNS Check widget [1] but it can also be used to programmatically retrieve the test results of DNS checks run by Zonemaster. The data call has two modes, one to get an overview of available tests (\"resource\" parameter is hostname) and one to get the test details (\"resource\" parameter is test ID and \"method\" parameter is \"details\").",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://stat.ripe.net/data/zonemaster/data.json?resource={{input}}",
+            "name": "Zonemaster",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "RIPEstat is a large-scale information service and the open data platform of the RIPE NCC. Get essential information on IP address space and Autonomous System Numbers (ASNs) along with related statistics on specific hostnames and countries.",
+        "documentation": "https://stat.ripe.net/docs/data_api",
+        "link": "https://stat.ripe.net/",
+        "name": "Ripe"
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipinfo.io/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipinfo.io/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "ASN API allows you to programmatically access details about an ASN, such as the assigned prefixes, related domain, and more.",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"prefixes\":[{\"$$netblock$$\":\"\"}],\"prefixes6\":[{\"$$netblock$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://ipinfo.io/AS{{input}}?token={{key}}",
+            "name": "asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Our Hosted Domains, or Reverse IP API returns a list of all of the domains hosted on the provided IP address.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://ipinfo.io/domains/{{input}}?token={{key}}",
+            "name": "hosted domains",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns All the Information about the Ip address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://ipinfo.io/{{input}}?token={{key}}",
+            "name": "ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Our IP address ranges API returns a list of all of the IP addresses ranges assigned to or operated by a company, identified by the provided domain name.",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"ranges\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://ipinfo.io/ranges/{{input}}?token={{key}}",
+            "name": "ranges",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "IP Whois API allows you to programmatically access Whois data by IP, ID or domain.",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"records\":[{\"$$range$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "ip",
+                "domain"
+            ],
+            "link": "https://ipinfo.io/whois/net/{{input}}?token={{key}}",
+            "name": "IP Whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "With IPinfo, you can pinpoint your users’ locations, customize their experiences, \nprevent fraud, ensure compliance, and so much more",
+        "documentation": "https://ipinfo.io/developers",
+        "link": "https://ipinfo.io/",
+        "name": "IpInfo"
+    }
+}

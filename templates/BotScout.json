@@ -1,0 +1,76 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Check all.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "http://botscout.com/test/?all={{input}}&format=xml",
+            "name": "ALL",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Check an email address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "http://botscout.com/test/?mail={{input}}&format=xml",
+            "name": "EMAIL",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Check an IP Address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "http://botscout.com/test/?ip={{input}}&format=xml",
+            "name": "IP",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Check a user name.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "name"
+            ],
+            "link": "http://botscout.com/test/?name={{input}}&format=xml",
+            "name": "NAME",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "BotScout helps prevent automated web scripts, known as bots, from registering on forums, polluting databases, spreading spam, and abusing forms on web sites. We do this by tracking the names, IPs, and email addresses that bots use and logging them as unique signatures for future reference.",
+        "documentation": "http://botscout.com/api.htm",
+        "link": "http://botscout.com",
+        "name": "BotScout"
+    }
+}

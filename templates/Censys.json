@@ -1,0 +1,117 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://censys.io/login",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://censys.io/login",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The account endpoint returns information about your Censys account.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://censys.io/api/v1/account",
+            "name": "Account",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns structured certificate data for the specified SHA-256 fingerprint",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"parsed\":{\"names\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "cert"
+            ],
+            "link": "https://censys.io/api/v1/view/certificates/{{input}}",
+            "name": "View Certificate",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The View API exposes a single endpoint, /api/v1/view, which can be used to fetch full document from IP address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://censys.io/api/v1/view/ipv4/{{input}}",
+            "name": "View Ipv4",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The View API exposes a single endpoint, /api/v1/view, which can be used to fetch full document from domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain e.g. example.com"
+            ],
+            "link": "https://censys.io/api/v1/view/websites/{{input}}",
+            "name": "View Websites",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns host information for the specified IP address",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"result\":{\"autonomous_system\":{\"$$asn$$\":\"\"}}}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"result\":{\"autonomous_system\":{\"$$bgp_prefix$$\":\"\"}}}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://search.censys.io/api/v2?ip={{input}}",
+            "name": "Hosts ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns host names for the specified IP address",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"result\":{\"names\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://search.censys.io/api/v2/hosts/{{input}}/names",
+            "name": "Hosts names",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Censys reduces your Internet attack surface by continually discovering unknown assets and helping remediate Internet facing risks",
+        "documentation": "https://search.censys.io/api",
+        "link": "https://censys.io/",
+        "name": "Censys"
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://x.threatbook.cn/api",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://x.threatbook.cn/api",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Advanced domain name query, to obtain the historical Whois information of the domain name and the historical IP information of the domain name.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.threatbook.cn/v3/domain/adv_query?apikey={{key}}&resource={{input}}",
+            "name": "domain adv query",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It can analyze domain names extracted from internal DNS or some NGFWs. Obtain the IP address corresponding to the domain name, the current Whois, comprehensively determine the threat types such as: remote control (C2), malware (Malware), zombie, scan (Scanner), brute force (Brute Force), etc., related attack groups Or security incident labels, original intelligence, relevant sample information, etc.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.threatbook.cn/v3/domain/query?apikey={{key}}&resource={{input}}",
+            "name": "domain query",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "IP advanced query, get current IP domain name and historical domain name information.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.threatbook.cn/v3/ip/adv_query?apikey={{key}}&resource={{input}}",
+            "name": "ip adv query",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It can analyze business logs and external IP obtained from security devices such as firewalls and WAF. Obtain IP-related geographic location and ASN information, and comprehensively determine threat types such as: remote control (C2), zombie, compromised host (Compromised), scanning (Scanner), phishing, etc., related attack groups or security incidents Labels, original information, relevant sample information, etc.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.threatbook.cn/v3/ip/query?apikey={{key}}&resource={{input}}",
+            "name": "ip query",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Advanced domain name query to obtain subdomain information of a domain name.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.threatbook.cn/v3/domain/sub_domains?apikey={{key}}&resource={{input}}",
+            "name": "subdomains",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Threat detection platform",
+        "documentation": "https://x.threatbook.cn/api",
+        "link": "https://threatbook.cn/",
+        "name": "ThreatBook"
+    }
+}

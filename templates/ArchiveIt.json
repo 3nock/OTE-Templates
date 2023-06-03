@@ -1,0 +1,37 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Urls archived in ArchiveIt...",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://wayback.archive-it.org/all/timemap/cdx?matchType=domain&fl=original&collapse=urlkey&url={{input}}",
+            "name": "url",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Archive-It provides tools, training, and technical support for capturing and preserving dynamic web materials, as well as a platform for partners to share their collections, with multiple search, discovery, and access capabilities.",
+        "documentation": "https://support.archive-it.org/hc/en-us/articles/360001231286-Archive-It-APIs-and-integrations",
+        "link": "https://archive-it.org/",
+        "name": "ArchiveIt"
+    }
+}

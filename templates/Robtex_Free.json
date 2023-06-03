@@ -1,0 +1,96 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Returns an array of networks related to a specific AS number",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"nets\":[{\"$$n$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://freeapi.robtex.com/asquery/{{input}}",
+            "name": "asquery",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API returns the current forward and reverse of an IP number, together with GEO-location data and network data",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"$$as$$\":\"\"}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"$$bgproute$$\":\"\"}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://freeapi.robtex.com/ipquery/{{input}}",
+            "name": "ipquery",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns Passive dns Data of a domain",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "[{\"$$rrdata$$\":\"\"}]"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://freeapi.robtex.com/pdns/forward/{{input}}",
+            "name": "pdns forward",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns Passive dns Data of an Ip address",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "[{\"$$rrname$$\":\"\"}]"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://freeapi.robtex.com/pdns/reverse/{{input}}",
+            "name": "pdns reverse",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Robtex is used for various kinds of research of IP numbers, Domain names, etc",
+        "documentation": "https://www.robtex.com/api/",
+        "link": "https://www.robtex.com/",
+        "name": "Robtex_Free"
+    }
+}

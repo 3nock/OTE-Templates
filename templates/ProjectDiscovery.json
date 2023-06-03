@@ -1,0 +1,41 @@
+{
+    "authentication": {
+        "authHeader": "Authorization",
+        "authType": "HEADER",
+        "link": "https://chaos.projectdiscovery.io/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "Authorization",
+        "authType": "HEADER",
+        "link": "https://chaos.projectdiscovery.io/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Returns Subdomains Associated with the domain",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"subdomains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://dns.projectdiscovery.io/dns/{{input}}/subdomains",
+            "name": "subdomain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "We actively collect and maintain internet-wide assets' data, \nthis project is meant to enhance research and analyse changes around DNS for better insights",
+        "documentation": "https://chaos.projectdiscovery.io/",
+        "link": "https://chaos.projectdiscovery.io/",
+        "name": "ProjectDiscovery"
+    }
+}

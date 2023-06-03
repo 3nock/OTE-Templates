@@ -1,0 +1,45 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "The IP2ASN API call retrieves ASN & Subnet info about an IP address (IPv4 and IPv6).",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"$$asn$$\":\"\"}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"$$cidr$$\":\"\"}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://freeapi.dnslytics.net/v1/ip2asn/{{input}}",
+            "name": "IP2ASN",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "This service is provided by a Dutch ICT consultant. My goal is to provide webmasters, system administrators, forensic specialist or anyone who is interested the information they need to view the technical details about internet, offer diagnostic tools and show information to track spammers, hackers or other suspicious activities.",
+        "documentation": "https://dnslytics.com/api",
+        "link": "https://dnslytics.com/",
+        "name": "DNSlytics_ip2asn"
+    }
+}

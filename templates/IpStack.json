@@ -1,0 +1,62 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipstack.com/product",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipstack.com/product",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The ipstack API also offers the ability to request data for multiple IPv4 or IPv6 addresses at the same time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "http://api.ipstack.com/{{input}}?access_key={{key}}",
+            "name": "Bulk Ip Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The ipstack API also offers a separate API endpoint capable of detecting the IP address which the current API request is coming from.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "http://api.ipstack.com/check?access_key={{key}}",
+            "name": "Requester IP Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The ipstack's primary endpoint is called Standard Lookup and is used to look up single IPv4 or IPv6 addresses.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "http://api.ipstack.com/{{input}}?access_key={{key}}",
+            "name": "Standard Ip Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "ipstack offers a powerful, real-time IP to geolocation API capable of looking up accurate location data and assessing security threats originating from risky IP addresses.",
+        "documentation": "https://ipstack.com/documentation",
+        "link": "https://ipstack.com/",
+        "name": "IpStack"
+    }
+}

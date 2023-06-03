@@ -1,0 +1,63 @@
+{
+    "authentication": {
+        "authHeader": "api-key",
+        "authType": "HEADER",
+        "link": "https://leakix.net/auth/login",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "api-key",
+        "authType": "HEADER",
+        "link": "https://leakix.net/auth/login",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "All available data on the Host.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://leakix.net/host/{{input}}",
+            "name": "Host",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Leaks.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://leakix.net/search?q={{input}}&scope=leak",
+            "name": "Leak",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Services.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://leakix.net/search?q={{input}}&scope=service",
+            "name": "Services",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "LeakIX is the first platform combining a search engine indexing public information AND an open reporting platform linked to the results.",
+        "documentation": "https://leakix.net/api-documentation",
+        "link": "https://leakix.net/",
+        "name": "LeakIX"
+    }
+}

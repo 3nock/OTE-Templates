@@ -1,0 +1,55 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipgeolocation.io/pricing.html",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipgeolocation.io/pricing.html",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "IP Geolocation API provides real-time and accurate geolocation, and security information for any IPv4 or IPv6 address and domain name along with the user-agent detail for the provided user-agent string.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"$$asn$$\":\"\"}"
+                }
+            ],
+            "inputTypes": [
+                "ip",
+                "domain"
+            ],
+            "link": "https://api.ipgeolocation.io/ipgeo?apiKey={{key}}&ip={{input}}",
+            "name": "IP Geolocation",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Time zone API provides current time, date, and time zone related information.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipgeolocation.io/timezone?apiKey={{key}}&ip={{input}}",
+            "name": "IP To Time zone",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The Trusted Source of IP Address Data",
+        "documentation": "https://ipgeolocation.io/documentation/",
+        "link": "https://ipgeolocation.io/",
+        "name": "IpGeoLocation"
+    }
+}

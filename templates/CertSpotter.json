@@ -1,0 +1,45 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "BEARER",
+        "link": "https://sslmate.com/certspotter/api/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "BEARER",
+        "link": "https://sslmate.com/certspotter/api/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Use this endpoint to list all certificate issuances for a domain.",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "[{\"dns_names\":[\"$$\"]}]"
+                },
+                {
+                    "name": "cert",
+                    "script": "[{\"$$cert_sha256$$\":\"\"}]"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.certspotter.com/v1/issuances?domain={{input}}&expand=dns_names&expand=issuer&expand=issuer.caa_domains",
+            "name": "issuances",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "SSLMate monitors public Certificate Transparency logs, coalescing all the certificates and precertificates for a particular issuance event into a single issuance object. SSLMate indexes the issuances by DNS name, and you can use the API described below to efficiently query all the issuances for a particular domain, and then poll for new issuances",
+        "documentation": "https://sslmate.com/help/reference/ct_search_api_v1",
+        "link": "https://sslmate.com/certspotter/",
+        "name": "CertSpotter"
+    }
+}

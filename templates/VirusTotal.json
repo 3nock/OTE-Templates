@@ -1,0 +1,258 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.virustotal.com/gui/join-us",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.virustotal.com/gui/join-us",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The caa_records relationship returns a list of all domain's CAA records",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/caa_records",
+            "name": "domain caa records",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The cname_records relationship returns a list of all domain's CNAME records",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/cname_records",
+            "name": "domain cname records",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "All SSL certificates that have been associated with the domain at some moment in time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/historical_ssl_certificates",
+            "name": "domain historical ssl certs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "All whois records that have been associated with the domain at some moment in time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/historical_whois",
+            "name": "domain historical whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The mx_records relationship returns a list of all domain's MX records. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/mx_records",
+            "name": "domain mx records",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The ns_records relationship returns a list of all domain's NS records.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/ns_records",
+            "name": "domain ns records",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The parent relationship returns the domain's object parent.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/parent",
+            "name": "domain parent",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The resolutions relationship returns a list of past and current IP resolutions for a given domain or subdomain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/resolutions",
+            "name": "domain resolutions",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The siblings relationship returns a list of subdomains at the same level as the given subdomain for a domain, along with their information.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/siblings",
+            "name": "domain siblings",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The soa_records relationship returns a list of all domain's CNAME records.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/soa_records",
+            "name": "domain soa records",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The subdomains relationship returns a list of all domain's subdomains. This relationships only returns direct subdomains, it's not recursive (it won't return a subdomain's subdomains).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/subdomains",
+            "name": "domain subdomains",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The urls relationship returns a list of the domain's URLs",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/api/v3/domains/{{input}}/urls",
+            "name": "domain urls",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The historical_ssl_certificates relationship returns a list of SSL certificates that have been associated with the IP address at some moment in time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.virustotal.com/api/v3/ip_addresses/{{input}}/historical_ssl_certificates",
+            "name": "ip historical ssl certs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The historical_whois relationship returns a list of whois records that have been associated with the IP address at some moment in time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.virustotal.com/api/v3/ip_addresses/{{input}}/historical_whois",
+            "name": "ip historical whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The resolutions relationship returns a list of past and current domain resolutions for a IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.virustotal.com/api/v3/ip_addresses/{{input}}/resolutions",
+            "name": "ip resolutions",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The urls relationship returns a list of the IP's URLs",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.virustotal.com/api/v3/ip_addresses/{{input}}/urls",
+            "name": "ip urls",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all the available data assosiated with domain, uses v2 api",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.virustotal.com/vtapi/v2/domain/report?apikey={{key}}&domain={{input}}",
+            "name": "v2 api domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all the available data assosiated with ip-address, uses v2 api",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.virustotal.com/vtapi/v2/ip-address/report?apikey={{key}}&ip={{input}}",
+            "name": "v2 api ipaddress",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Analyze suspicious files and URLs to detect types of malware, \nautomaticsubdomainIpy share them with the security community",
+        "documentation": "https://developers.virustotal.com/reference",
+        "link": "https://www.virustotal.com/",
+        "name": "VirusTotal"
+    }
+}

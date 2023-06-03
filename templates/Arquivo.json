@@ -1,0 +1,50 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "CDX-server API allows automatic access in order to list, sort, and filter preserved pages from a given URL.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://arquivo.pt/wayback/cdx?url={{input}}&output=json",
+            "name": "CDX Server",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The Arquivo.pt TextSearch API allows full-text search and access preserved web content and related metadata. It is also possible to search by URL, accessing all versions of preserved web content.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://arquivo.pt/textsearch?q={{input}}&prettyPrint=false&maxItems=100",
+            "name": "TextSearch",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Arquivo.pt is a research infrastructure that allows searching and accessing web pages archived since 1996. The main objective is the preservation of information published on the web for research purposes.",
+        "documentation": "https://github.com/arquivo/pwa-technologies/wiki/APIs",
+        "link": "https://arquivo.pt/",
+        "name": "Arquivo"
+    }
+}

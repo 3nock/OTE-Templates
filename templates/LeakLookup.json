@@ -1,0 +1,76 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://leak-lookup.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://leak-lookup.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Search Domain",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://leak-lookup.com/api/search/?key={{key}}&type=domain&query={{input}}",
+            "name": "DOMAIN",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search Email address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://leak-lookup.com/api/search/?key={{key}}&type=email_address&query={{input}}",
+            "name": "EMAIL",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search Ip-address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://leak-lookup.com/api/search/?key={{key}}&type=ipaddress&query={{input}}",
+            "name": "IP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search Username",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "name"
+            ],
+            "link": "https://leak-lookup.com/api/search/?key={{key}}&type=username&query={{input}}",
+            "name": "USERNAME",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Leak-Lookup allows you to search across thousands of data breaches to stay on top of credentials that may have been compromised, allowing you to proactively stay on top of the latest data leaks with ease.",
+        "documentation": "https://leak-lookup.com/api",
+        "link": "https://leak-lookup.com/",
+        "name": "LeakLookup"
+    }
+}

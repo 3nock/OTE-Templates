@@ -1,0 +1,89 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://etherscan.io/apis#pricing-plan",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://etherscan.io/apis#pricing-plan",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Returns the Ether balance of a given address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ethereum address"
+            ],
+            "link": "https://api.etherscan.io/api?module=account&action=balance&address={{input}}&tag=latest&apikey={{key}}",
+            "name": "Accounts",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns the Contract Application Binary Interface ( ABI ) of a verified smart contract.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ethereum address"
+            ],
+            "link": "https://api.etherscan.io/api?module=contract&action=getabi&address={{input}}&apikey={{key}}",
+            "name": "Contracts",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns the status code of a contract execution. Input target is the string representing the transaction hash to check the execution status",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ethereum transaction hash"
+            ],
+            "link": "https://api.etherscan.io/api?module=transaction&action=getstatus&txhash={{input}}&apikey={{key}}",
+            "name": "Transactions",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns the block reward and 'Uncle' block rewards. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ethereum block number"
+            ],
+            "link": "https://api.etherscan.io/api?module=block&action=getblockreward&blockno={{input}}&apikey={{key}}",
+            "name": "Blocks",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns the event logs from an address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ethereum address"
+            ],
+            "link": "https://api.etherscan.io/api?module=logs&action=getLogs&address={{input}}&page=1&offset=1000&apikey={{key}}",
+            "name": "Logs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Etherscan is a Block Explorer and Analytics Platform for Ethereum, a decentralized smart contracts platform.",
+        "documentation": "https://docs.etherscan.io/",
+        "link": "https://etherscan.io/",
+        "name": "Etherscan"
+    }
+}

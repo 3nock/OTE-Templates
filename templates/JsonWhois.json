@@ -1,0 +1,63 @@
+{
+    "authentication": {
+        "authHeader": "Authorization: Token token={{key}}",
+        "authType": "HEADER",
+        "link": "https://jsonwhois.com/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "Authorization: Token token={{key}}",
+        "authType": "HEADER",
+        "link": "https://jsonwhois.com/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The fastest and most reliable screenshot API available. Grab a full page screenshot of any domain, which you can then thumbnail or display as is.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://jsonwhois/api/v1/screenshot?domain={{input}}",
+            "name": "Screenshot",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Social Data",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://jsonwhois/api/v1/social?domain={{input}}",
+            "name": "Social Data",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Quickly and easily get up to date whois data for all domains.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://jsonwhois/api/v1/whois?domain={{input}}",
+            "name": "Whois & Social",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Domain API Services; WHOIS | SCREENSHOTS | SOCIAL.",
+        "documentation": "https://jsonwhois.com/docs",
+        "link": "https://jsonwhois.com/",
+        "name": "JsonWhois"
+    }
+}

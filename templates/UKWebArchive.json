@@ -1,0 +1,37 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Urls archived in UKWebArchive...",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://www.webarchive.org.uk/wayback/archive/cdx?matchType=domain&output=json&url={{input}}",
+            "name": "url",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The UK Web Archive (UKWA) collects millions of websites each year, preserving them for future generations. Use this site to discover old or obsolete versions of UK websites, search the text of the websites and browse websites curated on different topics and themes.",
+        "documentation": "https://data.webarchive.org.uk/",
+        "link": "https://www.webarchive.org.uk/",
+        "name": "UKWebArchive"
+    }
+}

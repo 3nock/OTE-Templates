@@ -1,0 +1,37 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Perform a single lookup on our real-time email verification",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.trumail.io/v2/lookups/json?email={{input}}",
+            "name": "Email",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Prevent bounced emails and low-quality users with FREE professional grade email verification",
+        "documentation": "https://trumail.io/documentation",
+        "link": "https://trumail.io/",
+        "name": "TruMail"
+    }
+}

@@ -1,0 +1,284 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Lists the POCs associated with a given ASN",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn number e.g. 12345"
+            ],
+            "link": "http://whois.arin.net/rest/asn/{{input}}/pocs",
+            "name": "asn pocs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the child networks of a given network",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "network"
+            ],
+            "link": "http://whois.arin.net/rest/poc/{{input}}/children",
+            "name": "net children",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the parent network of a given network",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "network"
+            ],
+            "link": "http://whois.arin.net/rest/net/{{input}}/parent",
+            "name": "net parent",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the POCs associated with a given network",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "network"
+            ],
+            "link": "http://whois.arin.net/rest/net/{{input}}/pocs",
+            "name": "net pocs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the delegations of a given network",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "network"
+            ],
+            "link": "http://whois.arin.net/rest/net/{{input}}/rdns",
+            "name": "net rdns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the ASNs associated with a given organization",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "organization"
+            ],
+            "link": "http://whois.arin.net/rest/org/{{input}}/asns",
+            "name": "org asns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the networks associated with a given organization",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "organization"
+            ],
+            "link": "http://whois.arin.net/rest/org/{{input}}/nets",
+            "name": "org nets",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the POCs associate with a given organization",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "organization"
+            ],
+            "link": "http://whois.arin.net/rest/org/{{input}}/pocs",
+            "name": "org pocs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the ASNs associated with a given POC",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "poc"
+            ],
+            "link": "http://whois.arin.net/rest/poc/{{input}}/asns",
+            "name": "poc asns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the networks associated with a given POC",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "poc"
+            ],
+            "link": "http://whois.arin.net/rest/poc/{{input}}/nets",
+            "name": "poc nets",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists the organizations associated with a given POC",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "poc"
+            ],
+            "link": "http://whois.arin.net/rest/poc/{{input}}/orgs",
+            "name": "poc orgs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Lists networks related to a given delegation",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "http://whois.arin.net/rest/rdns/{{input}}/nets",
+            "name": "rdns nets",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Registration Info of an asn",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://rdap.arin.net/registry/autnum/{{input}}",
+            "name": "registry asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Registration Info of an Ip-address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://rdap.arin.net/registry/ip/{{input}}",
+            "name": "registry ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois info of an asn",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "http://whois.arin.net/rest/asn/{{input}}",
+            "name": "whois asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois information of an organization customer",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "name"
+            ],
+            "link": "http://whois.arin.net/rest/customer/{{input}}",
+            "name": "whois customer",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois info of a Network",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "network"
+            ],
+            "link": "http://whois.arin.net/rest/net/{{input}}",
+            "name": "whois net",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois info of an Organization",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "organization"
+            ],
+            "link": "http://whois.arin.net/rest/org/{{input}}",
+            "name": "whois org",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois info of a point of contact",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "poc"
+            ],
+            "link": "http://whois.arin.net/rest/poc/{{input}}",
+            "name": "whois poc",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois info of a delegate",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://whois.arin.net/rest/rdns/{{input}}",
+            "name": "whois rdns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "ARIN is a nonprofit, member-based organization that administers IP addresses & ASNs in support of the operation and growth of the Internet.",
+        "documentation": "https://www.arin.net/resources/registry/whois/rws/api/",
+        "link": "https://www.arin.net/",
+        "name": "Arin"
+    }
+}

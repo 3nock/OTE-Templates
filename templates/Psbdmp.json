@@ -1,0 +1,37 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Searching dump(s) by some word. Response will be dumps id, date, length and some text sample where search string was found. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://psbdmp.ws/api/v3/search/{{input}}",
+            "name": "General Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Use a set of utilities bundled into a single automated workflow to improve, simplify, and speed up resource discovery",
+        "documentation": "https://psbdmp.cc/api",
+        "link": "https://psbdmp.cc",
+        "name": "Psbdmp"
+    }
+}

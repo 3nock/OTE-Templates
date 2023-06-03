@@ -1,0 +1,50 @@
+{
+    "authentication": {
+        "authHeader": "X-Key",
+        "authType": "HEADER",
+        "link": "https://docs.binaryedge.io/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "X-Key",
+        "authType": "HEADER",
+        "link": "https://docs.binaryedge.io/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Details about an Host. List of recent events for the specified host, including details of exposed ports and services.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.binaryedge.io/v2/query/ip/{{input}}",
+            "name": "Host",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Details about an Host, with data up to 6 months. List of events for the specified host, with events for each time that: \n- A port was detected open \n- A service was found running\n- Other modules were successfully executed\n",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.binaryedge.io/v2/query/ip/historical/{{input}}",
+            "name": "Host Historical",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "BinaryEdge is Cybersecurity/Data Science company that focuses its effort on acquiring, analyzing and classifying internet wide data. The API provides access to that scanning platform, for your own usage, along with access to our curated databases so that you can do querying and analytics on our worldwide (constantly updated) collected data.",
+        "documentation": "https://docs.binaryedge.io/",
+        "link": "https://binaryedge.io/",
+        "name": "BinaryEdge"
+    }
+}

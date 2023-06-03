@@ -1,0 +1,213 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Returns analytical data about the asn",
+            "extractors": [
+                {
+                    "name": "email",
+                    "script": "{\"data\":{\"email_contacts\":[\"$$\"]}}"
+                },
+                {
+                    "name": "address",
+                    "script": "{\n    \"data\": {\n        \"$$owner_address$$\": [\n        ]\n    }\n}\n"
+                },
+                {
+                    "name": "link",
+                    "script": "{\"data\":{\"$$website$$\":\"\"}}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.bgpview.io/asn/{{input}}",
+            "name": "asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all asn downstream of the queried asn",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\n    \"data\": {\n        \"ipv4_downstreams\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ],\n        \"ipv6_downstreams\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.bgpview.io/asn/{{input}}/downstreams",
+            "name": "asn downstreams",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all asn associated with the ixs",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\n    \"data\": [\n        {\n            \"$$ipv4_address$$\": \"\",\n            \"$$ipv6_address$$\": \"\"\n        }\n    ]\n}\n"
+                },
+                {
+                    "name": "ipv4",
+                    "script": "{\n    \"data\": [\n        {\n            \"$$ipv4_address$$\": \"\"\n        }\n    ]\n}\n"
+                },
+                {
+                    "name": "ipv6",
+                    "script": "{\n    \"data\": [\n        {\n            \"$$ipv6_address$$\": \"\"\n        }\n    ]\n}\n"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.bgpview.io/asn/{{input}}/ixs",
+            "name": "asn ixs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all peers associated with the asn",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\n    \"data\": {\n        \"ipv4_peers\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ],\n        \"ipv6_peers\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.bgpview.io/asn/{{input}}/peers",
+            "name": "asn peers",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all prefixes related to the asn",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\n    \"data\": {\n        \"ipv4_prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ],\n       \"ipv6_prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.bgpview.io/asn/{{input}}/prefixes",
+            "name": "asn prefixes",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all asn upstream of the queried asn",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\n    \"data\": {\n        \"ipv4_upstreams\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ],\n        \"ipv6_upstreams\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.bgpview.io/asn/{{input}}/upstreams",
+            "name": "asn upstreams",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns analytical data about the Ip address",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\n    \"data\": {\n        \"prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ],\n       \"related_prefixes\":[{\"$$prefix$$\":\"\"}]\n    }\n}\n"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\n    \"data\": {\n        \"prefixes\": [\n            {\n                \"asn\": {\n                    \"$$asn$$\": \"\"\n                }\n            }\n        ]\n    }\n}\n"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.bgpview.io/ip/{{input}}",
+            "name": "ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns analytical data about all the Ip address cidr",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\n    \"data\": {\n        \"asns\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                },
+                {
+                    "name": "email",
+                    "script": "{\n    \"data\": {\n        \"email_contacts\": [\"$$\"\n        ]\n    }\n}\n"
+                },
+                {
+                    "name": "address",
+                    "script": "{\"data\":{\"$$owner_address$$\":[]}}"
+                }
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://api.bgpview.io/prefix/{{input}}",
+            "name": "ip prefix",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all analytical data of the query term. Search resources by ASN, IP, Prefix, Name, Descitpion ",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\n    \"data\": {\n        \"asns\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\n    \"data\": {\n        \"ipv4_prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ],\n\"ipv6_prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                },
+                {
+                    "name": "email",
+                    "script": "{\n    \"data\": {\n        \"asns\": [\n            {\n                \"email_contacts\": [\n                    \"$$\"\n                ]\n            }\n        ],\n        \"ipv4_prefixes\": [\n            {\n                \"email_contacts\": [\n                    \"$$\"\n                ]\n            }\n        ],\n        \"ipv6_prefixes\": [\n            {\n                \"email_contacts\": [\n                    \"$$\"\n                ]\n            }\n        ]\n    }\n}\n"
+                }
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.bgpview.io/search?query_term={{input}}",
+            "name": "Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "BGPView is a simple API allowing consumers to view all sort of analytics dataabout the current state and structure of the internet.",
+        "documentation": "https://bgpview.docs.apiary.io/",
+        "link": "https://bgpview.io/",
+        "name": "Bgpview"
+    }
+}

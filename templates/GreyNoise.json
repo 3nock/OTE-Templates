@@ -1,0 +1,100 @@
+{
+    "authentication": {
+        "authHeader": "key",
+        "authType": "HEADER",
+        "link": "https://viz.greynoise.io/signup",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "key",
+        "authType": "HEADER",
+        "link": "https://viz.greynoise.io/signup",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The Community API provides community users with a free tool to query IPs in the GreyNoise dataset and retrieve a subset of the full IP context data returned by the IP Lookup API.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.greynoise.io/v3/community/{{input}}",
+            "name": "Community API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get more information about a given IP address. Returns time ranges, IP metadata (network owner, ASN, reverse DNS pointer, country), associated actors, activity tags, and raw port scan and web request information.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.greynoise.io/v2/noise/context/{{input}}",
+            "name": "IP Context",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Check whether a given IP address is “Internet background noise”, or has been observed scanning or attacking devices across the Internet.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.greynoise.io/v2/noise/quick/{{input}}",
+            "name": "IP Quick Check",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "RIOT identifies IPs from known benign services and organizations that commonly cause false positives in network security and threat intelligence products. The collection of IPs in RIOT is continually curated and verified to provide accurate results.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.greynoise.io/v2/riot/{{input}}",
+            "name": "RIOT IP Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Provides a simple endpoint to check GreyNoise status and GreyNoise\nAPI access",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.greynoise.io/ping",
+            "name": "Ping",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get a list of tags and their respective metadata.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.greynoise.io/v2/meta/metadata",
+            "name": "Tag Metadata",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "GreyNoise is a cybersecurity platform that collects and analyzes Internet-wide scan and attack traffic. This data is made available through the web-based Visualizer and GreyNoise APIs so users can contextualize existing alerts, filter false-positives, identify compromised devices, and track emerging threats.",
+        "documentation": "https://docs.greynoise.io/reference",
+        "link": "https://www.greynoise.io/",
+        "name": "GreyNoise"
+    }
+}

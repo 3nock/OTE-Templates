@@ -1,0 +1,63 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Hostname IoC related methods",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.maltiverse.com/hostname/{{input}}",
+            "name": "Hostname",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "IPv4 address IoC related methods",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.maltiverse.com/ip/{{input}}",
+            "name": "IpV4",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Url IOC related methods",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "checksum"
+            ],
+            "link": "https://api.maltiverse.com/url/{{input}}",
+            "name": "Url",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "We are here to help companies to adopt quality Threat Intelligence in a simple, quick and effective way. Maltiverse works as a broker for Threat intelligence sources that are aggregated from more than a hundred different Public, Private and Community sources.",
+        "documentation": "https://app.swaggerhub.com/apis-docs/maltiverse/api/1.0.0-oas3",
+        "link": "https://maltiverse.com/",
+        "name": "Maltiverse"
+    }
+}

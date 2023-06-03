@@ -1,0 +1,37 @@
+{
+    "authentication": {
+        "authHeader": "api-key",
+        "authType": "HEADER",
+        "link": "https://www.hybrid-analysis.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "api-key",
+        "authType": "HEADER",
+        "link": "https://www.hybrid-analysis.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Analyses Url",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://www.hybrid-analysis.com/api/v2/quick-scan/url",
+            "name": "Url Quick-Scan",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Detects and analyzes unknown threats using a unique Hybrid Analysis technology.",
+        "documentation": "https://www.hybrid-analysis.com/docs/api/v2",
+        "link": "https://www.hybrid-analysis.com/",
+        "name": "HybridAnalysis"
+    }
+}

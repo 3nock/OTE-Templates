@@ -1,0 +1,76 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "will return results from host archive.org and all subhosts *.archive.org",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://web.archive.org/cdx/search/cdx?matchType=domain&output=json&collapse=urlkey&url={{input}}",
+            "name": "MatchType Domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "will return results matching exactly archive.org/about/",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://web.archive.org/cdx/search/cdx?matchType=exact&output=json&collapse=urlkey&url={{input}}",
+            "name": "MatchType Exact",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "will return results from host archive.org",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://web.archive.org/cdx/search/cdx?matchType=host&output=json&collapse=urlkey&url={{input}}",
+            "name": "MatchType Host",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "will return results for all results under the path archive.org/about/",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://web.archive.org/cdx/search/cdx?matchType=prefix&output=json&collapse=urlkey&url={{input}}",
+            "name": "MatchType Prefix",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The Internet Archive, a 501(c)(3) non-profit, is building a digital library of Internet sites and other cultural artifacts in digital form. Like a paper library, we provide free access to researchers, historians, scholars, the print disabled, and the general public",
+        "documentation": "https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server",
+        "link": "https://archive.org/web/",
+        "name": "WaybackMachine"
+    }
+}

@@ -1,0 +1,207 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://viewdns.info/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://viewdns.info/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Used to find the abuse contact address for a domain name. This is where you would send complaints about spam originating from that domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/abuselookup/?domain={{input}}&apikey={{key}}&output=json",
+            "name": "Abuse Contact Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Check whether recent changes to DNS entries have propagated to DNS servers all over the world. Useful in troubleshooting DNS issues that appear to be isolated to one geographic region. Provides a status report on DNS propagation globally.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/propagation/?domain={{input}}&apikey={{key}}&output=json",
+            "name": "DNS Propagation Checker",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "View all configured DNS records (A, MX, CNAME etc.) for a specified domain name.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/dnsrecord/?domain={{input}}&recordtype=ANY&apikey={{key}}&output=json",
+            "name": "DNS Record Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Displays owner/contact information for a domain name. Can also be used to determine if a domain name is registered or not.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain",
+                "ip"
+            ],
+            "link": "https://api.viewdns.info/whois/?domain={{input}}&apikey={{key}}&output=json",
+            "name": "Domain/IP Whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Shows a historical list of IP addresses a given domain name has been hosted on as well as where that IP address is geographically located, and the owner of that IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/iphistory/?domain={{input}}&apikey={{key}}&output=json",
+            "name": "IP History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This tool will display geographic information about a supplied IP address including city, country, latitude, longitude and more.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.viewdns.info/iplocation/?ip={{input}}&apikey={{key}}&output=json",
+            "name": "IP Location Finder",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This tool will display the name of the company that manufactured a specific network device based on its MAC Address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "mac address"
+            ],
+            "link": "https://api.viewdns.info/maclookup/?mac={{input}}&apikey={{key}}&output=json",
+            "name": "MAC Address Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Test how long a response from remote system takes to reach the ViewDNS server. Useful for detecting latency issues on network connections.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/ping/?host={{input}}&apikey={{key}}&output=json",
+            "name": "Ping",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This web based port scanner will test whether common ports are open on a server. Useful in determining if a specific service (e.g. HTTP) is up or down on a specific server. Ports scanned are: 21, 22, 23, 25, 80, 110, 139, 143, 445, 1433, 1521, 3306 and 3389",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/portscan/?host={{input}}&apikey={{key}}&output=json",
+            "name": "Port Scanner",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Find the reverse DNS entry (PTR) for a given IP. This is generally the server or host name.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.viewdns.info/reversedns/?ip={{input}}&apikey={{key}}&output=json",
+            "name": "Reverse DNS Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Takes a domain or IP address and quickly shows all other domains hosted from the same server. Useful for finding phishing sites or identifying other sites on the same shared hosting server. By default, the first 10,000 results are returned.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.viewdns.info/reverseip/?host={{input}}&apikey={{key}}&output=json",
+            "name": "Reverse IP Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Takes a mail server (e.g. mail.google.com) and quickly shows all other domains that use the same mail server. Useful for identifying domains that are used as email aliases",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "mailserver"
+            ],
+            "link": "https://api.viewdns.info/reversemx/?mx={{input}}&apikey={{key}}&output=json",
+            "name": "Reverse MX Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Takes a nameserver (e.g. ns.example.com) and quickly shows all other domains that share the same nameserver. Useful for identifying other domains that share the same web server or hosting company.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://api.viewdns.info/reversens/?ns={{input}}&apikey={{key}}&output=json",
+            "name": "Reverse NS Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This tool will allow you to find domain names owned by an individual person or company. Simply provide the email address or name of the person or company to find other domains registered using those same details. Returns 1,000 results at a time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/reversewhois/?q={{input}}&apikey={{key}}&output=json",
+            "name": "Reverse Whois Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The tools provided by ViewDNS.info allow users to gather a large amount of data about a given website or IP address.",
+        "documentation": "https://viewdns.info/api/docs/",
+        "link": "https://viewdns.info/",
+        "name": "ViewDns"
+    }
+}

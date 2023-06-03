@@ -1,0 +1,154 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://webresolver.nl/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://webresolver.nl/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Search trough a database with known disposable email servers to check if a domain is disposable.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{key}}&json&action=disposable_email&string={{input}}",
+            "name": "Disposable email checker",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get the DNS records from a domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{key}}&json&action=dns&string={{input}}",
+            "name": "Dns Resolver",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all the information from a domain such as: IP history, subdomains & domain score",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{key}}&json&action=domaininfo&string={{input}}",
+            "name": "Domain information",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Geo Location data. Supports Domain, IPv4 and IPv6.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{input}}&json&action=geoip&string={{input}}",
+            "name": "GeoIP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Tries to find any websites linked to an IP you entered.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{key}}&json&action=ip2websites&string={{input}}",
+            "name": "Ip to Website(s)",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Looks up information about a specific phone number. (Use international phone format).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "phone"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{key}}&json&action=phonenumbercheck&string={{input}}",
+            "name": "Phone Number Check",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Scan a port to check if the port is open or closed on a host.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{key}}&json&action=portscan&string={{input}}",
+            "name": "Portscan",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Creates a screenshot of any website/url.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain e.g. example.com"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{key}}&json&action=screenshot&string={{input}}",
+            "name": "Screenshot Tool",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get the website header information from a domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{key}}&json&action=domaininfo&string={{input}}",
+            "name": "Website Headers",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get the registration information from a domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://webresolver.nl/api.php?key={{key}}&html=0&action=whois&string={{input}}",
+            "name": "Website Whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "WebResolver",
+        "documentation": "https://webresolver.nl/api",
+        "link": "https://webresolver.nl/",
+        "name": "WebResolver"
+    }
+}

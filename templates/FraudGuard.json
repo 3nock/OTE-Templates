@@ -1,0 +1,112 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://fraudguard.io/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://fraudguard.io/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "This API endpoint retrieves your custom blacklist built in FraudGuard.io",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://@api.fraudguard.io/whitelist/0",
+            "name": "Get Custom Blacklist",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API endpoint retrieves your custom Geographic blacklist built in FraudGuard.io",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://@api.fraudguard.io/geoblock",
+            "name": "Get Custom GeoBlock",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API endpoint retrieves your custom whitelist built in FraudGuard.io",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://@api.fraudguard.io/blacklist/0",
+            "name": "Get Custom Whitelist",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API endpoint retrieves IP reputation data for a specific Hostname. It is vastly more accurate and detailed but requires a paid plan.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://@api.fraudguard.io/v2/hostname/{{input}}",
+            "name": "Specific Hostname Reputation v2",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API endpoint retrieves IP reputation data for a specific IP. It is less accurate and far less detailed but is free forever.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://@api.fraudguard.io/ip/{{input}}",
+            "name": "Specific IP Reputation v1",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API endpoint retrieves IP reputation data for a specific IP. It is vastly more accurate and detailed but requires a paid plan.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://@api.fraudguard.io/v2/ip/{{input}}",
+            "name": "Specific IP Reputation v2",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API endpoint retrieves Geographic, ISP and Organizational data for a specific IP.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://@api.fraudguard.io/v2/ip/geolookup/{{input}}",
+            "name": "Specific IP v2 Geo,ISP & Org",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "FraudGuard is a service designed to provide an easy way to validate usage by continuously collecting and analyzing real-time internet traffic",
+        "documentation": "https://docs.fraudguard.io/",
+        "link": "https://fraudguard.io/",
+        "name": "FraudGuard"
+    }
+}

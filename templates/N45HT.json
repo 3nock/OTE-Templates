@@ -1,0 +1,41 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Returns Subdomains of a particular domain",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"subdomains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.n45ht.or.id/v1/subdomain-enumeration?domain={{input}}",
+            "name": "subdomain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "We are a Security Researcher Organization from Indonesia, start from 2015 become a Security Analyst and help people secure their website from the attacker. ",
+        "documentation": "https://n45ht.or.id/",
+        "link": "https://n45ht.or.id/",
+        "name": "N45HT"
+    }
+}

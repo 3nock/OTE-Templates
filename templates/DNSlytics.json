@@ -1,0 +1,397 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://dnslytics.com/api",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://dnslytics.com/api",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The ASInfo API call retrieves information about an AS number. It is based on the AS/BGP report displayed on the website",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"data\":{\"prefixesv4\":[{\"$$prefix$$\":\"\"}],\"prefixesv6\":[{\"$$prefix$$\":\"\"}]}}"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\"peersv4\":[{\"$$aspeer$$\":\"\"}],\"peersv6\":[{\"$$aspeer$$\":\"\"}]}}"
+                },
+                {
+                    "name": "mailserver",
+                    "script": "{\"data\":{\"mxrecords\":[{\"$$mxrecord$$\":\"\"}]}}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"data\":{\"nsrecords\":[{\"$$nsrecord$$\":\"\"}]}}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"data\":{\"topips\":[{\"$$ipv4$$\":\"\",\"$$ipv6$$\":\"\"}]}}"
+                },
+                {
+                    "name": "subdomain",
+                    "script": "{\"data\":{\"domains\":[{\"$$domain$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.dnslytics.net/v1/asinfo/{{input}}/summary?apikey={{key}}",
+            "name": "ASInfo",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The AccountInfo API call returns the current status of your API account.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.dnslytics.net/v1/accountinfo?apikey={{key}}",
+            "name": "AccountInfo",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns registered and previously registered domain names based on one or more keywords.",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"data\":{\"domains\":[{\"$$domain$$\":\"dnslytics.com\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.dnslytics.net/v1/domainsearch/{{input}}?apikey={{key}}",
+            "name": "DomainSearch",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns registered domain typos and misspellings for a domain name. A domain name with one character difference is defined as a typo. For example ddslytics.com is a typo domain for dnslytics.com. It does not return exact matched domains on other TLDs, use the DomainSearch API to find such domain names.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.dnslytics.net/v1/domaintypos/{{input}}?apikey={{key}}",
+            "name": "DomainTypos",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns the IP/DNS history for a specific domain. The following records are supported: A, AAAA, MX, NS and SPF.",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"data\":{\"ipv4\":[{\"$$ip$$\":\"\"}],\"ipv6\":[{\"$$ip$$\":\"\"}]}}"
+                },
+                {
+                    "name": "ipv4",
+                    "script": "{\"data\":{\"ipv4\":[{\"$$ip$$\":\"\"}]}}"
+                },
+                {
+                    "name": "ipv6",
+                    "script": "{\"data\":{\"ipv6\":[{\"$$ip$$\":\"\"}]}}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"data\":{\"dns\":[{\"$$dns$$\":\"\"}]}}"
+                },
+                {
+                    "name": "mailserver",
+                    "script": "{\"data\":{\"mx\":[{\"$$mx$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.dnslytics.net/v1/hostinghistory/{{input}}?apikey={{key}}",
+            "name": "HostingHistory",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The IP2ASN API call retrieves ASN & Subnet info about an IP address (IPv4 and IPv6).",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"$$asn$$\":\"\"}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"$$cidr$$\":\"\"}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://freeapi.dnslytics.net/v1/ip2asn/{{input}}",
+            "name": "IP2ASN",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The IPInfo API call retrieves information about an IP address. It is based on the IP address report displayed on the website",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\"asinfo\":{\"$$asn$$\":\"\"}}}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"data\":{\"asinfo\":{\"$$cidr$$\":\"\"}}}"
+                },
+                {
+                    "name": "subdomain",
+                    "script": "{\"data\":{\"domains\":[\"$$\"]}}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"data\":{\"nsrecords\":[\"$$\"]}}"
+                },
+                {
+                    "name": "mailserver",
+                    "script": "{\"data\":{\"mxrecords\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.dnslytics.net/v1/ipinfo/{{input}}?apikey={{key}}",
+            "name": "IPInfo",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns domains using the same Google Adsense ID.  Adsense ID is in format pub-xxxxx",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"data\":{\"domains\":[{\"$$domain$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "adsense"
+            ],
+            "link": "https://api.dnslytics.net/v1/reverseadsense/{{input}}?apikey={{key}}",
+            "name": "ReverseAdsense",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns domains using the same Google Analytics ID. Analytics ID is in format ua-xxxxx.",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"data\":{\"domains\":[{\"$$domain$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "google analytics"
+            ],
+            "link": "https://api.dnslytics.net/v1/reverseganalytics/{{input}}?apikey={{key}}",
+            "name": "ReverseGAnalytics",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The ReverseIP API call returns domains hosted on the same IP address. It will only returns domains currently using an IP. Use the ReverseHistory API to find domains using an IP in the past.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"domains\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.dnslytics.net/v1/reverseip/{{input}}?apikey={{key}}",
+            "name": "ReverseIP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The ReverseMX API call returns domains hosted on the same mail server (MX record). It will only returns domains currently using a MX record. Use the ReverseHistory API to find domains using a MX record in the past.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"domains\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "mailserver"
+            ],
+            "link": "https://api.dnslytics.net/v1/reversemx/{{input}}?apikey={{key}}",
+            "name": "ReverseMX",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The ReverseNS API call returns domains hosted on the same name server (NS record). It will only returns domains currently using a NS record. Use the ReverseHistory API to find domains using a NS record in the past.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"domains\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "namesever"
+            ],
+            "link": "https://api.dnslytics.net/v1/reversens/{{input}}?apikey={{key}}",
+            "name": "ReverseNS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The SubnetInfo API call retrieves information about a subnet. It is based on the IP subnet report displayed on the website.We calculate statistics of all subnets allocated by the RIRs (ARIN, RIPE etc.) and subnets part of the global routing table. In total about 700K IPv4 subnets.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\"routes\":[{\"$$asn$$\":\"\"}]}}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"data\":{\"routes\":[{\"$$cidr$$\":\"\"}]}}"
+                },
+                {
+                    "name": "mailserver",
+                    "script": "{\"data\":{\"mxrecords\":[{\"$$examples$$\":\"\"}]}}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"data\":{\"nsrecords\":[{\"$$examples$$\":\"\"}]}}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"data\":{\"topips\":[{\"$$ip$$\":\"\"}]}}"
+                },
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"domains\":[{\"$$domain$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://api.dnslytics.net/v1/subnetinfo/{{input}}/summary?apikey={{key}}",
+            "name": "SubnetInfo",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns historical reverse data for Google Adsense. Adsense ID is in format pub-xxxxx",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"events\":[{\"$$domain$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "adsense"
+            ],
+            "link": "https://api.dnslytics.net/v1/reversehistory/adsense/{{input}}?apikey={{key}}",
+            "name": "ReverseHistory Adsense",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns historical reverse data for Google Analytics. Analytics ID is in format ua-xxxxx.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"events\":[{\"$$domain$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "google analytics"
+            ],
+            "link": "https://api.dnslytics.net/v1/reversehistory/ganalytics/{{input}}?apikey={{key}}",
+            "name": "ReverseHistory Google Analytics",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns historical reverse data for IP records",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"events\":[{\"$$domain$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.dnslytics.net/v1/reversehistory/ip/{{input}}?apikey={{key}}",
+            "name": "ReverseHistory IP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns historical reverse data for MX records.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"events\":[{\"$$domain$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "mailserver"
+            ],
+            "link": "https://api.dnslytics.net/v1/reversehistory/mx/{{input}}?apikey={{key}}",
+            "name": "ReverseHistory MX",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API call returns historical reverse data for NS records.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"events\":[{\"$$domain$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://api.dnslytics.net/v1/reversehistory/ns/{{input}}?apikey={{key}}",
+            "name": "ReverseHistory NS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "This service is provided by a Dutch ICT consultant. My goal is to provide webmasters, system administrators, forensic specialist or anyone who is interested the information they need to view the technical details about internet, offer diagnostic tools and show information to track spammers, hackers or other suspicious activities.",
+        "documentation": "https://dnslytics.com/api",
+        "link": "https://dnslytics.com/",
+        "name": "DNSlytics"
+    }
+}

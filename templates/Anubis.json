@@ -1,0 +1,41 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Returns Subdomains of a particular domain",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "[\"$$\"]"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://jldc.me/anubis/subdomains/{{input}}",
+            "name": "subdomain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Subdomain enumeration and information gathering tool",
+        "documentation": "https://github.com/jonluca/anubis",
+        "link": "https://jldc.me/anubis/",
+        "name": "Anubis"
+    }
+}

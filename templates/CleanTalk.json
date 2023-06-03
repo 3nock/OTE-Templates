@@ -1,0 +1,76 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://cleantalk.org/price-anti-spam",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://cleantalk.org/price-anti-spam",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The API \"ip_info()\" returns a 2-letter country code (US, UK, CN and etc) for an IP address. You can specify a list for IP addresses to find countries for each IP address by one API call.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.cleantalk.org/?method_name=ip_info&ip={{input}}",
+            "name": "Ip Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This method allows you to identify if a domain was used in other spam messages.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.cleantalk.org/?method_name=backlinks_check&auth_key={{key}}&domain={{input}}",
+            "name": "BackLinks check",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Method's response is information about the existence of IP in our database.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.cleantalk.org/?method_name=spam_check&auth_key={{key}}&ip={{input}}",
+            "name": "Spam check ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Method's response is information about the existence of e-mail records in our database.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.cleantalk.org/?method_name=spam_check&auth_key={{key}}&email={{input}}",
+            "name": "Spam check email",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Check if a netblock or IP address is on CleanTalk.org's spam IP list.",
+        "documentation": "https://cleantalk.org/help",
+        "link": "https://cleantalk.org",
+        "name": "CleanTalk"
+    }
+}

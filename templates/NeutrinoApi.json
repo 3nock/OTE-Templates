@@ -1,0 +1,129 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.neutrinoapi.com/plans/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.neutrinoapi.com/plans/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Parse, validate and clean an email address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://neutrinoapi.net/email-validate?email={{input}}&user-id={{user}}&api-key={{key}}",
+            "name": "Email Validate",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Check the reputation of an IP address, domain name or URL against a comprehensive list of blacklists and blocklists.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain",
+                "ip"
+            ],
+            "link": "https://neutrinoapi.net/host-reputation?host={{input}}&user-id={{user}}&api-key={{key}}",
+            "name": "Host Reputation",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The IP Blocklist API will detect potentially malicious or dangerous IP addresses.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://neutrinoapi.net/ip-blocklist?ip={{input}}&user-id={{user}}&api-key={{key}}",
+            "name": "Ip Blocklist",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get location information about an IP address and do reverse DNS (PTR) lookups.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://neutrinoapi.net/ip-info?reverse-lookup=true&ip={{input}}&user-id={{user}}&api-key={{key}}",
+            "name": "Ip Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Analyze and extract provider information for an IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://neutrinoapi.net/ip-probe?ip={{input}}&user-id={{user}}&api-key={{key}}",
+            "name": "Ip Probe",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Parse, validate and get location information about a phone number.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "phone"
+            ],
+            "link": "https://neutrinoapi.net/phone-validate?number={{input}}&user-id={{user}}&api-key={{key}}",
+            "name": "Phone Validate",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Parse, validate and get detailed user-agent information from a user agent string or from client hints.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "user-agent"
+            ],
+            "link": "https://neutrinoapi.net/ua-lookup?ua={{input}}&user-id={{user}}&api-key={{key}}",
+            "name": "Ua Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Parse, analyze and retrieve content from the supplied URL.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://neutrinoapi.net/url-info?url={{input}}&user-id={{user}}&api-key={{key}}",
+            "name": "Url Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Neutrino API solves recurring problems encountered during the development of software systems. Neutrino API is a general-purpose tool which can assist in many different situations.",
+        "documentation": "https://www.neutrinoapi.com/api/api-basics/",
+        "link": "https://www.neutrinoapi.com/",
+        "name": "NeutrinoApi"
+    }
+}

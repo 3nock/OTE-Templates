@@ -1,0 +1,114 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.whoxy.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.whoxy.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Check your account's API query balance:",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "http://api.whoxy.com/?key={{input}}&account=balance",
+            "name": "Account Balance Check",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Reverse Whois API lets you perform a comprehensive search on our database, to find domains owned by a company.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "organization"
+            ],
+            "link": "http://api.whoxy.com/?key={{key}}&reverse=whois&company={{input}}&format=json",
+            "name": "Reverse Whois Company",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Reverse Whois API lets you perform a comprehensive search on our database, to find domains by email.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "http://api.whoxy.com/?key={{key}}&reverse=whois&email={{input}}&format=json",
+            "name": "Reverse Whois Email",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Reverse Whois API lets you perform a comprehensive search on our database, to find domains by a domain name keyword.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "http://api.whoxy.com/?key={{key}}&reverse=whois&keyword={{input}}&format=json",
+            "name": "Reverse Whois Keyword",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Reverse Whois API lets you perform a comprehensive search on our database, to find domains owned by a person.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "name"
+            ],
+            "link": "http://api.whoxy.com/?key={{key}}&reverse=whois&name={{input}}&format=json",
+            "name": "Reverse Whois Name",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois History API returns all the historical WHOIS records of a domain name that is saved in our local database.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "http://api.whoxy.com/?key={{key}}&history={{input}}&format=json",
+            "name": "Whois History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois API digs into WHOIS registry referral chains until the correct WHOIS servers are found, for the most complete WHOIS data.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "http://api.whoxy.com/?key={{key}}&whois={{input}}&format=json",
+            "name": "Whois Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Our Whois API returns consistent and well-structured WHOIS data in XML & JSON format. Returned data contain parsed WHOIS fields that can be easily understood by your application. Along with Whois API, we also provide API access to Whois History and Reverse Whois.",
+        "documentation": "https://www.whoxy.com/#api",
+        "link": "https://www.whoxy.com/",
+        "name": "Whoxy"
+    }
+}

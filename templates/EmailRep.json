@@ -1,0 +1,37 @@
+{
+    "authentication": {
+        "authHeader": "Key",
+        "authType": "HEADER",
+        "link": "https://emailrep.io/key",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "Key",
+        "authType": "HEADER",
+        "link": "https://emailrep.io/key",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Query an email...",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://emailrep.io/{{input}}",
+            "name": "Email Query",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "EmailRep is a system of crawlers, scanners and enrichment services that collects data on email addresses, domains, and internet personas.",
+        "documentation": "https://docs.emailrep.io/",
+        "link": "https://emailrep.io/",
+        "name": "EmailRep"
+    }
+}

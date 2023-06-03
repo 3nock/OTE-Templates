@@ -1,0 +1,115 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "BEARER",
+        "link": "https://spyse.com/user/registration",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "BEARER",
+        "link": "https://spyse.com/user/registration",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "ASN",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.spyse.com/v4/data/as/{{input}}",
+            "name": "AS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "CVE",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cve"
+            ],
+            "link": "https://api.spyse.com/v4/data/cve/{{input}}",
+            "name": "CVE",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "DNS history",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.spyse.com/v4/data/history/dns/ANY/{{input}}",
+            "name": "DNS History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "domain",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.spyse.com/v4/data/domain/{{input}}",
+            "name": "DOMAIN",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Emails",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.spyse.com/v4/data/email/{{input}}",
+            "name": "EMAILS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Ip v4",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4"
+            ],
+            "link": "https://api.spyse.com/v4/data/ip/{{input}}",
+            "name": "IPv4 Host",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "SSL Certificate",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cert"
+            ],
+            "link": "https://api.spyse.com/v4/data/certificate/{{input}}",
+            "name": "SSL/TLS Certificate",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Find any Internet asset by digital fingerprints",
+        "documentation": "https://spyse.com/api",
+        "link": "https://spyse.com/",
+        "name": "Spyse"
+    }
+}

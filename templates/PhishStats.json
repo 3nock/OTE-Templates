@@ -1,0 +1,89 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Phishstat data by id",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "phishstats id"
+            ],
+            "link": "https://phishstats.info:2096/api/phishing?_where=(id,eq,{{input}})",
+            "name": "id",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Phishstats data by asn",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://phishstats.info:2096/api/phishing?_where=(asn,eq,as{{input}})",
+            "name": "asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Phishstats data by ip-address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://phishstats.info:2096/api/phishing?_where=(ip,eq,{{input}})",
+            "name": "ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Phishstats data by country code. e.g. US",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "country code"
+            ],
+            "link": "https://phishstats.info:2096/api/phishing?_where=(countrycode,eq,{{input}})",
+            "name": "country code",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Phishstats data by top level domain name tld. e.g. com",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "tld"
+            ],
+            "link": "https://phishstats.info:2096/api/phishing?_where=(tld,eq,{{input}})",
+            "name": "tld",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Fighting phishing and cybercrime since 2014 by gathering, enhancing and sharing phishing information with the infosec community.",
+        "documentation": "https://phishstats.info/#apidoc",
+        "link": "https://phishstats.info/",
+        "name": "PhishStats"
+    }
+}

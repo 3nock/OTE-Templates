@@ -1,0 +1,489 @@
+{
+    "authentication": {
+        "authHeader": "Authorization: apikey {{key}}",
+        "authType": "HEADER",
+        "link": "https://www.onyphe.io/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "Authorization: apikey {{key}}",
+        "authType": "HEADER",
+        "link": "https://www.onyphe.io/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "It will return one result about geoloc category of information we have for the given IPv{4,6} address. There will be no history of changes, the goal of this API is to return the best matching subnet regarding the given address. Best matching subnet means the one with the smallest CIDR mask.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/geoloc/best/{{input}}",
+            "name": "simple best geoloc",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": " It will return one result about inetnum category of information we have for the given IPv{4,6} address. There will be no history of changes, the goal of this API is to return the best matching subnet regarding the given address. Best matching subnet means the one with the smallest CIDR mask.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/inetnum/best/{{input}}",
+            "name": "simple best inetnum",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": " It will return 10 latest results about threatlist category of information we have for the given IPv{4,6} address. There will be no history of changes, the goal of this API is to return latest malicious events for the given address that occured during the last 2-days.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/threatlist/best/{{input}}",
+            "name": "simple best threatlist",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about ctl category of information we have for the given domain or hostname with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/ctl/{{input}}",
+            "name": "simple ctl",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about datascan/datamd5 category of information we have for the given domain or hostname with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "hash"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/datascan/datamd5/{{input}}",
+            "name": "simple datamd5",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about datascan category of information we have for the given domain or hostname with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/datascan/{{input}}",
+            "name": "simple datascan",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": " It will return one result about whois category of information we have for the given IPv{4,6} address. There will be no history of changes, the goal of this API is to return the best matching subnet regarding the given address. Best matching subnet means the one with the smallest CIDR mask.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/whois/best/{{input}}",
+            "name": "simple enterprise best whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about datashot category of information we have for the given IPv{4,6} address with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/datashot/{{input}}",
+            "name": "simple enterprise datashot",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about onionscan category of information we have for the given domain or hostname with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/onionscan/{{input}}",
+            "name": "simple enterprise onionscan",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about onionshot category of information we have for the given IPv{4,6} address with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/onionshot/{{input}}",
+            "name": "simple enterprise onionshot",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about topsite category of information we have for the given IPv{4,6} address with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/topsite/{{input}}",
+            "name": "simple enterprise topsite",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about vulnscan category of information we have for the given IPv{4,6} address with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/vulnscan/{{input}}",
+            "name": "simple enterprise vulnscan",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about whois category of information we have for the given IPv{4,6} address with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/whois/{{input}}",
+            "name": "simple enterprise whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about resolver category of information we have for the given domain or hostname with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/resolver/forward/{{input}}",
+            "name": "simple forward",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Return results about geoloc category of information",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/geoloc/{{input}}",
+            "name": "simple geoloc",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Return results about inetnum category of information",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/inetnum/{{input}}",
+            "name": "simple inetnum",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Return results about pastries category of information",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/pastries/{{input}}",
+            "name": "simple pastries",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about resolver category of information we have for the given IPv{4,6} address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/resolver/{{input}}",
+            "name": "simple resolver",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about resolver category of information we have for the given domain or hostname with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/resolver/reverse/{{input}}",
+            "name": "simple reverse",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about sniffer category of information we have for the given IPv{4,6} address with history of changes, if any",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/sniffer/{{input}}",
+            "name": "simple sniffer",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about synscan category of information we have for the given IPv{4,6} address with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/synscan/{{input}}",
+            "name": "simple synscan",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": " It will return results about threatlist category of information we have for the given IPv{4,6} address with history of changes, if any.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/threatlist/{{input}}",
+            "name": "simple threatlist",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about all categories of information we have for the given IPv{4,6} address.",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"results\":[{\"domain\":[\"$$\"],\"hostname\":[\"$$\"]}]}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"results\":[{\"ip\":[\"$$\"]}]}"
+                },
+                {
+                    "name": "cert",
+                    "script": "{\"results\":[{\"fingerprint\":{\"$$sha1$$\":\"\"}}]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.onyphe.io/api/v2/summary/domain/{{input}}",
+            "name": "summary domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": " It will return results about all categories of information we have for the given IPv{4,6} address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.onyphe.io/api/v2/summary/hostname/{{input}}",
+            "name": "summary hostname",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return results about all categories of information we have for the given IPv{4,6} address.",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"results\":[{\"domain\":[\"$$\"],\"hostname\":[\"$$\"]}]}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"results\":[{\"ip\":[\"$$\"]}]}"
+                },
+                {
+                    "name": "cert",
+                    "script": "{\"results\":[{\"fingerprint\":{\"$$sha1$$\":\"\"}}]}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/summary/ip/{{input}}",
+            "name": "summary ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Return information about your user account",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://www.onyphe.io/api/v2/user",
+            "name": "user",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It will return 10 latest results about threatlist category of information we have for the given IPv{4,6} address. There will be no history of changes, the goal of this API is to return latest malicious events for the given address that occured during the last 2-days.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/whois/best/{{input}}",
+            "name": "simple best whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "onionscan",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "onion domain"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/onionscan/{{input}}",
+            "name": "simple onionscan",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "onion shot",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "onion domain"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/onionshot/{{input}}",
+            "name": "simple onionshot",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "simple whois",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/whois/{{input}}",
+            "name": "simple whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "simple vulnscan",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/vulnscan/{{input}}",
+            "name": "simple vulnscan",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "simple topsite",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/topsite/{{input}}",
+            "name": "simple topsite",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "simple resolver forward",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/resolver/forward/{{input}}",
+            "name": "simple resolver forward",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "simple resolver reverse",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.onyphe.io/api/v2/simple/resolver/reverse/{{input}}",
+            "name": "simple resolver reverse",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "ONYPHE is a Cyber Defense Search Engine dedicated to Attack Surface Discovery & Attack Surface Management. We scan the entire Internet and Dark Web for exposed assets and crawl the links just like a Web search engine. Our data is searchable with a Web form or directly from our numerous APIs.",
+        "documentation": "https://www.onyphe.io/documentation/api",
+        "link": "https://www.onyphe.io/",
+        "name": "Onyphe"
+    }
+}

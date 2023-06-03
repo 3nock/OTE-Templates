@@ -1,0 +1,120 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Returns list of ASNs",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.asrank.caida.org/v2/restful/asns",
+            "name": "ASN",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns list of ASN by ID",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.asrank.caida.org/v2/restful/asns/{{input}}",
+            "name": "ASN by asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns ASN by name",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\"asns\":{\"edges\":[{\"node\":{\"$$asn$$\":\"\"}}]}}}"
+                }
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.asrank.caida.org/v2/restful/asns/name/{{input}}",
+            "name": "ASN by name",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns Links",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.asrank.caida.org/v2/restful/asnLinks",
+            "name": "Links",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns asn links",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\"asnLinks\":{\"edges\":[{\"node\":{\"asn1\":{\"$$asn$$\":\"\"}}}]}}}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.asrank.caida.org/v2/restful/asnLinks/{{input}}",
+            "name": "Links by Link",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns Organizations",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.asrank.caida.org/v2/restful/organizations",
+            "name": "ORG",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns Organization by ID",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "organization"
+            ],
+            "link": "https://api.asrank.caida.org/v2/restful/organizations/{{input}}",
+            "name": "ORG by organization",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "ASRank is CAIDA's ranking of Autonomous Systems (AS) (which approximately map to Internet Service Providers) and organizations (Orgs) (which are a collection of one or more ASes).This ranking is derived from topological data collected by CAIDA's Archipelago Measurement Infrastructure and Border Gateway Protocol (BGP) routing data collected by the Route Views Project and RIPE NCC.",
+        "documentation": "https://api.asrank.caida.org/v2/docs",
+        "link": "https://asrank.caida.org/",
+        "name": "ASRank"
+    }
+}

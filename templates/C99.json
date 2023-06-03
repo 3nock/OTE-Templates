@@ -1,0 +1,374 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "http://api.c99.nl/dashboard/shop",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "http://api.c99.nl/dashboard/shop",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Grab the latest Alexa Rank information of any website, including backlinks and top country.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.c99.nl/alexarank?key={{key}}&url={{input}}&json",
+            "name": "Alexa Rank Checker",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Checks if given up e-mail is disposable/temporarily or not.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.c99.nl/disposablemailchecker?key={{key}}&email={{input}}&json",
+            "name": "Disposable Mail Check",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Checks whether a domain is available or not, no matter what extension.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.c99.nl/domainchecker?key={{key}}&domain={{input}}&json",
+            "name": "Domain Checker",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Checks available IP history of a domain with dates.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.c99.nl/domainhistory?key={{key}}&domain={{input}}&json",
+            "name": "Domain History Check",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Checks if given up e-mail exists.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.c99.nl/emailvalidator?key={{key}}&email={{input}}&json",
+            "name": "Email Validator",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Scans to detect if a website is behind a firewall and determines what firewall it is.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.c99.nl/firewsubdomainIpdetector?key={{key}}&url={{input}}&json",
+            "name": "Firewall Technology Detector",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Locates the given host/ip address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/geoip?key={{key}}&host={{input}}&json",
+            "name": "GeoIP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Gets server IP of given host.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.c99.nl/dnsresolver?key={{key}}&host={{input}}&json",
+            "name": "Host to IP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Attempts to find websites hosted on the specific IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/ip2domains?key={{key}}&ip={{input}}&json",
+            "name": "IP 2 Domains",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Creates you various links which you can send to anyone to log their IP.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.c99.nl/iplogger?key={{key}}&action=viewloggers&json",
+            "name": "IP Logger",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Checks if IP address format is valid.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/ipvalidator?key={{key}}&ip={{input}}&json",
+            "name": "IP Validator",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Gets host of given IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/gethostname?key={{key}}&host={{input}}&json",
+            "name": "IP to Host",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Shows all Skype accounts with that specific IP.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/ip2skype?key={{key}}&ip={{input}}&json",
+            "name": "Ip 2 Skype",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Makes an online backup of a link.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.c99.nl/linkbackup?key={{key}}&url={{input}}&json",
+            "name": "Link Backup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Scans all ports of given host.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/portscanner?key={{key}}&host={{input}}&json",
+            "name": "Multiple port scanner",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Performs an nmap scan to find open ports.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/nmap?key={{key}}&host={{input}}&json",
+            "name": "Nmap Scanner",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get more information about any phone number.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "phone"
+            ],
+            "link": "https://api.c99.nl/phonelookup?key={{key}}&number={{input}}&json",
+            "name": "Phone Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Pings a host 4 times and shows the result.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/ping?key={{key}}&host={{input}}&json",
+            "name": "Ping",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Detects whether an IP address is a proxy/vpn or not. High accuracy!",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/proxydetector?key={{key}}&ip={{input}}&json",
+            "name": "Proxy Detector",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Creates a screenshot of any website/url you want.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.c99.nl/createscreenshot?key={{key}}&url={{input}}&json",
+            "name": "Screenshot Tool",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Checks whether a specific site/url is suspicious and might contain malware, phishing or other potential harmful software.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.c99.nl/reputationchecker?key={{key}}&url={{input}}&json",
+            "name": "Site/URL Reputation Checker",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Attempts to grab an IP address of a Skype account, results are not guaranteed.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "name"
+            ],
+            "link": "https://api.c99.nl/skyperesolver?key={{key}}&username={{input}}&json",
+            "name": "Skype Resolver",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Performs an advanced subdomain scan to find most subdomains of the given domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.c99.nl/subdomainfinder?key={{key}}&domain={{input}}&json",
+            "name": "Subdomain Finder",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Checks whether an IP is from a TOR network or not.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.c99.nl/torchecker?key={{key}}&ip={{input}}&json",
+            "name": "TOR Checker",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Gets the headers of a website.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.c99.nl/getheaders?key={{key}}&host={{input}}&json",
+            "name": "Website Headers",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Checks if a host is up or down.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.c99.nl/upordown?key={{key}}&host={{input}}&json",
+            "name": "Website Up or Down Checker",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois check on a domain to see who the domain owner is.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.c99.nl/whois?key={{key}}&domain={{input}}&json",
+            "name": "Whois Checker",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Quality APIs for Osint",
+        "documentation": "https://api.c99.nl/",
+        "link": "https://api.c99.nl/",
+        "name": "C99"
+    }
+}

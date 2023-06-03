@@ -1,0 +1,88 @@
+{
+    "authentication": {
+        "authHeader": "API-KEY",
+        "authType": "HEADER",
+        "link": "https://www.zoomeye.org/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "API-KEY",
+        "authType": "HEADER",
+        "link": "https://www.zoomeye.org/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Search by asn",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.zoomeye.org/host/search?query=asn:{{input}}",
+            "name": "host search asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search by ip-address/cidr",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://api.zoomeye.org/host/search?query=cidr:{{input}}",
+            "name": "host search cidr",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search by hostname",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.zoomeye.org/host/search?query=hostname:{{input}}",
+            "name": "host search hostname",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search by ip-address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.zoomeye.org/host/search?query=ip:{{input}}",
+            "name": "host search ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "User Information",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.zoomeye.org/resources-info",
+            "name": "user information",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "ZoomEyeis a Cyberspace Search Engine recording information of devices, websites, \nservices and components etc.",
+        "documentation": "https://www.zoomeye.org/doc",
+        "link": "https://www.zoomeye.org/",
+        "name": "ZoomEye"
+    }
+}

@@ -1,0 +1,95 @@
+{
+    "authentication": {
+        "authHeader": "X-API-KEY",
+        "authType": "HEADER",
+        "link": "https://fullhunt.io/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "X-API-KEY",
+        "authType": "HEADER",
+        "link": "https://fullhunt.io/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Get domain details, subdomains, associated hosts, DNS records, exposed ports, and more.",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"hosts\":[{\"dns\":{\"a\":[\"$$\"],\"aaaa\":[\"$$\"]}}]}"
+                },
+                {
+                    "name": "ipv4",
+                    "script": "{\"hosts\":[{\"dns\":{\"a\":[\"$$\"]}}]}"
+                },
+                {
+                    "name": "ipv6",
+                    "script": "{\"hosts\":[{\"dns\":{\"aaaa\":[\"$$\"]}}]}"
+                },
+                {
+                    "name": "mailserver",
+                    "script": "{\"hosts\":[{\"dns\":{\"mx\":[\"$$\"]}}]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"hosts\":[{\"dns\":{\"ns\":[\"$$\"]}}]}"
+                },
+                {
+                    "name": "cname",
+                    "script": "{\"hosts\":[{\"dns\":{\"cname\":[\"$$\"]}}]}"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\"hosts\":[{\"ip_metadata\":{\"$$asn$$\":\"\"}}]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://fullhunt.io/api/v1/domain/{{input}}/details",
+            "name": "Domain details",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "List all discovered subdomains for a given domain.",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"hosts\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://fullhunt.io/api/v1/domain/{{input}}/subdomains",
+            "name": "Domain subdomains",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This endpoint retrieves details for a given host.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://fullhunt.io/api/v1/host/{{input}}",
+            "name": "Host details",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "FullHunt is the attack surface database of the entire Internet. FullHunt enables companies to discover all of their attack surfaces, monitor them for exposure, and continuously scan them for the latest security vulnerabilities. All, in a single platform, and more.",
+        "documentation": "https://api-docs.fullhunt.io/",
+        "link": "https://fullhunt.io/",
+        "name": "FullHunt"
+    }
+}

@@ -1,0 +1,190 @@
+{
+    "authentication": {
+        "authHeader": "X-Api-Key",
+        "authType": "HEADER",
+        "link": "https://networksdb.io/api/plans",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "X-Api-Key",
+        "authType": "HEADER",
+        "link": "https://networksdb.io/api/plans",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Search for an autonomous system.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://networksdb.io/api/asn-info?asn={{input}}",
+            "name": "Autonomous System Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search for the networks announced by an autonomous system.",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"results\":[{\"$$cidr$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://networksdb.io/api/asn-networks?asn={{input}}",
+            "name": "Autonomous System Networks",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Perform a \"mass\" reverse DNS lookup to find all the domain names pointing to any IPv4 or IPv6 address in the given network.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[{\"domains\":[\"$$\"]}]}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"page\":1,\"results\":[{\"$$ip$$\":\"\"}],\"total\":270}"
+                }
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://networksdb.io/api/mass-reverse-dns?cidr={{input}}",
+            "name": "Domains in Network (Mass Reverse DNS)",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Perform a reverse DNS lookup to find all the domain names pointing to the given IPv4 or IPv6 address.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://networksdb.io/api/reverse-dns?ip={{input}}",
+            "name": "Domains on IP (Reverse DNS)",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search for an IPv4 or IPv6 address.",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"network\":{\"$$cidr$$\":\"\"}}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://networksdb.io/api/ip-geo?ip={{input}}",
+            "name": "IP Address Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Request geolocation information for a given IPv4 or IPv6 Address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://networksdb.io/api/ip-info?ip={{input}}",
+            "name": "IP Geolocation",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Perform a forward DNS lookup to find all the IPv4 and IPv6 addresses pointed to by a given domain name.",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"results\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://networksdb.io/api/dns?domain={{input}}",
+            "name": "IPs for Domain (Forward DNS)",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retreive information about an organisation.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"asns\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "organisation"
+            ],
+            "link": "https://networksdb.io/api/org-info?id={{input}}",
+            "name": "Organisation Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search for the public networks owned by an organisation.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "organisation ID from search"
+            ],
+            "link": "https://networksdb.io/api/org-networks?id={{input}}",
+            "name": "Organisation Networks",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search for organisations matching a search term.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"results\":[{\"asns\":[\"$$\"]}]}"
+                },
+                {
+                    "name": "organization",
+                    "script": "{\"results\":[{\"$$organisation$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://networksdb.io/api/org-search?search={{input}}",
+            "name": "Organisation Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Our database contains information about the public IPv4 and IPv6 addresses, networks and domains owned by companies and organisations across the world along with city-level IP geolocation data and autonomous system information.",
+        "documentation": "https://networksdb.io/api/docs",
+        "link": "https://networksdb.io/",
+        "name": "NetworksDB"
+    }
+}

@@ -1,0 +1,403 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.domaintools.com/resources/api-documentation/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.domaintools.com/resources/api-documentation/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Provides a snapshot of product usage for an account",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.domaintools.com/v1/account/?api_username={{user}}&api_key={{key}}",
+            "name": "Account Information",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Monitor new domain registrations for specific keywords",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.domaintools.com/v1/mark-alert/?query={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Brand Monitor",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Basic registrant, server, and registration data for a domain name, plus preview data for other products",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/{{input}}?api_username={{user}}&api_key={{key}}",
+            "name": "Domain Profile",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Provides risk scores based on a domain's proximity to known-bad domains",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/reputation/?domain={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Domain Reputation",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Provides risk scores and threat predictions based on DomainTools Proximity and Threat Profile algorithms",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/risk/evidence/?domain={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Domain Risk Score",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Searches active and deleted domain names that match a query string",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.domaintools.com/v2/domain-search/?query={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Domain Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Provides the registrar, IP and name server history for a domain name",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/{{input}}/hosting-history/?api_username={{user}}&api_key={{key}}",
+            "name": "Hosting History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Receive notification when there are new and/or deleted domains on a given IP Address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.domaintools.com/v1/ip-monitor/?query={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "IP Monitor",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Receive notification when specific people or organizations are allocated new IP ranges or have existing ranges de-allocated",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.domaintools.com/v1/ip-registrant-monitor/?query={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "IP Registrant Monitor",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Designed to support high query volumes with batch processing and fast response times, the Iris Enrich API provides actionable insights-at-scale with enterprise-scale ingestion of DomainTools data",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/iris-enrich/?domain={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Iris Enrich",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Suited for investigation and orchestration at human scale, the Iris Investigate API delivers dozens of domain name attributes on every result",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/iris-investigate/?domain={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Iris Investigate Domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Suited for investigation and orchestration at human scale, the Iris Investigate API delivers dozens of domain name attributes on every result",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.domaintools.com/v1/iris-investigate/?ip={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Iris Investigate Ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Leverage Iris' pivot engine in API form",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/iris/?domain={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Iris Pivot Domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Leverage Iris' pivot engine in API form",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.domaintools.com/v1/iris/?ip={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Iris Pivot Ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Receive notification when there are new and/or deleted domains on a given Domain Name Server",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://api.domaintools.com/v1/name-server-monitor/?query={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Name Server Monitor",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Parsed results for Whois records for domain names and IP addresses",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/{{input}}/whois/parsed?api_username={{user}}&api_key={{key}}",
+            "name": "Parsed Whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Provides programmatic access to daily monitor results from the DomainTools PhishEye product",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.domaintools.com/v1/phisheye?query={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "PhishEye",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Receive notification when specific people or organizations register, renew or delete domain names",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.domaintools.com/v1/registrant-alert/?query={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Registrant Monitor",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The Reverse IP API provides a list of domain names that share the same Internet host (i.e. the same IP address).",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"response\":{\"ip_addresses\":[{\"domain_names\":[\"$$\"]}]}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/{{input}}/reverse-ip/?api_username={{user}}&api_key={{key}}",
+            "name": "Reverse IP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Provides a list of IP network ranges with Whois records that match a specific query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.domaintools.com/v1/reverse-ip-whois/?ip={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Reverse IP Whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "List of domains that share the same primary mail server",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/reverse-mx/?domain={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Reverse Mail-Server Domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "List of domains that share the same primary mail server",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.domaintools.com/v1/reverse-mx/?mx_ip={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Reverse Mail-Server IP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "List of domains that share the same primary mail server",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "mailserver"
+            ],
+            "link": "https://api.domaintools.com/v1/reverse-mx/?mx_server={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Reverse Mail-Server MX",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "List of domains that share the same primary name server",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"response\":{\"primary_domains\":[\"$$\"],\"secondary_domains\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://api.domaintools.com/v1/{{input}}/name-server-domains/?api_username={{user}}&api_key={{key}}",
+            "name": "Reverse Name-Server",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Provides a list of domain names with Whois records that match a specific query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.domaintools.com/v1/reverse-whois/?terms={{input}}&api_username={{user}}&api_key={{key}}",
+            "name": "Reverse Whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Historical Whois records",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/{{input}}/whois/history/?sort=date_asc&api_username={{user}}&api_key={{key}}",
+            "name": "Whois History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois records for domain names and IP addresses",
+            "extractors": [
+                {
+                    "name": "nameserver",
+                    "script": "{\"response\":{\"name_servers\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.domaintools.com/v1/{{input}}/whois/?api_username={{user}}&api_key={{key}}",
+            "name": "Whois Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "provides a list of domain names that share the same Internet host (i.e. the same IP address)",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"response\":{\"ip_addresses\":[{\"domain_names\":[\"$$\"]}]}}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.domaintools.com/v1/{{input}}/host-domains/?api_username={{user}}&api_key={{key}}",
+            "name": "Host Domains",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Connect indicators from your network with nearly every active domain and IP address on the Internet. Learn how this data can inform risk assessments, help profile attackers, guide online fraud investigations, and map cyber activity to attacker infrastructure.",
+        "documentation": "https://www.domaintools.com/resources/api-documentation",
+        "link": "https://www.domaintools.com/",
+        "name": "DomainTools"
+    }
+}

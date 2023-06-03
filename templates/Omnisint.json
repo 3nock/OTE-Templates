@@ -1,0 +1,89 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "All Results types",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://sonar.omnisint.io/all/{{input}}",
+            "name": "all",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Identify other domains hosted on the IP address of your target, or even their ASN as supported by CIDR range searchs.Access a comprehensive reverse DNS database without limits",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://sonar.omnisint.io/reverse/{{input}}",
+            "name": "reverse ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Identify other domains hosted on the IP address of your target, or even their ASN as supported by CIDR range searchs.Access a comprehensive reverse DNS database without limits",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://sonar.omnisint.io/reverse/{{input}}",
+            "name": "reverse ip/cidr",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Perform research to enumerate instances of cloud services (eg: *.amazonaws.com, Azure and more.)",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://sonar.omnisint.io/subdomains/{{input}}",
+            "name": "subdomains",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Easily identify additional Top Level Domains registered for a domain without the need for brute forcing. Find additional attack surfaces by leveraging international distribution of assets.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://sonar.omnisint.io/tlds/{{input}}",
+            "name": "tlds",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Rapid7's DNS Database easily searchable via a lightening fast API, \nwith domains available in milliseconds.",
+        "documentation": "https://github.com/Cgboal/SonarSearch",
+        "link": "https://omnisint.io/",
+        "name": "Omnisint"
+    }
+}

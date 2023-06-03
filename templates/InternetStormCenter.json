@@ -1,0 +1,149 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Returns a current list of subnets used by cloud providers (Amazon, Google, ...)",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://isc.sans.edu/api/cloudips",
+            "name": "cloudips",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns a current list of CIDRs used by cloud providers (Amazon, Google, ...)",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://isc.sans.edu/api/cloudcidrs",
+            "name": "cloudcidrs",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns the name of the handler of the day",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "http://isc.sans.edu/api/handler",
+            "name": "handler",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns a summary of notable IPs. Updated Daily",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "http://isc.sans.edu/api/intelfeed",
+            "name": "intelfeed",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns a summary of the information our database holds for a particular IP address (similar to /ipinfo.html).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "http://isc.sans.edu/api/ip/{{input}}",
+            "name": "ip",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns detailed reports for a particular IP address Parameters: IP Address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://isc.sans.edu/api/ipdetails/{{input}}",
+            "name": "IP Details",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Summary information about a particular port",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "port"
+            ],
+            "link": "http://isc.sans.edu/api/port/{{input}}",
+            "name": "port",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns a summary of the information our database holds for a particular ASNUM (similar to /asdetailsascii.html) with return limit.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "http://isc.sans.edu/api/asnum/1000/{{input}}",
+            "name": "asnum",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Return data about a particular domain, in particular the first seen date.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://isc.sans.edu/api/domainage/{{input}}",
+            "name": "Domain Age",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        },
+        {
+            "description": "We do collect data from a number of open threat feeds. This API will give you access to this data. Some of this data can also be found as part of the IP or Domain data we return with other API functions. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://isc.sans.edu/api/threatfeeds/",
+            "name": "threatfeeds",
+            "postData": "",
+            "responseType": "XML",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The ISC provides a free analysis and warning service to thousands of Internet users and organizations, and is actively working with Internet Service Providers to fight back against the most malicious attackers.",
+        "documentation": "https://isc.sans.edu/api/",
+        "link": "https://isc.sans.edu/",
+        "name": "InternetStormCenter"
+    }
+}

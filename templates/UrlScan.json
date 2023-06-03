@@ -1,0 +1,76 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Search by asn",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://urlscan.io/api/v1/search/?q=asn:AS{{input}}",
+            "name": "asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search by domain name",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://urlscan.io/api/v1/search/?q=domain:{{input}}",
+            "name": "domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search by ipaddress",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://urlscan.io/api/v1/search/?q=ip:{{input}}",
+            "name": "ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search by url",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://urlscan.io/api/v1/search/?q=url:{{input}}",
+            "name": "url",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Our APIs allow you to submit URLs for scanning and retrieve the results once the scan has finished. Furthermore, you can use an API for searching existing scans by attributes such as domains, IPs, Autonomous System (AS) numbers, hashes, etc",
+        "documentation": "https://urlscan.io/docs/api/",
+        "link": "https://urlscan.io/",
+        "name": "UrlScan"
+    }
+}

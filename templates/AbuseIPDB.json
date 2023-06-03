@@ -1,0 +1,63 @@
+{
+    "authentication": {
+        "authHeader": "Key",
+        "authType": "HEADER",
+        "link": "https://www.abuseipdb.com/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "Key",
+        "authType": "HEADER",
+        "link": "https://www.abuseipdb.com/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The blacklist is the culmination of all of the valiant reporting by AbuseIPDB users. It's a list of the most reported IP addresses.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.abuseipdb.com/api/v2/blacklist",
+            "name": "BLACKLIST Endpoint",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The check endpoint accepts a single IP address (v4 or v6).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.abuseipdb.com/api/v2/check?ipAddress={{input}}",
+            "name": "CHECK Endpoint",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The check-block endpoint accepts a subnet (v4 or v6) denoted with CIDR notation.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip",
+                "cidr"
+            ],
+            "link": "https://api.abuseipdb.com/api/v2/check-block?network={{input}}",
+            "name": "CHECK-BLOCK Endpoint",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "AbuseIPDB is a project managed by Marathon Studios Inc. Our mission is to help make Web safer by providing a central repository for webmasters, system administrators, and other interested parties to report and identify IP addresses that have been associated with malicious activity online.",
+        "documentation": "https://docs.abuseipdb.com/",
+        "link": "https://abuseipdb.com/",
+        "name": "AbuseIPDB"
+    }
+}

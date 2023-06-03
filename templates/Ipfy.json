@@ -1,0 +1,123 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://geo.ipify.org/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://geo.ipify.org/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "IP Geolocation API allows you to locate and identify website visitors by IP address. IP location helps prevent fraud, customize web experiences, and maintain regulatory compliance.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\"as\":{\"$$asn$$\":\"\"}}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"as\":{\"$$route$$\":\"\"}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://geo.ipify.org/api/v2/country?apiKey={{key}}&domain={{input}}",
+            "name": "IP Geolocation by Domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "IP Geolocation API allows you to locate and identify website visitors by IP address. IP location helps prevent fraud, customize web experiences, and maintain regulatory compliance.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"as\":{\"$$asn$$\":\"\"}}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"as\":{\"$$route$$\":\"\"}}"
+                },
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://geo.ipify.org/api/v2/country?apiKey={{key}}&email={{input}}",
+            "name": "IP Geolocation by Email",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "IP Geolocation API allows you to locate and identify website visitors by IP address. IP location helps prevent fraud, customize web experiences, and maintain regulatory compliance.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"as\":{\"$$asn$$\":\"\"}}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"as\":{\"$$route$$\":\"\"}}"
+                },
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://geo.ipify.org/api/v2/country?apiKey={{key}}&ipAddress={{input}}",
+            "name": "IP Geolocation by IP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "A public IP API service. for IPv4",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.ipify.org?format=json",
+            "name": "Public Ipv4",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "A public IP API service. for IPv6",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api64.ipify.org?format=json",
+            "name": "Public Ipv6",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Ipfy provides an easy-to-use API interface allowing customers to look various pieces of information IPv4 and IPv6 addresses are associated with",
+        "documentation": "https://geo.ipify.org/docs",
+        "link": "https://www.ipify.org/",
+        "name": "Ipfy"
+    }
+}

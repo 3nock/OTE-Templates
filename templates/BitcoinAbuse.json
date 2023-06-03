@@ -1,0 +1,74 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.bitcoinabuse.com/register",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://www.bitcoinabuse.com/register",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The Report Address API allows you to report bitcoin addresses automatically. This API requires permission to be used, please contact us.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "bitcoin_address"
+            ],
+            "link": "https://www.bitcoinabuse.com/api/reports/create",
+            "name": "Report Address",
+            "postData": "api_token={{key}}&address={{input}}&abuse_type_id=1",
+            "responseType": "JSON",
+            "resquestType": "POST"
+        },
+        {
+            "description": "This API allows you to look up the abuse_type_id for use with the report address API. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://www.bitcoinabuse.com/api/abuse-types",
+            "name": "Lookup Abuse Type",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This report is cached and only updates once per hour.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://www.bitcoinabuse.com/api/reports/distinct?api_token={{key}}",
+            "name": "Lookup Distinct Reports",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This report is cached and only updates once per hour.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "bitcoin_address"
+            ],
+            "link": "https://www.bitcoinabuse.com/api/reports/check?api_token={{key}}&address={{input}}",
+            "name": "Check Address",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "racking bitcoin addresses used by ransomware, blackmailers, fraudsters, etc.",
+        "documentation": "https://www.bitcoinabuse.com/api-docs",
+        "link": "https://www.bitcoinabuse.com/",
+        "name": "BitcoinAbuse"
+    }
+}

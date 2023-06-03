@@ -1,0 +1,37 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "This query will return the most-specific or smallest IP network which completely encompasses it in a hierarchy of IP networks",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "http://rdap.apnic.net/ip/{{input}}",
+            "name": "IP networks",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The APNIC Whois Database is an official record that contains information regarding organizations that hold IP addresses and AS Numbers in the Asia Pacific region Users querying the database can determine who is responsible for an IP address range or an AS Number.",
+        "documentation": "https://www.apnic.net/about-apnic/whois_search/about/rdap/",
+        "link": "https://Apnic.net/",
+        "name": "Apnic"
+    }
+}

@@ -1,0 +1,154 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://api.builtwith.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://api.builtwith.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Get domain names from lists of company names you supply to us.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "company"
+            ],
+            "link": "https://ctu.builtwith.com/ctu1/api.json?KEY={{key}}&COMPANY={{input}}",
+            "name": "Company API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The BuiltWith Domain API provides XML and JSON access to the technology information of a website which includes all technical information as found on detailed lookups at builtwith.com and additional meta data where available.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.builtwith.com/v19/api.json?KEY={{key}}&LOOKUP={{input}}",
+            "name": "Domain API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns the technology that the domain is builtwith",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.builtwith.com/free1/api.json?KEY={{key}}&LOOKUP={{input}}",
+            "name": "Free API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "API endpoint that allows you to get access to keywords connected to websites.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.builtwith.com/kw2/api.json?KEY={{key}}&LOOKUP={{input}}",
+            "name": "Keyword API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The BuiltWith Lists API provides XML and JSON access to lists of websites using particular web technologies across the entire internet.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "technology"
+            ],
+            "link": "https://api.builtwith.com/lists8/api.json?KEY={{key}}&TECH={{input}}",
+            "name": "List API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The BuiltWith Domain Live API does a comprehensive technology search across the domain you provide us, this includes indexing internal pages, subdomains, tag managers, ads.txt and technology versions on the site live.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.builtwith.com/dlv2/api.json?KEY={{key}}&LOOKUP={{input}}",
+            "name": "Live API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "API endpoint that allows you to get access to live and historical redirects for a website.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.builtwith.com/redirect1/api.json?KEY={{key}}&LOOKUP={{input}}",
+            "name": "Redirects API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get XML and JSON results of relationships between websites that show what sites are linked together, by what and for how long.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.builtwith.com/rv1/api.json?KEY={{key}}&LOOKUP={{input}}",
+            "name": "Relationships API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The BuiltWith Trends API provides XML and JSON access to the technology trends data found on BuiltWith Trends.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "technology"
+            ],
+            "link": "https://api.builtwith.com/trends/v6/api.json?KEY={{key}}&TECH={{input}}",
+            "name": "Trends API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The BuiltWith Trust API provides you with an overview of a website domain - allowing you to make the call on how much it can be trusted. We use attributes such as technology spend, time, relationships with other sites, current response, keywords and undisclosed methods to determine the trustworthiness of a domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.builtwith.com/trustv1/api.json?KEY={{key}}&LOOKUP={{input}}",
+            "name": "Trust API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Find out what websites are Built With",
+        "documentation": "https://api.builtwith.com/",
+        "link": "https://builtwith.com/",
+        "name": "BuiltWith"
+    }
+}

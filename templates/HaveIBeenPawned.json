@@ -1,0 +1,76 @@
+{
+    "authentication": {
+        "authHeader": "hibp-api-key",
+        "authType": "HEADER",
+        "link": "https://haveibeenpwned.com/API/Key",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "hibp-api-key",
+        "authType": "HEADER",
+        "link": "https://haveibeenpwned.com/API/Key",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Getting all breaches for an account",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://haveibeenpwned.com/api/v3/breachedaccount/{{input}}",
+            "name": "Breached Account",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Getting all breached sites in the system",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://haveibeenpwned.com/api/v3/breaches?domain={{input}}",
+            "name": "Breached Site",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Getting all pastes for an account",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://haveibeenpwned.com/api/v3/pasteaccount/{{input}}",
+            "name": "Pastes Account",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Getting a single breached site",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "breach name"
+            ],
+            "link": "https://haveibeenpwned.com/api/v3/breach/{{input}}",
+            "name": "Single Breach",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Check if your email or phone is in a data breach",
+        "documentation": "https://haveibeenpwned.com/API/v3",
+        "link": "https://haveibeenpwned.com",
+        "name": "HaveIBeenPawned"
+    }
+}

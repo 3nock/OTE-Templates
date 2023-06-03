@@ -1,0 +1,181 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Get Autonomous System Number or ASN details from an AS or an IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip",
+                "asn"
+            ],
+            "link": "https://api.hackertarget.com/aslookup/?q={{input}}",
+            "name": "aslookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Discover network services by querying the service port.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://api.hackertarget.com/bannerlookup/?q={{input}}",
+            "name": "banner grabbing",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Find DNS records for a domain, results are determined using the dig DNS tool.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.hackertarget.com/dnslookup/?q={{input}}",
+            "name": "dnslookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Find hosts sharing DNS servers.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://api.hackertarget.com/findshareddns/?q={{input}}",
+            "name": "find shared dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Find the location of an IP address using the GeoIP lookup location tool.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.hackertarget.com/geoip/?q={{input}}",
+            "name": "geoip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Host Search",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.hackertarget.com/hostsearch/?q={{input}}",
+            "name": "hostsearch",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "View HTTP Headers of a web site. The HTTP Headers reveal system and web application details.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.hackertarget.com/httpheaders/?q={{input}}",
+            "name": "httpheaders",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Dump all the links from a web page.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.hackertarget.com/pagelinks/?q={{input}}",
+            "name": "pagelinks",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Find Reverse DNS records for an IP address or a range of IP addresses.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.hackertarget.com/reversedns/?q={{input}}",
+            "name": "reverse dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Discover web hosts sharing an IP address with a reverse IP lookup.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.hackertarget.com/reverseiplookup/?q={{input}}",
+            "name": "reverse ip lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Determine the properties of a network subnet",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://api.hackertarget.com/subnetcalc/?q={{input}}",
+            "name": "subnet calculator",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Online Test of a zone transfer that will attempt to get all DNS records for a target domain",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.hackertarget.com/zonetransfer/?q={{input}}",
+            "name": "zonetransfer",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "From attack surface discovery to vulnerability identification, actionable network intelligence \nfor IT & security operations.",
+        "documentation": "https://hackertarget.com/ip-tools/",
+        "link": "https://hackertarget.com/",
+        "name": "HackerTarget_Free"
+    }
+}

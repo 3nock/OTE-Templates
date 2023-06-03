@@ -1,0 +1,76 @@
+{
+    "authentication": {
+        "authHeader": "X-API-KEY",
+        "authType": "HEADER",
+        "link": "https://seon.io/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "X-API-KEY",
+        "authType": "HEADER",
+        "link": "https://seon.io/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Our Email API v2.1 aggregates hundreds of open and reachable social data sources to provide an in-depth email address investigation tool.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.seon.io/SeonRestService/email-api/v2.2/{{input}}",
+            "name": "Email",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Our Email Verification API lets you know whether an email address is valid or not, using a fast SMTP-MX check.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.seon.io/SeonRestService/email-verification/v1.0/{{input}}",
+            "name": "Email Verification",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Fraudsters bypass IP address bans with proxies and VPNs. This API determines how likely an IP address is to be faked using modern computing techniques, so you can block TOR, VPN and proxy users. This reduces ATO (account takeover), spyware, malware, criminal netblocks, botnets, spammers and exploit scanners.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.seon.io/SeonRestService/ip-api/v1.1/{{input}}",
+            "name": "Ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Our Phone API combines numerous data sources to provide an in-depth phone number investigation tool. It aggregates open and reachable social and messenger data to flag fraudsters based on a phone number only.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "phone"
+            ],
+            "link": "https://api.seon.io/SeonRestService/phone-api/v1.2/{{input}}",
+            "name": "Phone",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Stop fraud before it happens with unbeatable speed, scale, depth, and breadth. Use real-time digital, social, phone, email, IP, and device data to make better risk decisions.",
+        "documentation": "https://docs.seon.io/",
+        "link": "https://seon.io/",
+        "name": "Seon"
+    }
+}

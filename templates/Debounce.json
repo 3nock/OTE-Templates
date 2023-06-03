@@ -1,0 +1,74 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://app.debounce.io/login",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://app.debounce.io/login",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Get the remaining balance of your DeBounce account.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.debounce.io/v1/balance?api={{key}}",
+            "name": "Account Balance",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can get the number of calls between two dates for the desired API key",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.debounce.io/v1/usage?api={{key}}",
+            "name": "Api Usage History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "DeBounce provides a free & powerful API endpoint for checking a domain or email address against a realtime up-to-date list of disposable domains.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://disposable.debounce.io?email={{input}}",
+            "name": "Disposable Email Detector",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Perform a single email validation request.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.debounce.io/v1?api={{key}}&email={{input}}",
+            "name": "Single Validation",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Email Validation Tool; Simple, Fast & Accurate.",
+        "documentation": "https://docs.debounce.io/",
+        "link": "https://debounce.io/",
+        "name": "Debounce"
+    }
+}

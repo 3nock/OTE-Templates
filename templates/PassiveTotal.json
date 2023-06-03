@@ -1,0 +1,262 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://community.riskiq.com/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://community.riskiq.com/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "allow you to see all the information related to your account.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.riskiq.net/pt/v2/account",
+            "name": "Account",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieve items with the specified classification.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.riskiq.net/pt/v2/account/classifications",
+            "name": "Account Classifications",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Read API usage history of the account.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.riskiq.net/pt/v2/account/history",
+            "name": "Account History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get active monitors",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.riskiq.net/pt/v2/account/monitors",
+            "name": "Account Monitors",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Read current organization metadata",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.riskiq.net/pt/v2/account/organization",
+            "name": "Account Organization",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Read current account and organization quotas.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.riskiq.net/pt/v2/account/quota",
+            "name": "Account Quotas",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Check sources being used for queries.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.riskiq.net/pt/v2/account/sources",
+            "name": "Account Sources",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Read team activity.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.riskiq.net/pt/v2/account/organization/teamstream",
+            "name": "Account TeamStream",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieves SSL certificates for a given keyword.",
+            "extractors": [
+                {
+                    "name": "cert",
+                    "script": "{\"results\":[{\"$$focusPoint$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.riskiq.net/pt/v2/ssl-certificate/search/keyword?query={{input}}",
+            "name": "Certificate Keyword",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieves an SSL certificate by its SHA-1 hash.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cert"
+            ],
+            "link": "https://api.riskiq.net/pt/v2/ssl-certificate?query={{input}}",
+            "name": "Certificates",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieves the SSL certificate history for a given certificate SHA-1 hash or IP address.",
+            "extractors": [
+                {
+                    "name": "cert",
+                    "script": "{\"results\":[{\"$$sha1$$\":\"\"}]}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"results\":[{\"ipAddresses\":[\"$$\"]}]}"
+                }
+            ],
+            "inputTypes": [
+                "cert",
+                "ip"
+            ],
+            "link": "https://api.riskiq.net/pt/v2/ssl-certificate/history?query={{input}}",
+            "name": "Certificates History",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieves the passive DNS results from active account sources.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.riskiq.net/pt/v2/dns/passive?query={{input}}",
+            "name": "Passive DNS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Searches the Passive DNS data for a keyword query.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.riskiq.net/pt/v2/dns/search/keyword?query={{input}}",
+            "name": "Passive DNS search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieves the unique passive DNS results from active account sources.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.riskiq.net/pt/v2/dns/passive/unique?query={{input}}",
+            "name": "Passive DNS unique",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieves the WHOIS data for the specified query",
+            "extractors": [
+                {
+                    "name": "email",
+                    "script": "{\"$$contactEmail$$\":\"\"}"
+                },
+                {
+                    "name": "phone",
+                    "script": "{\"$$telephone$$\":\"\"}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"nameServers\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.riskiq.net/pt/v2/whois?query={{input}}",
+            "name": "Whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search WHOIS data for a keyword.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.riskiq.net/pt/v2/whois/search/keyword?query={{input}}",
+            "name": "Whois Keyword",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get Vulnerability Article for a CVE. Retrieves the CVE with corresponding components, attack surface, and third-party details. Input example CVE-2016-6797",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cve"
+            ],
+            "link": "https://api.riskiq.net/pt/v2/vuln-intel/article/{{input}}",
+            "name": "Vulnerability",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "PassiveTotal provides RiskIQ customers the ability to investigate threat to their environment through a rich user interface; broad access to aggregated, curated, and interconnected data from both RiskIQ and partner sources; the ability to seamlessly pivot through these data sets; and robust integrations with third party security providers, bringing the PassiveTotal experience to security tools already deployed within your environment.",
+        "documentation": "https://api.riskiq.net/api/pt_started.html",
+        "link": "https://community.riskiq.com/",
+        "name": "PassiveTotal"
+    }
+}

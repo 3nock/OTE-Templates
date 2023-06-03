@@ -1,0 +1,375 @@
+{
+    "authentication": {
+        "authHeader": "X-OTX-API-KEY",
+        "authType": "HEADER",
+        "link": "https://otx.alienvault.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "X-OTX-API-KEY",
+        "authType": "HEADER",
+        "link": "https://otx.alienvault.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "General information about the domain, including any pulses, and a list of the other sections currently available for this domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/domain/{{input}}/general",
+            "name": "indicator domain general",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "A more verbose listing of geographic data (Country code, coordinates, etc.)",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/domain/{{input}}/geo",
+            "name": "indicator domain geo",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Meta data for http(s) connections to the domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/domain/{{input}}/http_scans",
+            "name": "indicator domain http_scans",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Malware samples analyzed by AlienVault Labs which have been observed connecting to this domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/domain/{{input}}/malware",
+            "name": "indicator domain malware",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Passive dns records observed by AlienVault Labs pointing to this domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/domain/{{input}}/passive_dns",
+            "name": "indicator domain passive_dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "URLs analyzed by AlienVault Labs on this domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/domain/{{input}}/url_list",
+            "name": "indicator domain url_list",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Whois records for the domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/domain/{{input}}/whois",
+            "name": "indicator domain whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "General information about the hostname, including any pulses, and a list of the other sections currently available for this hostname.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "hostname"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/hostname/{{input}}/general",
+            "name": "indicator hostname general",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "A more verbose listing of geographic data (Country code, coordinates, etc.)",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "hostname"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/hostname/{{input}}/geo",
+            "name": "indicator hostname geo",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Meta data for http(s) connections to the hostname.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "hostname"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/hostname/{{input}}/http_scans",
+            "name": "indicator hostname http_scans",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Malware samples analyzed by AlienVault Labs which have been observed connecting to this hostname.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "hostname"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/hostname/{{input}}/malware",
+            "name": "indicator hostname malware",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "passive dns records observed by AlienVault Labs pointing to this hostname.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "hostname"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/hostname/{{input}}/passive_dns",
+            "name": "indicator hostname passive_dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "URLs analyzed by AlienVault Labs on this hostname.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "hostname"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/hostname/{{input}}/url_list",
+            "name": "indicator hostname url_list",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": " General information about the IP, such as geo data, and a list of the other sections currently available for this IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv4/{{input}}/general",
+            "name": "indicator ipv4 general",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "A more verbose listing of geographic data (Country code, coordinates, etc.)",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv4/{{input}}/geo",
+            "name": "indicator ipv4 geo",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Malware samples analyzed by AlienVault Labs which have been observed connecting to this IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv4/{{input}}/malware",
+            "name": "indicator ipv4 malware",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "passive dns information about hostnames/domains observed by AlienVault Labs pointing to this IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv4/{{input}}/passive_dns",
+            "name": "indicator ipv4 passive_dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "OTX data on malicious activity observed by AlienVault Labs (IP Reputation).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv4/{{input}}/reputation",
+            "name": "indicator ipv4 reputation",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "URLs analyzed by AlienVault Labs which point to or are somehow associated with this IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv4/{{input}}/url_list",
+            "name": "indicator ipv4 url_list",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": " General information about the IP, such as geo data, and a list of the other sections currently available for this IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv6"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv6/{{input}}/general",
+            "name": "indicator ipv6 general",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "A more verbose listing of geographic data (Country code, coordinates, etc.)",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv6"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv6/{{input}}/geo",
+            "name": "indicator ipv6 geo",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Malware samples analyzed by AlienVault Labs which have been observed connecting to this IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv6"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv6/{{input}}/malware",
+            "name": "indicator ipv6 malware",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "passive dns information about hostnames/domains observed by AlienVault Labs pointing to this IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv6"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv6/{{input}}/passive_dns",
+            "name": "indicator ipv6 passive_dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "OTX data on malicious activity observed by AlienVault Labs (IP Reputation).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv6"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv6/{{input}}/reputation",
+            "name": "indicator ipv6 reputation",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "URLs analyzed by AlienVault Labs which point to or are somehow associated with this IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv6"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/IPv6/{{input}}/url_list",
+            "name": "indicator ipv6 url_list",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Historical geographic info, any pulses this indicator is on, list of the other sections currently available for this URL.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/url/{{input}}/general",
+            "name": "indicator url general",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Full results (potentially multiple) from AlienVault Labs url analysis.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://otx.alienvault.com/api/v1/indicators/url/{{input}}/url_list",
+            "name": "indicator url url_list",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The World’s First Truly Open Threat Intelligence Community",
+        "documentation": "https://otx.alienvault.com/api",
+        "link": "https://otx.alienvault.com/",
+        "name": "AlienVault"
+    }
+}

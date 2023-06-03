@@ -1,0 +1,1 @@
+# Template Contribution Guidelines

@@ -1,0 +1,183 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipdata.co/pricing.html",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipdata.co/pricing.html",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "We offer a dedicated endpoint to query detailed ASN information, with coverage of ~100K ASNs.",
+            "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"ipv4_prefixes\":[\"$$\"],\"ipv6_prefixes\":[\"$$\"]}"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\"downstream\":[\"$$\"],\"peers\":[\"$$\"],\"upstream\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://api.ipdata.co/AS{{input}}/?api-key={{key}}",
+            "name": "ASN API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "We provide detailed ASN data for all IP Addresses with the following fields: AS Name, AS Number, AS Route, the AS Organization's domain and the usage type.",
+            "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"$$asn$$\":\"\"}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"$$route$$\":\"\"}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}/asn?api-key={{key}}",
+            "name": "Basic ASN",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "ipdata helps you personalize your ecommerce pages with the user's home currency.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}/currency?api-key={{key}}",
+            "name": "Currency Detection",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "IP address data",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}?api-key={{key}}",
+            "name": "IP Data",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The ipdata API supports looking up the Mobile Carrier of an IP Address. Our database currently consists of over 2500 carriers in 234 countries and territories.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}/carrier?api-key={{key}}",
+            "name": "Mobile Carrier Detection",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "We have over 600M malicious IP addresses in our IP Threat Intelligence database. We also track Tor nodes and open proxies. This data is updated every 15mins and is aggregated and published hourly.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}/threat?api-key={{key}}",
+            "name": "Proxy, Tor and Threat Detection",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "We provide detailed and accurate Timezone data, adjusted for DST where applicable.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}/time_zone?api-key={{key}}",
+            "name": "Timezone Detection",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "We have ~2.5M unique companies covering ~9M subnets.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}/company?api-key={{key}}",
+            "name": "Company",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "We publish 4M+ malicious IP addresses daily in our IP Threat Intelligence database. We also track Tor nodes and open proxies.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}/threat?api-key={{key}}",
+            "name": "Threat Intelligence",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get Geolocation of an ip-address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}?api-key={{key}}",
+            "name": "Geolocation",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The ipdata API supports looking up the Mobile Carrier of an IP Address. Our database currently consists of over 2500 carriers in 234 countries and territories.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipdata.co/{{input}}/carrier?api-key={{key}}",
+            "name": "Mobile Carrier",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "ipdata provides an IP Address Intelligence API that allows you to lookup the approximate location of any IP Address. We also provide, aggregated Open Source threat intelligence data, IP to Company lookups, as well as internationalization data like currencies, timezones and languages.",
+        "documentation": "https://docs.ipdata.co/",
+        "link": "https://ipdata.co/",
+        "name": "IpData"
+    }
+}

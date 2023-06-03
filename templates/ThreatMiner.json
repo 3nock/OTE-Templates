@@ -1,0 +1,141 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Search uri data of a domain",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.threatminer.org/v2/domain.php?q={{input}}&rt=3",
+            "name": "domain Query URI",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search passive dns data by domain name",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.threatminer.org/v2/domain.php?q={{input}}&rt=2",
+            "name": "domain passive dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search subdomains of the domain",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.threatminer.org/v2/domain.php?q={{input}}&rt=5",
+            "name": "domain subdomains",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search Whois data by domain name",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.threatminer.org/v2/domain.php?q={{input}}&rt=1",
+            "name": "domain whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search uri data of an ip address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.threatminer.org/v2/host.php?q={{input}}&rt=3",
+            "name": "ip Query URI",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search passive dns data of an ip address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.threatminer.org/v2/host.php?q={{input}}&rt=2",
+            "name": "ip passive dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search ssl certificate data of an ip address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.threatminer.org/v2/host.php?q={{input}}&rt=5",
+            "name": "ip ssl certs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search whois data of an ip address",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.threatminer.org/v2/host.php?q={{input}}&rt=1",
+            "name": "ip whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search hosts data of an ssl certificate",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cert"
+            ],
+            "link": "https://api.threatminer.org/v2/ssl.php?q={{input}}&rt=1",
+            "name": "ssl Hosts",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Data Mining for threat Intelligence",
+        "documentation": "https://www.threatminer.org/api.php",
+        "link": "https://threatminer.org/",
+        "name": "ThreatMiner"
+    }
+}

@@ -1,0 +1,304 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://api.riskiq.net/api/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://api.riskiq.net/api/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Get SSL certificates by host name",
+            "extractors": [
+                {
+                    "name": "cert",
+                    "script": "{\"content\":[{\"cert\":{\"$$sha1$$\":\"\"}}]}"
+                }
+            ],
+            "inputTypes": [
+                "ip",
+                "domain"
+            ],
+            "link": "https://api.riskiq.net/v1/ssl/cert/hos?host={{input}}",
+            "name": "cert host",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get SSL certificates by name of certificates to retrieve, including formal subject alternative and common names and other colloquial names.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ssl certificate name"
+            ],
+            "link": "https://api.riskiq.net /v1/ssl/cert/name?name={{input}}",
+            "name": "cert name",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get SSL certificates by serial number",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "serial"
+            ],
+            "link": "https://api.riskiq.net/v1/ssl/cert/serial?serial={{input}}",
+            "name": "cert serial",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get SSL certificate by SHA1 hash",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"content\":[{\"host\":{\"$$host$$\":\"\"}}]}"
+                }
+            ],
+            "inputTypes": [
+                "cert"
+            ],
+            "link": "https://api.riskiq.net/v1/ssl/cert/sha1?sha1={{input}}",
+            "name": "cert sha1",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get hosts by SSL certificate's sha1 hash.",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"content\":[{\"$$host$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "cert"
+            ],
+            "link": "https://api.riskiq.net/v1/ssl/host?certSha1={{input}}",
+            "name": "hosts",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieve results by searching for specified IP address within PDNS record data field",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.riskiq.net/v0/pdns/data/ip?ip={{input}}",
+            "name": "pdns ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieve results by searching for specified resource name within PDNS record data field.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.riskiq.net/v0/pdns/data/name?name={{input}}",
+            "name": "pdns name",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieve results by searching for specified hexadecimal bytes within PDNS record data field.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "hex"
+            ],
+            "link": "https://api.riskiq.net/v0/pdns/data/raw?hex={{input}}",
+            "name": "pdns raw",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get WHOIS records associated with an address",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[{\"$$domain$$\":\"\"}]}"
+                },
+                {
+                    "name": "email",
+                    "script": "{\"domains\":[{\"$$contactEmail$$\":\"\"}]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"domains\":[{\"nameServers\":[\"$$\"]}]}"
+                }
+            ],
+            "inputTypes": [
+                "address"
+            ],
+            "link": "https://api.riskiq.net/v0/whois/address?address={{input}}",
+            "name": "whois address",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get the current WHOIS for a domain",
+            "extractors": [
+                {
+                    "name": "email",
+                    "script": "{\"domains\":[{\"$$contactEmail$$\":\"\"}]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"domains\":[{\"nameServers\":[\"$$\"]}]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.riskiq.net/v0/whois/domain?domain={{input}}",
+            "name": "whois domain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get WHOIS records associated with an email address",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[{\"$$domain$$\":\"\"}]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"domains\":[{\"nameServers\":[\"$$\"]}]}"
+                }
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.riskiq.net/v0/whois/email?email={{input}}",
+            "name": "whois email",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get WHOIS records associated with a name",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[{\"$$domain$$\":\"\"}]}"
+                },
+                {
+                    "name": "email",
+                    "script": "{\"domains\":[{\"$$contactEmail$$\":\"\"}]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"domains\":[{\"nameServers\":[\"$$\"]}]}"
+                }
+            ],
+            "inputTypes": [
+                "name"
+            ],
+            "link": "https://api.riskiq.net/v0/whois/name?name={{input}}",
+            "name": "whois name",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get WHOIS records associated with a name server",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[{\"$$domain$$\":\"\"}]}"
+                },
+                {
+                    "name": "email",
+                    "script": "{\"domains\":[{\"$$contactEmail$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://api.riskiq.net/v0/whois/nameserver?nameserver={{input}}",
+            "name": "whois nameserver",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get WHOIS records associated with an organization",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[{\"$$domain$$\":\"\"}]}"
+                },
+                {
+                    "name": "email",
+                    "script": "{\"domains\":[{\"$$contactEmail$$\":\"\"}]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"domains\":[{\"nameServers\":[\"$$\"]}]}"
+                }
+            ],
+            "inputTypes": [
+                "organization"
+            ],
+            "link": "https://api.riskiq.net/v0/whois/org?org={{input}}",
+            "name": "whois org",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get WHOIS records associated with a phone number",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[{\"$$domain$$\":\"\"}]}"
+                },
+                {
+                    "name": "email",
+                    "script": "{\"domains\":[{\"$$contactEmail$$\":\"\"}]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"domains\":[{\"nameServers\":[\"$$\"]}]}"
+                }
+            ],
+            "inputTypes": [
+                "phone"
+            ],
+            "link": "https://api.riskiq.net/v0/whois/phone?phone={{input}}",
+            "name": "whois phone",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Relevant, actionable security intelligence to protect your attack surface. Security Intelligence Services provides direct, high volume access to RiskIQ data, allowing mature customers the ability to use this data to defend against threats to their environment.",
+        "documentation": "https://api.riskiq.net/api/concepts.html",
+        "link": "https://www.riskiq.com/",
+        "name": "RiskIq"
+    }
+}

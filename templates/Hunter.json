@@ -1,0 +1,122 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://hunter.io/api",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://hunter.io/api",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "This API endpoint enables you to get information regarding your Hunter account at any time",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.hunter.io/v2/account?api_key={{key}}",
+            "name": "Account Information",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "It finds the author of the article, and their most likely email address on the given domain name.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.hunter.io/v2/author-finder?url={{input}}&api_key={{key}}",
+            "name": "Author Finder",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You give one domain name and it returns all the email addresses using this domain name found on the internet.",
+            "extractors": [
+                {
+                    "name": "email",
+                    "script": "{\"data\":{\"emails\":[{\"$$value$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.hunter.io/v2/domain-search?domain={{input}}&api_key={{key}}",
+            "name": "Domain Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API endpoint allows you to know how many email addresses we have for one domain or for one company. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.hunter.io/v2/email-count?domain={{input}}",
+            "name": "Email Count",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API endpoint finds the most likely email address from a domain name, a first name and a last name.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.hunter.io/v2/email-finder?domain={{input}}&api_key={{key}}",
+            "name": "Email Finder",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API endpoint allows you to verify the deliverability of an email address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.hunter.io/v2/email-verifier?email={{input}}&api_key={{key}}",
+            "name": "Email Verifier",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The company name from which you want to find the email addresses. For example, \"stripe\". Note that you'll get better results by supplying the domain",
+            "extractors": [
+                {
+                    "name": "email",
+                    "script": "{\"data\":{\"emails\":[{\"$$value$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "company"
+            ],
+            "link": "https://api.hunter.io/v2/domain-search?company={{input}}&api_key={{key}}",
+            "name": "Domain Search Company",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Hunter lets you find professional email addresses in seconds and \nconnect with the people that matter for your business.",
+        "documentation": "https://hunter.io/api-documentation/",
+        "link": "https://hunter.io/",
+        "name": "Hunter"
+    }
+}

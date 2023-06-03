@@ -1,0 +1,102 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "",
+        "link": "",
+        "uses_id": false,
+        "uses_key": false
+    },
+    "endpoints": [
+        {
+            "description": "Returns ANY dns Records",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.mnemonic.no/pdns/v3/{{input}}?limit=999",
+            "name": "ip any record",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns A dns Records",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.mnemonic.no/pdns/v3/{{input}}?rrType=A&limit=999",
+            "name": "pdns A",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns AAAA dns Records",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.mnemonic.no/pdns/v3/{{input}}?rrType=AAAA&limit=999",
+            "name": "pdns AAAA",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns CNAME dns Records",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.mnemonic.no/pdns/v3/{{input}}?rrType=CNAME&limit=999",
+            "name": "pdns CNAME",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns MX dns Records",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.mnemonic.no/pdns/v3/{{input}}?rrType=MX&limit=999",
+            "name": "pdns MX",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns NS dns Records",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.mnemonic.no/pdns/v3/{{input}}?rrType=NS&limit=999",
+            "name": "pdns NS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The mnemonic PassiveDNS service passively collects DNS queries from our sensor network around the globe.Parts of the collected data is private, while other data is collected from public collection points.",
+        "documentation": "https://docs.mnemonic.no/",
+        "link": "https://www.mnemonic.no/",
+        "name": "Mnemonic_Free"
+    }
+}

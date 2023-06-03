@@ -1,0 +1,62 @@
+{
+    "authentication": {
+        "authHeader": "x-api-key",
+        "authType": "HEADER",
+        "link": "https://www.wappalyzer.com/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "x-api-key",
+        "authType": "HEADER",
+        "link": "https://www.wappalyzer.com/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Endpoint to get your remaining credit balance",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.wappalyzer.com/v2/credits/balance/",
+            "name": "Balance",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Verify email addresses before sending to improve delivery. A high bounce rate lowers your sender reputation and you risk getting blocked by email providers.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.wappalyzer.com/v2/verify/?email={{input}}",
+            "name": "Email Verification",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Find out the technology stack of any website, such as the CMS or ecommerce platform. Perform near-instant queries against our comprehensive database of millions of websites or analyse websites live for real-time results. In addition to technologies, responses optionally include company details, verified email addresses, phone numbers, social media profiles, locale information, keywords, metadata and more.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.wappalyzer.com/v2/lookup/?urls={{input}}",
+            "name": "Technology Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "We track over a thousand web technologies across millions of websites. We know who uses your software and that of your competitors.",
+        "documentation": "https://www.wappalyzer.com/docs/api/v2/basics/",
+        "link": "https://www.wappalyzer.com/",
+        "name": "Wappalyzer"
+    }
+}

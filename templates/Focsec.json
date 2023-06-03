@@ -1,0 +1,37 @@
+{
+    "authentication": {
+        "authHeader": "Authorization",
+        "authType": "HEADER",
+        "link": "https://focsec.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "Authorization",
+        "authType": "HEADER",
+        "link": "https://focsec.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Check a given IP",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.focsec.com/v1/ip/{{input}}",
+            "name": "IP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Our API lets you know if a user’s IP address is associated with a VPN, Proxy, TOR or malicious bots. Take your applications security to the next level by detecting suspicious activity early on.",
+        "documentation": "https://docs.focsec.com/",
+        "link": "https://focsec.com",
+        "name": "Focsec"
+    }
+}

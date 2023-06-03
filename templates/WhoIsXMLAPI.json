@@ -1,0 +1,245 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://main.whoisxmlapi.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://main.whoisxmlapi.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "A DNS lookup API call gives you a domain’s corresponding IP address from its A record as well as the domain’s mail server (MX record), nameserver (NS record), SPF (TXT record), and more records.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.whoisxmlapi.com/whoisserver/DNSService?apiKey={{key}}&domainName={{input}}&type=all",
+            "name": "dns Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Domain Availability",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://domain-availability.whoisxmlapi.com/api/v1?apiKey={{key}}&domainName={{input}}",
+            "name": "domain availability",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": " Boost email marketing results and get rid of abusers with our complete email verification product line—API, web-based lookup tool, bulk processing capabilities, and disposable email domains database.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://emailverification.whoisxmlapi.com/api/v1?apiKey={{key}}&emailAddress={{input}}",
+            "name": "email Verification",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "With one API call get exhaustive information on the IP range that a given IP address belongs to, with detailed ownership information regarding each range.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://ip-netblocks.whoisxmlapi.com/api/v2?apiKey={{key}}&asn={{input}}",
+            "name": "ip netblocks asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "With one API call get exhaustive information on the IP range that a given IP address belongs to, with detailed ownership information regarding each range.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cidr"
+            ],
+            "link": "https://ip-netblocks.whoisxmlapi.com/api/v2?apiKey={{key}}&ip={{input}}&mask={{}}",
+            "name": "ip netblocks cidr",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "With one API call get exhaustive information on the IP range that a given IP address belongs to, with detailed ownership information regarding each range.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://ip-netblocks.whoisxmlapi.com/api/v2?apiKey={{key}}&ip={{input}}",
+            "name": "ip netblocks ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "With one API call get exhaustive information on the IP range that a given IP address belongs to, with detailed ownership information regarding each range.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "organization"
+            ],
+            "link": "https://ip-netblocks.whoisxmlapi.com/api/v2?apiKey={{key}}&org[]={{input}}",
+            "name": "ip netblocks org",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Our hosted WHOIS API service provides the registration details, also known as the WHOIS record data, of a domain name, an IP address, or an email address. All of the WHOIS information we offer is adequately parsed and normalized to a consistent format so it can easily fit in with your business operations.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey={{key}}&ipWhois=1&ip=1&domainName={{input}}",
+            "name": "ip whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Reverse IP",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://reverse-ip.whoisxmlapi.com/api/v1?apiKey={{key}}&ip={{input}}",
+            "name": "reverse ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Check which domains link back to a mail server via API calls to avoid hosts with a dubious reputation, improve email delivery, and other purposes.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "mailserver"
+            ],
+            "link": "https://reverse-mx.whoisxmlapi.com/api/v1?apiKey={{key}}&mx={{input}}",
+            "name": "reverse mx",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Reverse NS API lets you see the list of domain names tied to the same nameserver via API calls with outputs in JSON and XML.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://reverse-ns.whoisxmlapi.com/api/v1?apiKey={{key}}&ns={{input}}",
+            "name": "reverse ns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "With one API call for search terms such as a domain owner’s name, email address, phone number, postal address, etc., you will get a list of all the linked domains that contain the identifier.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://reverse-whois.whoisxmlapi.com/api/v2",
+            "name": "reverse whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "With one API call, instantly get a list of all subdomains related to a given domain name to reveal a company’s entire web infrastructure. Use it to identify and fortify potential vulnerabilities.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://subdomains.whoisxmlapi.com/api/v1?apiKey={{key}}&domainName={{input}}",
+            "name": "subdomain lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get well-structured domain owner contact information, including company name and key contacts with direct-dial phone numbers, email addresses, and social media links based on data parsed from website content, social networks, Secure Sockets Layer (SSL) certificates, and other sources.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://website-contacts.whoisxmlapi.com/api/v1?apiKey={{key}}&domainName={{input}}",
+            "name": "website contacts",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Our Google Chrome engine-based Screenshot API allows you to instantly get a screenshot of any web page as a jpg, png or PDF file with embedded links which you can easily integrate into your product or use for any other business purposes.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://website-screenshot.whoisxmlapi.com/api/v1?apiKey={{key}}&url={{input}}",
+            "name": "website screenshot",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Our hosted WHOIS API service provides the registration details, also known as the WHOIS record data, of a domain name, an IP address, or an email address. All of the WHOIS information we offer is adequately parsed and normalized to a consistent format so it can easily fit in with your business operations.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey={{key}}&domainName={{input}}",
+            "name": "whois",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Start checking historical WHOIS records via API calls in your developed systems and commercial applications.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://whois-history.whoisxmlapi.com/api/v1?apiKey={{key}}&domainName={{input}}",
+            "name": "whois history",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The Who Behind Cyber Threat Intelligence",
+        "documentation": "https://whoisxmlapi.github.io/",
+        "link": "https://whoisxmlapi.com/",
+        "name": "WhoIsXMLAPI"
+    }
+}

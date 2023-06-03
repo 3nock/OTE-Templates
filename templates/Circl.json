@@ -1,0 +1,86 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://www.circl.lu/services/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "BASIC",
+        "link": "https://www.circl.lu/services/",
+        "uses_id": true,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "CIRCL Passive SSL is a database storing historical X.509 certificates seen per IP address. Query values can be IP addresses or CIDR blocks between /32 up to /23.",
+            "extractors": [
+                {
+                    "name": "cert",
+                    "script": "{\"*\":{\"certificates\":[\"$$\"]}}"
+                }
+            ],
+            "inputTypes": [
+                "ip",
+                "cidr"
+            ],
+            "link": "https://www.circl.lu/v2pssl/query/{{input}}",
+            "name": "Passive SSL query",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "CIRCL Passive SSL is a database storing historical X.509 certificates seen per IP address. The X509 certificate can be requested by its fingerprint and the raw certificate will be returned, including its readable output:",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cert"
+            ],
+            "link": "https://www.circl.lu/v2pssl/cfetch/{{input}}",
+            "name": "Passive SSL Fetch",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "CIRCL Passive SSL is a database storing historical X.509 certificates seen per IP address. Query value in cquery is the SHA1 fingerprint of a certificate and returns a list of seen IP addresses for the requested certificate.",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"seen\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "cert"
+            ],
+            "link": "https://www.circl.lu/v2pssl/cquery/{{input}}",
+            "name": "Passive SSL cquery",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "CIRCL Passive DNS is a database storing historical DNS records from various resources including malware analysis or partners",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain",
+                "ip"
+            ],
+            "link": "https://www.circl.lu/pdns/query/{{input}}",
+            "name": "Passive dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The Computer Incident Response Center Luxembourg (CIRCL) is a government-driven initiative designed to provide a systematic response facility to computer security threats and incidents.",
+        "documentation": "https://www.circl.lu/services/",
+        "link": "https://www.circl.lu/",
+        "name": "Circl"
+    }
+}

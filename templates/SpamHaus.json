@@ -1,0 +1,218 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "BEARER",
+        "link": "https://www.spamhaus.com/developer/sia/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "BEARER",
+        "link": "https://www.spamhaus.com/developer/sia/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "his query type is used to identify hosts seen on a given IP address or within a given subnet. The largest subnet queryable is a /16 for IPv4 or /32 for IPv6. All results will return the “last seen” instance for each host, sorted in alphabetical order by host.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[{\"$$host$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=IP&target={{input}}&output=JOBJECT",
+            "name": "Query Type IP",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify IPs (IPv4 and IPv6) seen for a given host. All results will return the “last seen” instance for each host, sorted by IP.",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"results\":[{\"$$ip$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "hostname"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=HOST&target={{input}}&output=JOBJECT",
+            "name": "Query Type HOST",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify hosts found within a given domain. All results will return the “last seen” instance for each host, sorted by subdomain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=DOMSEARCH&target={{input}}&output=JOBJECT",
+            "name": "Query Type DOMSEARCH",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify authoritative nameservers for a given domain. All results will return the “last seen” instance for each host, sorted by namesever.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=DOMAIN&target={{input}}&output=JOBJECT",
+            "name": "Query Type DOMAIN",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify domains that a given nameserver is authoritative for. All results will return the “last seen” instance for each host, sorted by domain.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[{\"$$domain$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=NS&target={{input}}&output=JOBJECT",
+            "name": "Query Type NS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify MX records for a given domain/host. All results will return the “last seen” instance for each host, sorted by priority.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[{\"$$domain$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=MXD&target={{input}}&output=JOBJECT",
+            "name": "Query Type MXD",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify hosts/domains for a given MX. All results will return the “last seen” instance for each host, sorted alphabetically by host.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[{\"$$domain$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "mailserver"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=MX&target={{input}}&output=JOBJECT",
+            "name": "Query Type MX",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify hosts for a given canonical name. All results will return the “last seen” instance for each host, sorted by host.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=CNAME&target={{input}}&output=JOBJECT",
+            "name": "Query Type CNAME",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify canonical names for a given host. All results will return the “last seen” instance for each host, sorted by CNAME.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "hostname"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=CHOST&target={{input}}&output=JOBJECT",
+            "name": "Query Type CHOST",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify TXT records for a given host/domain. All results will return the “last seen” instance for each host, sorted by TXT record. Due to the freeform nature of TXT records we recommend not using the CSV output for this querytype.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=TXT&target={{input}}&output=JOBJECT",
+            "name": "Query Type TXT",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify SOA records for a given domain. All results will return the “last seen” instance for each domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=SOA&target={{input}}&output=JOBJECT",
+            "name": "Query Type SOA",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify domains for a given IP/CIDR. All results will be “deduped” and sorted by domain.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "ip",
+                "cidr"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=SOA&target={{input}}&output=JOBJECT",
+            "name": "Query Type HOSTDOM",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This query type is used to identify the first time a domain was seen. Only one result will be returned by this query type, which will show the the “first seen” timestamp of the domain and the domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://pdnsapi.deteque.com/api/query?queryType=NEW_DOMAIN&target={{input}}&output=JOBJECT",
+            "name": "Query Type NEW_DOMAIN",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The trusted authority on IP and domain reputation data, working to make the internet a safer place.",
+        "documentation": "https://docs.spamhaus.com/",
+        "link": "https://spamhaus.com/",
+        "name": "SpamHaus"
+    }
+}

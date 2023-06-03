@@ -1,0 +1,323 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://host.io/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://host.io/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Get all the DNS records stored for a domain. Currently supported records are: A (IPv4 address), AAAA (IPv6 address), MX (mailserver), NS (nameserver)",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"a\":[\"$$\"],\"aaaa\":[\"$$\"]}"
+                },
+                {
+                    "name": "ipv4",
+                    "script": "{\"a\":[\"$$\"]}"
+                },
+                {
+                    "name": "ipv6",
+                    "script": "{\"aaaa\":[\"$$\"]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"ns\":[\"$$\"]}"
+                },
+                {
+                    "name": "mailserver",
+                    "script": "{\"mx\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://host.io/api/dns/{{input}}?token={{key}}",
+            "name": "dns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "A single endpoint that includes the data from /api/web, /api/dns, /api/related and IPinfo.",
+            "extractors": [
+                {
+                    "name": "mailserver",
+                    "script": "{\"dns\":{\"mx\":[\"$$\"]}}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"dns\":{\"ns\":[\"$$\"]}}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"dns\":{\"a\":[\"$$\"],\"aaaa\":[\"$$\"]}}"
+                },
+                {
+                    "name": "ipv4",
+                    "script": "{\"dns\":{\"a\":[\"$$\"]}}"
+                },
+                {
+                    "name": "ipv6",
+                    "script": "{\"dns\":{\"aaaa\":[\"$$\"]}}"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\"ipinfo\":{\"*\":{\"asn\":{\"$$asn$$\":\"\"}}}}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"ipinfo\":{\"*\":{\"asn\":{\"$$route$$\":\"\"}}}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://host.io/api/full/{{input}}?token={{key}}",
+            "name": "full",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get a count of the number of related domains for all supported lookups we offer",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"ip\":[{\"$$value$$\":\"\"}]}"
+                },
+                {
+                    "name": "domain",
+                    "script": "{\"backlinks\":[{\"$$value$$\":\"\"}],\"redirects\":[{\"$$value$$\":\"\"}]}"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\"asn\":[{\"$$value$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://host.io/api/related/{{input}}?token={{key}}",
+            "name": "related",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Metadata scraped from a domain homepage.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://host.io/api/web/{{input}}?token={{key}}",
+            "name": "web",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains associated with ip address",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://host.io/api/domains/ip/{{input}}&token={{input}}",
+            "name": "Domains ip",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains associated with the nameserver.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://host.io/api/domains/ns/{{input}}&token={{input}}",
+            "name": "Domains ns",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains associated with the mailserver",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "mailserver"
+            ],
+            "link": "https://host.io/api/domains/mx/{{input}}&token={{input}}",
+            "name": "Domains mx",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains associated with the autonomous system number (asn)",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "asn"
+            ],
+            "link": "https://host.io/api/domains/asn/AS{{input}}&token={{input}}",
+            "name": "Domains asn",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains associated with the google adsense id on ther homepage. Id format is pub-XXXXXXXXXXX",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "google adsense"
+            ],
+            "link": "https://host.io/api/domains/adsense/{{input}}&token={{input}}",
+            "name": "Domains adsense",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains linking to the Facebook social media handle on their homepage.",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "name"
+            ],
+            "link": "https://host.io/api/domains/facebook/{{input}}&token={{input}}",
+            "name": "Domains facebook",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains linking to the Twitter social media handle on their homepage ",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "name"
+            ],
+            "link": "https://host.io/api/domains/twitter/{{input}}&token={{input}}",
+            "name": "Domains twitter",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains linking to the Instagram social media handle on their homepage ",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "name"
+            ],
+            "link": "https://host.io/api/domains/instagram/{{input}}&token={{input}}",
+            "name": "Domains instagram",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains having the google tag manager ID on their homepage. e.g. GTM-544JFM",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "google tag manager"
+            ],
+            "link": "https://host.io/api/domains/gtm/{{input}}&token={{input}}",
+            "name": "Domains google tag manager",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains that include a googleanalytics ID on their homepage. e.g. UA-55552418",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "google analytics"
+            ],
+            "link": "https://host.io/api/domains/googleanalytics/{{input}}&token={{input}}",
+            "name": "Domains google analytics",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get all domains that include an email address on their homepage",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://host.io/api/domains/email/{{input}}&token={{input}}",
+            "name": "Domains email",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "A Powerful and Fast Domain Name Data API. Get comprehensive domain name data, uncover new domains and the relationships between them. Built for Cyber Security, Business Intelligence, Competitor Analysis, Market Research and more.",
+        "documentation": "https://host.io/docs",
+        "link": "https://host.io/",
+        "name": "Host"
+    }
+}

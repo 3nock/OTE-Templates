@@ -1,0 +1,37 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://zetalytics.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://zetalytics.com/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Subdomain",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://zonecruncher.com/api/v1/subdomains?q={{input}}&token={{key}}",
+            "name": "Subdomain",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "https://zetalytics.com/",
+        "documentation": "https://zetalytics.com/",
+        "link": "https://zetalytics.com/",
+        "name": "ZETAlytics"
+    }
+}

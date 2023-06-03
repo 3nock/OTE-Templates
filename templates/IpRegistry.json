@@ -1,0 +1,62 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipregistry.co/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://ipregistry.co/pricing",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "The batch IP lookup endpoint allows you to group up to 1024 IP search requests into a single request (you can mix up IPv4 and IPv6 addresses).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipregistry.co/{{input}}?key={{key}}",
+            "name": "Batch IP Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Look up the IP address the current API request is coming from.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.ipregistry.co/?key={{key}}",
+            "name": "Origin IP Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This is the primary Ipregistry endpoint. It is used to look up any given IPv4 or IPv6 addresses.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.ipregistry.co/{{input}}?key={{key}}",
+            "name": "Single IP Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Ipregistry is a trusted and in-depth IP Geolocation and Threat detections source of information that can benefit publishers, ad networks, retailers, financial services, e-commerce stores and more.",
+        "documentation": "https://ipregistry.co/docs/",
+        "link": "https://ipregistry.co/",
+        "name": "IpRegistry"
+    }
+}

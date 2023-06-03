@@ -1,0 +1,62 @@
+{
+    "authentication": {
+        "authHeader": "Authorization",
+        "authType": "HEADER",
+        "link": "https://www.email-format.com/i/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "authHeader": "Authorization",
+        "authType": "HEADER",
+        "link": "https://www.email-format.com/i/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "endpoints": [
+        {
+            "description": "Returns a JSON-encoded object with the best known formats for the given domain. Calls to the API are metered and billed if there are any formats returned with the result. If there are no formats available you will not be billed.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.email-format.com/api/v2/get_best_format?domain={{input}}",
+            "name": "Get Best Formats",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns a JSON-encoded object with the known formats for the given domain. Calls to the API are metered and billed if there are any formats returned with the result. If there are no formats available you will not be billed.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://www.email-format.com/api/v2/get_formats?domain={{input}}",
+            "name": "Get Formats",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "The ping call is used to validate connectivity to the Email Format API server and to confirm that your Authentication header and API private key are functioning as expected. Calls to this API are not metered and you will not be billed for their use.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://www.email-format.com/api/v2/ping",
+            "name": "Ping",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Save time and energy - find the email address formats in use at thousands of companies.",
+        "documentation": "https://www.email-format.com/i/api_v2/",
+        "link": "https://www.email-format.com/",
+        "name": "EmailFormat"
+    }
+}
