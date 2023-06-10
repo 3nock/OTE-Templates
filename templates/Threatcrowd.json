@@ -1,17 +1,14 @@
 {
     "authentication": {
         "authHeader": "",
-        "authType": "",
+        "authType": "QUERY",
         "link": "",
         "uses_id": false,
         "uses_key": false
     },
     "author": {
-        "authHeader": "",
-        "authType": "",
-        "link": "",
-        "uses_id": false,
-        "uses_key": false
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -81,7 +78,7 @@
         }
     ],
     "info": {
-        "description": "A Search Engine for Threats",
+        "description": "A Search Engine for Threats. The ThreatCrowd API allows you to quickly identify related infrastructure and malware.",
         "documentation": "https://github.com/AlienVault-OTX/ApiV2",
         "link": "https://www.threatcrowd.org/",
         "name": "Threatcrowd"

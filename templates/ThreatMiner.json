@@ -7,16 +7,21 @@
         "uses_key": false
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "",
-        "uses_id": false,
-        "uses_key": false
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
             "description": "Search uri data of a domain",
             "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"results\":[{\"$$ip$$\":\"\"}]}"
+                },
+                {
+                    "name": "url",
+                    "script": "{\"results\":[{\"$$uri$$\":\"\"}]}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -30,6 +35,10 @@
         {
             "description": "Search passive dns data by domain name",
             "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"results\":[{\"$$ip$$\":\"\"}]}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -56,6 +65,14 @@
         {
             "description": "Search Whois data by domain name",
             "extractors": [
+                {
+                    "name": "email",
+                    "script": "{\"results\":[{\"emails\":{\"$$admin$$\":\"\",\"$$billing$$\":\"\",\"$$registrant$$\":\"\",\"$$tech$$\":\"\"}}]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"results\":[{\"nameservers\":[\"$$\"]}]}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -69,6 +86,14 @@
         {
             "description": "Search uri data of an ip address",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[{\"$$domain$$\":\"\"}]}"
+                },
+                {
+                    "name": "url",
+                    "script": "{\"results\":[{\"$$uri$$\":\"\"}]}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -82,6 +107,10 @@
         {
             "description": "Search passive dns data of an ip address",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[{\"$$domain$$\":\"\"}]}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -95,6 +124,10 @@
         {
             "description": "Search ssl certificate data of an ip address",
             "extractors": [
+                {
+                    "name": "cert",
+                    "script": "{\"results\":[\"$$\"]}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -108,6 +141,18 @@
         {
             "description": "Search whois data of an ip address",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"results\":[{\"$$reverse_name$$\":\"\"}]}"
+                },
+                {
+                    "name": "cidr",
+                    "script": "{\"results\":[{\"$$bgp_prefix$$\":\"\"}]}"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\"results\":[{\"$$asn$$\":\"\"}]}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -121,6 +166,10 @@
         {
             "description": "Search hosts data of an ssl certificate",
             "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"results\":[\"$$\"]}"
+                }
             ],
             "inputTypes": [
                 "cert"
@@ -133,7 +182,7 @@
         }
     ],
     "info": {
-        "description": "Data Mining for threat Intelligence",
+        "description": "ThreatMiner is a threat intelligence portal designed to enable analysts to research under a single interface.",
         "documentation": "https://www.threatminer.org/api.php",
         "link": "https://threatminer.org/",
         "name": "ThreatMiner"

@@ -7,11 +7,8 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://www.neutrinoapi.com/plans/",
-        "uses_id": true,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {

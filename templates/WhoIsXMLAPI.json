@@ -7,11 +7,8 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://main.whoisxmlapi.com/",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -54,53 +51,24 @@
             "resquestType": "GET"
         },
         {
-            "description": "With one API call get exhaustive information on the IP range that a given IP address belongs to, with detailed ownership information regarding each range.",
+            "description": "Get detailed information about the IP range a particular IP belongs to. With one API call get exhaustive information on the IP range that a given IP address belongs to, with detailed ownership information regarding each range.",
             "extractors": [
+                {
+                    "name": "asn",
+                    "script": "[{\"as\":{\"$$asn$$\":\"\"}}]"
+                },
+                {
+                    "name": "cidr",
+                    "script": "[{\"as\":{\"$$route$$\":\"\"}}]"
+                }
             ],
             "inputTypes": [
-                "asn"
-            ],
-            "link": "https://ip-netblocks.whoisxmlapi.com/api/v2?apiKey={{key}}&asn={{input}}",
-            "name": "ip netblocks asn",
-            "postData": "",
-            "responseType": "JSON",
-            "resquestType": "GET"
-        },
-        {
-            "description": "With one API call get exhaustive information on the IP range that a given IP address belongs to, with detailed ownership information regarding each range.",
-            "extractors": [
-            ],
-            "inputTypes": [
-                "cidr"
-            ],
-            "link": "https://ip-netblocks.whoisxmlapi.com/api/v2?apiKey={{key}}&ip={{input}}&mask={{}}",
-            "name": "ip netblocks cidr",
-            "postData": "",
-            "responseType": "JSON",
-            "resquestType": "GET"
-        },
-        {
-            "description": "With one API call get exhaustive information on the IP range that a given IP address belongs to, with detailed ownership information regarding each range.",
-            "extractors": [
-            ],
-            "inputTypes": [
-                "ip"
-            ],
-            "link": "https://ip-netblocks.whoisxmlapi.com/api/v2?apiKey={{key}}&ip={{input}}",
-            "name": "ip netblocks ip",
-            "postData": "",
-            "responseType": "JSON",
-            "resquestType": "GET"
-        },
-        {
-            "description": "With one API call get exhaustive information on the IP range that a given IP address belongs to, with detailed ownership information regarding each range.",
-            "extractors": [
-            ],
-            "inputTypes": [
+                "asn",
+                "ip",
                 "organization"
             ],
-            "link": "https://ip-netblocks.whoisxmlapi.com/api/v2?apiKey={{key}}&org[]={{input}}",
-            "name": "ip netblocks org",
+            "link": "https://ip-netblocks.whoisxmlapi.com/api/v2?apiKey={{key}}&asn={{input}}",
+            "name": "ip netblocks",
             "postData": "",
             "responseType": "JSON",
             "resquestType": "GET"
@@ -119,8 +87,12 @@
             "resquestType": "GET"
         },
         {
-            "description": "Reverse IP",
+            "description": "Reverse IP API reveals all domains that share an IP address in a single API call.\nGet a list of all domains associated with an IP address via API calls with outputs in JSON and XML formats.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "[{\"$$name$$\":\"\"}]"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -134,6 +106,10 @@
         {
             "description": "Check which domains link back to a mail server via API calls to avoid hosts with a dubious reputation, improve email delivery, and other purposes.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "[{\"$$name$$\":\"\"}]"
+                }
             ],
             "inputTypes": [
                 "mailserver"
@@ -147,6 +123,10 @@
         {
             "description": "Reverse NS API lets you see the list of domain names tied to the same nameserver via API calls with outputs in JSON and XML.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "[{\"$$name$$\":\"\"}]"
+                }
             ],
             "inputTypes": [
                 "nameserver"
@@ -158,21 +138,29 @@
             "resquestType": "GET"
         },
         {
-            "description": "With one API call for search terms such as a domain owner’s name, email address, phone number, postal address, etc., you will get a list of all the linked domains that contain the identifier.",
+            "description": "Find all domain names which contain a specified search terms in their WHOIS records. With one API call for search terms such as a domain owner’s name, email address, phone number, postal address, etc., you will get a list of all the linked domains that contain the identifier.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"domainsList\":[\"$$\"]}"
+                }
             ],
             "inputTypes": [
-                "domain"
+                "search"
             ],
             "link": "https://reverse-whois.whoisxmlapi.com/api/v2",
             "name": "reverse whois",
-            "postData": "",
+            "postData": "{\n    \"apiKey\": {{key}},\n    \"searchType\": \"current\",\n    \"mode\": \"purchase\",\n    \"punycode\": true,\n    \"searchAfter\": 1685609141,\n    \"basicSearchTerms\": {\n        \"include\": [\n\"{{input}}\"\n        ]\n    }\n}",
             "responseType": "JSON",
-            "resquestType": "GET"
+            "resquestType": "POST"
         },
         {
             "description": "With one API call, instantly get a list of all subdomains related to a given domain name to reveal a company’s entire web infrastructure. Use it to identify and fortify potential vulnerabilities.",
             "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"result\":{\"records\":[{\"$$domain$$\":\"\"}]}}"
+                }
             ],
             "inputTypes": [
                 "domain"

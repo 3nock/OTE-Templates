@@ -7,16 +7,17 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://x.threatbook.cn/api",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
             "description": "Advanced domain name query, to obtain the historical Whois information of the domain name and the historical IP information of the domain name.",
             "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"data\":{\"history_ips\":[{\"ips\":[{\"$$ip$$\":\"\"}]}]}}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -30,6 +31,14 @@
         {
             "description": "It can analyze domain names extracted from internal DNS or some NGFWs. Obtain the IP address corresponding to the domain name, the current Whois, comprehensively determine the threat types such as: remote control (C2), malware (Malware), zombie, scan (Scanner), brute force (Brute Force), etc., related attack groups Or security incident labels, original intelligence, relevant sample information, etc.",
             "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"data\":{\"bibme.org\":{\"cur_ips\":[{\"$$ip$$\":\"\"}]}}}"
+                },
+                {
+                    "name": "cert",
+                    "script": "{\"data\":{\"bibme.org\":{\"cas\":[{\"$$fingerprint$$\":\"\"}]}}}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -43,6 +52,14 @@
         {
             "description": "IP advanced query, get current IP domain name and historical domain name information.",
             "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\"asn\":{\"$$number$$\":\"\"}}}"
+                },
+                {
+                    "name": "domain",
+                    "script": "{\"data\":{\"history_domains\":{\"*\":[\"$$\"]}}}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -56,6 +73,10 @@
         {
             "description": "It can analyze business logs and external IP obtained from security devices such as firewalls and WAF. Obtain IP-related geographic location and ASN information, and comprehensively determine threat types such as: remote control (C2), zombie, compromised host (Compromised), scanning (Scanner), phishing, etc., related attack groups or security incidents Labels, original information, relevant sample information, etc.",
             "extractors": [
+                {
+                    "name": "asn",
+                    "script": "{\"data\":{\"*\":{\"asn\":{\"$$number$$\":\"\"}}}}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -69,6 +90,10 @@
         {
             "description": "Advanced domain name query to obtain subdomain information of a domain name.",
             "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"data\":{\"sub_domains\":{\"data\":[\"$$\"]}}}"
+                }
             ],
             "inputTypes": [
                 "domain"

@@ -7,11 +7,8 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://host.io/pricing",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -203,7 +200,7 @@
                 }
             ],
             "inputTypes": [
-                "google adsense"
+                "adsense"
             ],
             "link": "https://host.io/api/domains/adsense/{{input}}&token={{input}}",
             "name": "Domains adsense",
@@ -265,10 +262,6 @@
         {
             "description": "Get all domains having the google tag manager ID on their homepage. e.g. GTM-544JFM",
             "extractors": [
-                {
-                    "name": "domain",
-                    "script": "{\"domains\":[\"$$\"]}"
-                }
             ],
             "inputTypes": [
                 "google tag manager"
@@ -288,7 +281,7 @@
                 }
             ],
             "inputTypes": [
-                "google analytics"
+                "analytics"
             ],
             "link": "https://host.io/api/domains/googleanalytics/{{input}}&token={{input}}",
             "name": "Domains google analytics",

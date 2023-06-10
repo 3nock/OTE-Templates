@@ -7,11 +7,8 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://developer.shodan.io/api/requirements",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -42,6 +39,10 @@
         {
             "description": "Get all the subdomains and other DNS entries for the given domain. Uses 1 query credit per lookup.",
             "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"subdomains\":[\"$$\"]}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -68,6 +69,10 @@
         {
             "description": "Look up the hostnames that have been defined for the given list of IP addresses.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"*\":[\"$$\"]}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -94,6 +99,10 @@
         {
             "description": "Returns all services that have been found on the given host IP.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"hostnames\":[\"$$\"]}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -107,11 +116,19 @@
         {
             "description": "Search Shodan using the same query syntax as the website and use facets to get summary information for different properties.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"matches\":[{\"hostnames\":[\"$$\"]}]}"
+                },
+                {
+                    "name": "asn",
+                    "script": "{\"matches\":[{\"$$asn$$\":\"\"}]}"
+                }
             ],
             "inputTypes": [
                 "search"
             ],
-            "link": "https://api.shodan.io/shodan/host/search?key={{key}}&query={{input}}&facets=country",
+            "link": "https://api.shodan.io/shodan/host/search?key={{key}}&query={{input}}",
             "name": "host search",
             "postData": "",
             "responseType": "JSON",
@@ -153,10 +170,107 @@
             "postData": "",
             "responseType": "JSON",
             "resquestType": "GET"
+        },
+        {
+            "description": "List all ports that Shodan is crawling on the Internet. This method returns a list of port numbers that the crawlers are looking for.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.shodan.io/shodan/ports?key={{key}}",
+            "name": "Ports",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "List all protocols that can be used when performing on-demand Internet scans via Shodan. This method returns an object containing all the protocols that can be used when launching an Internet scan.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.shodan.io/shodan/protocols?key={{key}}",
+            "name": "Protocals",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "List the saved search queries. Use this method to obtain a list of search queries that users have saved in Shodan.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.shodan.io/shodan/query?key={{key}}",
+            "name": "Query",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search the directory of saved search queries. Use this method to search the directory of search queries that users have saved in Shodan. e.g. webcam",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://api.shodan.io/shodan/query/search?query={{input}}&key={{key}}",
+            "name": "Query Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "List the most popular tags. Use this method to obtain a list of popular tags for the saved search queries in Shodan.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.shodan.io/shodan/query/tags?key={{key}}",
+            "name": "Query Tags",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "HTTP Headers. Shows the HTTP headers that your client sends when connecting to a webserver.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.shodan.io/tools/httpheaders?key={{key}}",
+            "name": "Tools HttpHeaders",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "My IP Address. Get your current IP address as seen from the Internet.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.shodan.io/tools/myip?key={{key}}",
+            "name": "Tools MyIp",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "API Plan Information. Returns information about the API plan belonging to the given API key.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.shodan.io/api-info?key={{key}}",
+            "name": "API Info",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
         }
     ],
     "info": {
-        "description": "Search Engine for the Internet of Everything",
+        "description": "Shodan is the world's first search engine for Internet-connected devices. Discover how Internet intelligence can help you make better decisions.",
         "documentation": "https://developer.shodan.io/api",
         "link": "https://www.shodan.io/",
         "name": "Shodan"

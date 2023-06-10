@@ -7,11 +7,8 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://whatcms.org/API",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -30,6 +27,10 @@
         {
             "description": "Fetch Who-Hosts-This.com data with curl, guzzle or your favorite HTTP client.",
             "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"results\":[{\"$$ip$$\":\"\"}]}"
+                }
             ],
             "inputTypes": [
                 "url"

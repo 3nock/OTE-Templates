@@ -7,11 +7,8 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://zetalytics.com/",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -29,7 +26,7 @@
         }
     ],
     "info": {
-        "description": "https://zetalytics.com/",
+        "description": "Zetalytics serves the enterprise, government, law enforcement, and security industries. We offer unrivalled geographic diversity and exclusive global network visibility in searchable datasets for use by cyber security analysts.",
         "documentation": "https://zetalytics.com/",
         "link": "https://zetalytics.com/",
         "name": "ZETAlytics"

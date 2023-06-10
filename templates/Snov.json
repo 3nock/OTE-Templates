@@ -7,11 +7,8 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://snov.io/pricing",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -20,7 +17,7 @@
             ],
             "inputTypes": [
             ],
-            "link": "https://",
+            "link": "https://api.snov.io/v1/get-balance",
             "name": "Check user balance",
             "postData": "",
             "responseType": "JSON",
@@ -29,11 +26,15 @@
         {
             "description": "Enter a domain name and Snov.io will return all the email addresses on the domain. If there is any additional information about the email owner available in the database, we will add it as well. Each response returns up to 100 emails. If it does not return at least one email, you will not be charged for the request.",
             "extractors": [
+                {
+                    "name": "email",
+                    "script": "{\"emails\":[{\"$$email$$\":\"\"}]}"
+                }
             ],
             "inputTypes": [
-                "domain e.g. example.com"
+                "domain"
             ],
-            "link": "https://",
+            "link": "https://api.snov.io/v2/domain-emails-with-info?domain={{input}}&type=all",
             "name": "Domain Search",
             "postData": "",
             "responseType": "JSON",
@@ -57,26 +58,52 @@
             "extractors": [
             ],
             "inputTypes": [
-                "domain e.g. example.com"
+                "domain"
             ],
-            "link": "https://",
-            "name": "Email count",
-            "postData": "",
+            "link": "https://api.snov.io/v1/get-domain-emails-count",
+            "name": "Email Count",
+            "postData": "domain={{input}}",
             "responseType": "JSON",
-            "resquestType": "GET"
+            "resquestType": "POST"
         },
         {
             "description": "Provide an email address and Snov.io will return all the profile information connected to the provided email address owner from the database.If we find no information about the email owner in our database, you will not be charged for the request.",
             "extractors": [
             ],
             "inputTypes": [
-                "email e.g. something@email.com"
+                "email"
             ],
-            "link": "https://",
+            "link": "https://api.snov.io/v1/get-profile-by-email",
             "name": "Get profile with email",
-            "postData": "",
+            "postData": "email={{input}}",
             "responseType": "JSON",
-            "resquestType": "GET"
+            "resquestType": "POST"
+        },
+        {
+            "description": "Provide the prospect's social URL and Snov.io will return the full information on the prospect with the found email addresses. You should previously use the Add URL to search for prospect method. Otherwise, the result will not be shown.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.snov.io/v1/get-emails-from-url",
+            "name": "Get prospect with URL",
+            "postData": "url={{input}}",
+            "responseType": "JSON",
+            "resquestType": "POST"
+        },
+        {
+            "description": "Find prospects by social URL. To receive the results, use the Get prospect with URL method.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.snov.io/v1/add-url-for-search",
+            "name": "Add URL to search for prospect",
+            "postData": "url={{input}}",
+            "responseType": "JSON",
+            "resquestType": "POST"
         }
     ],
     "info": {

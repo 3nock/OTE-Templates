@@ -7,16 +7,17 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "APIKEY",
-        "authType": "HEADER",
-        "link": "https://securitytrails.com/corp/api",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
             "description": "Returns associated IPs for a company domain. The result is not paginated nor limited. The data is based on whois data with the names matched to the domains.",
             "extractors": [
+                {
+                    "name": "cidr",
+                    "script": "{\"records\":[{\"$$cidr$$\":\"\"}]}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -82,6 +83,10 @@
         {
             "description": "Returns child and sibling subdomains for a given hostname.",
             "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"subdomains\":[\"$$\"]}"
+                }
             ],
             "inputTypes": [
                 "domain"

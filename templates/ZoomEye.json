@@ -7,11 +7,8 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "API-KEY",
-        "authType": "HEADER",
-        "link": "https://www.zoomeye.org/",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -74,6 +71,27 @@
             ],
             "link": "https://api.zoomeye.org/resources-info",
             "name": "user information",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Search for associated domain names",
+            "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"list\":[{\"$$name$$\":\"\"}]}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"list\":[{\"$$ip$$\":\"\"}]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.zoomeye.org/domain/search?q={{input}}&type=0",
+            "name": "Domain/IP Association query",
             "postData": "",
             "responseType": "JSON",
             "resquestType": "GET"

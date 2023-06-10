@@ -7,11 +7,8 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "x-api-key",
-        "authType": "HEADER",
-        "link": "https://www.wappalyzer.com/pricing/",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -48,6 +45,23 @@
             ],
             "link": "https://api.wappalyzer.com/v2/lookup/?urls={{input}}",
             "name": "Technology Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Enumerate subdomains for a domain.",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"subdomains\":{\"$$\":{}}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.wappalyzer.com/v2/subdomains/?domains={{input}}",
+            "name": "Subdomain finder",
             "postData": "",
             "responseType": "JSON",
             "resquestType": "GET"

@@ -7,19 +7,20 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://api.spyonweb.com/",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
             "description": "The Google Adsense API allows you to input a google adsense identifier and get a list of domains that share the same identifier.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"result\":{\"adsense\":{\"*\":{\"items\":{\"$$\":\"\"}}}}}"
+                }
             ],
             "inputTypes": [
-                "google adsense id"
+                "adsense"
             ],
             "link": "https://api.spyonweb.com/v1/adsense/{{input}}?access_token={{key}}",
             "name": "Adsense",
@@ -30,9 +31,13 @@
         {
             "description": "The Google Analytics API allows you to input a Google Analytics identifier and get a list of domains that share the same identifier.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"result\":{\"analytics\":{\"*\":{\"items\":{\"$$\":\"\"}}}}}"
+                }
             ],
             "inputTypes": [
-                "analytics code"
+                "analytics"
             ],
             "link": "https://api.spyonweb.com/v1/analytics/{{input}}?access_token={{key}}",
             "name": "Analytics",
@@ -43,6 +48,22 @@
         {
             "description": "The Domain API allows you to input a domain and get a list of domains that share the same identifiers (Google Adsense, Google Analytics, IP Address, Nameserver). Output is limited to 100 domains per identifier.",
             "extractors": [
+                {
+                    "name": "adsense",
+                    "script": "{\"result\":{\"domain\":{\"*\":{\"items\":{\"adsense\":{\"$$\":\"\"}}}}}}"
+                },
+                {
+                    "name": "analytics",
+                    "script": "{\"result\":{\"domain\":{\"*\":{\"items\":{\"analytics\":{\"$$\":\"\"}}}}}}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"result\":{\"domain\":{\"*\":{\"items\":{\"dns_servers\":{\"$$\":\"\"}}}}}}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"result\":{\"domain\":{\"*\":{\"items\":{\"ip\":{\"$$\":\"\"}}}}}}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -56,6 +77,10 @@
         {
             "description": "The Domains on Nameserver API allows you to input a nameserver and get a list of domains handled by this nameserver.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"result\":{\"dns_domain\":{\"*\":{\"items\":{\"$$\":\"\"}}}}}"
+                }
             ],
             "inputTypes": [
                 "nameserver"
@@ -69,6 +94,10 @@
         {
             "description": "The IP Address API allows you to input an IP address and get a list of domains hosted on this IP address",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"result\":{\"ip\":{\"*\":{\"items\":{\"$$\":\"\"}}}}}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -82,6 +111,10 @@
         {
             "description": "The Nameservers on IP Address API allows you to input an IP address and get a list of nameservers using this IP address.",
             "extractors": [
+                {
+                    "name": "nameserver",
+                    "script": "{\"result\":{\"ip_dns\":{\"*\":{\"items\":{\"$$\":\"\"}}}}}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -95,6 +128,22 @@
         {
             "description": "The Request Summary API allows you to input a domain name and get the number of domains with the same Google Adsense, Google Analytics identifiers, IP Address, and Nameserver",
             "extractors": [
+                {
+                    "name": "adsense",
+                    "script": "{\"result\":{\"summary\":{\"*\":{\"items\":{\"adsense\":{\"$$\":\"\"}}}}}}"
+                },
+                {
+                    "name": "analytics",
+                    "script": "{\"result\":{\"summary\":{\"*\":{\"items\":{\"analytics\":{\"$$\":\"\"}}}}}}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"result\":{\"summary\":{\"*\":{\"items\":{\"dns_servers\":{\"$$\":\"\"}}}}}}"
+                },
+                {
+                    "name": "ip",
+                    "script": "{\"result\":{\"summary\":{\"*\":{\"items\":{\"ip\":{\"$$\":\"\"}}}}}}"
+                }
             ],
             "inputTypes": [
                 "domain"

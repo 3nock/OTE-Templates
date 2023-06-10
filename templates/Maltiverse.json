@@ -7,11 +7,8 @@
         "uses_key": false
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "",
-        "uses_id": false,
-        "uses_key": false
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {

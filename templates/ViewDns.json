@@ -7,16 +7,17 @@
         "uses_key": true
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "https://viewdns.info/",
-        "uses_id": false,
-        "uses_key": true
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
             "description": "Used to find the abuse contact address for a domain name. This is where you would send complaints about spam originating from that domain.",
             "extractors": [
+                {
+                    "name": "email",
+                    "script": "{\"response\":{\"$$abusecontact$$\":\"\"}}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -70,6 +71,10 @@
         {
             "description": "Shows a historical list of IP addresses a given domain name has been hosted on as well as where that IP address is geographically located, and the owner of that IP address.",
             "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"response\":{\"records\":[{\"$$ip$$\":\"\"}]}}"
+                }
             ],
             "inputTypes": [
                 "domain"
@@ -135,6 +140,10 @@
         {
             "description": "Find the reverse DNS entry (PTR) for a given IP. This is generally the server or host name.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"response\":{\"$$rdns$$\":\"\"}}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -148,6 +157,10 @@
         {
             "description": "Takes a domain or IP address and quickly shows all other domains hosted from the same server. Useful for finding phishing sites or identifying other sites on the same shared hosting server. By default, the first 10,000 results are returned.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"response\":{\"domains\":[{\"$$name$$\":\"\"}]}}"
+                }
             ],
             "inputTypes": [
                 "ip"
@@ -161,6 +174,10 @@
         {
             "description": "Takes a mail server (e.g. mail.google.com) and quickly shows all other domains that use the same mail server. Useful for identifying domains that are used as email aliases",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"response\":{\"domains\":[\"$$\"]}}"
+                }
             ],
             "inputTypes": [
                 "mailserver"
@@ -174,6 +191,10 @@
         {
             "description": "Takes a nameserver (e.g. ns.example.com) and quickly shows all other domains that share the same nameserver. Useful for identifying other domains that share the same web server or hosting company.",
             "extractors": [
+                {
+                    "name": "domain",
+                    "script": "{\"response\":{\"domains\":[{\"$$domain$$\":\"\"}]}}"
+                }
             ],
             "inputTypes": [
                 "nameserver"
@@ -193,6 +214,139 @@
             ],
             "link": "https://api.viewdns.info/reversewhois/?q={{input}}&apikey={{key}}&output=json",
             "name": "Reverse Whois Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Checks whether a site is blocked by the Great Firewall of China. This test checks across a number of servers from various locations in mainland China to determine if access to the site provided is possible from behind the Great Firewall of China. \nThis test checks for symptoms of DNS poisoning, one of the more common methods used by the Chinese government to block access to websites. ",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/chinesefirewall/?domain={{input}}&apikey={{key}}&output=json",
+            "name": "Chinese Firewall Test",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "View all configured DNS AAAA records for a specified domain name.",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"response\":{\"records\":[{\"$$data$$\":\"\"}]}}"
+                },
+                {
+                    "name": "ipv6",
+                    "script": "{\"response\":{\"records\":[{\"$$data$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/dnsrecord/?domain={{input}}&recordtype=AAAA&apikey={{key}}&output=json",
+            "name": "DNS Record Lookup AAAA",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "View all configured DNS MX records. for a specified domain name.",
+            "extractors": [
+                {
+                    "name": "mailserver",
+                    "script": "{\"response\":{\"records\":[{\"$$data$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/dnsrecord/?domain=twitter.com&recordtype=MX&apikey=yourapikey&output=output_type",
+            "name": "DNS Record Lookup MX",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "View all configured DNS NS Records. for a specified domain name.",
+            "extractors": [
+                {
+                    "name": "nameserver",
+                    "script": "{\"response\":{\"records\":[{\"$$data$$\":\"\"}]}}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/dnsrecord/?domain={{input}}&recordtype=NS&apikey={{key}}&output=json",
+            "name": "DNS Record Lookup NS",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Find out if a domain name provides free email addresses. Search is performed on a custom made list of thousands of known free email hosts.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/freeemail/?domain={{input}}&apikey={{key}}&output=json",
+            "name": "Free Email Lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Retrieves the HTTP headers of a remote domain. Useful in determining the web server (and version) in use and much more.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/httpheaders/?domain={{input}}&apikey={{key}}&output=json",
+            "name": "GET HTTP Headers",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Instantly check the Google Pagerank of any domain without the need to install the Google toolbar or any other software. Google Pagerank is a measurement of the importance of your site obtained by looking at the importance of all sites linking to it.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/pagerank/?domain={{input}}&apikey={{key}}&output=json",
+            "name": "Google Pagerank Checker",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Test if any website is accessible using the Internet in Iran in real-time.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.viewdns.info/iranfirewall/?siteurl={{input}}&apikey={{key}}&output=json",
+            "name": "Iran Firewall Test",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Determines the series of servers that data traverses from the ViewDNS server to the specified domain name or IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.viewdns.info/traceroute/?domain={{input}}&apikey={{key}}&output=json",
+            "name": "Traceroute",
             "postData": "",
             "responseType": "JSON",
             "resquestType": "GET"

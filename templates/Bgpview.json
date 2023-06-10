@@ -7,11 +7,8 @@
         "uses_key": false
     },
     "author": {
-        "authHeader": "",
-        "authType": "QUERY",
-        "link": "",
-        "uses_id": false,
-        "uses_key": false
+        "name": "Enock N. M.",
+        "social": "https://github.com/3nock"
     },
     "endpoints": [
         {
@@ -23,7 +20,7 @@
                 },
                 {
                     "name": "address",
-                    "script": "{\n    \"data\": {\n        \"$$owner_address$$\": [\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"$$owner_address$$\":[]}}"
                 },
                 {
                     "name": "link",
@@ -44,7 +41,7 @@
             "extractors": [
                 {
                     "name": "asn",
-                    "script": "{\n    \"data\": {\n        \"ipv4_downstreams\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ],\n        \"ipv6_downstreams\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"ipv4_downstreams\":[{\"$$asn$$\":\"\"}],\"ipv6_downstreams\":[{\"$$asn$$\":\"\"}]}}"
                 }
             ],
             "inputTypes": [
@@ -61,15 +58,15 @@
             "extractors": [
                 {
                     "name": "ip",
-                    "script": "{\n    \"data\": [\n        {\n            \"$$ipv4_address$$\": \"\",\n            \"$$ipv6_address$$\": \"\"\n        }\n    ]\n}\n"
+                    "script": "{\"data\":[{\"$$ipv4_address$$\":\"\",\"$$ipv6_address$$\":\"\"}]}"
                 },
                 {
                     "name": "ipv4",
-                    "script": "{\n    \"data\": [\n        {\n            \"$$ipv4_address$$\": \"\"\n        }\n    ]\n}\n"
+                    "script": "{\"data\":[{\"$$ipv4_address$$\":\"\"}]}"
                 },
                 {
                     "name": "ipv6",
-                    "script": "{\n    \"data\": [\n        {\n            \"$$ipv6_address$$\": \"\"\n        }\n    ]\n}\n"
+                    "script": "{\"data\":[{\"$$ipv6_address$$\":\"\"}]}"
                 }
             ],
             "inputTypes": [
@@ -86,7 +83,7 @@
             "extractors": [
                 {
                     "name": "asn",
-                    "script": "{\n    \"data\": {\n        \"ipv4_peers\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ],\n        \"ipv6_peers\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"ipv4_peers\":[{\"$$asn$$\":\"\"}],\"ipv6_peers\":[{\"$$asn$$\":\"\"}]}}"
                 }
             ],
             "inputTypes": [
@@ -103,7 +100,7 @@
             "extractors": [
                 {
                     "name": "cidr",
-                    "script": "{\n    \"data\": {\n        \"ipv4_prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ],\n       \"ipv6_prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"ipv4_prefixes\":[{\"$$prefix$$\":\"\"}],\"ipv6_prefixes\":[{\"$$prefix$$\":\"\"}]}}"
                 }
             ],
             "inputTypes": [
@@ -120,7 +117,7 @@
             "extractors": [
                 {
                     "name": "asn",
-                    "script": "{\n    \"data\": {\n        \"ipv4_upstreams\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ],\n        \"ipv6_upstreams\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"ipv4_upstreams\":[{\"$$asn$$\":\"\"}],\"ipv6_upstreams\":[{\"$$asn$$\":\"\"}]}}"
                 }
             ],
             "inputTypes": [
@@ -137,11 +134,11 @@
             "extractors": [
                 {
                     "name": "cidr",
-                    "script": "{\n    \"data\": {\n        \"prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ],\n       \"related_prefixes\":[{\"$$prefix$$\":\"\"}]\n    }\n}\n"
+                    "script": "{\"data\":{\"prefixes\":[{\"$$prefix$$\":\"\"}],\"related_prefixes\":[{\"$$prefix$$\":\"\"}]}}"
                 },
                 {
                     "name": "asn",
-                    "script": "{\n    \"data\": {\n        \"prefixes\": [\n            {\n                \"asn\": {\n                    \"$$asn$$\": \"\"\n                }\n            }\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"prefixes\":[{\"asn\":{\"$$asn$$\":\"\"}}]}}"
                 }
             ],
             "inputTypes": [
@@ -158,11 +155,11 @@
             "extractors": [
                 {
                     "name": "asn",
-                    "script": "{\n    \"data\": {\n        \"asns\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"asns\":[{\"$$asn$$\":\"\"}]}}"
                 },
                 {
                     "name": "email",
-                    "script": "{\n    \"data\": {\n        \"email_contacts\": [\"$$\"\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"email_contacts\":[\"$$\"]}}"
                 },
                 {
                     "name": "address",
@@ -183,15 +180,15 @@
             "extractors": [
                 {
                     "name": "asn",
-                    "script": "{\n    \"data\": {\n        \"asns\": [\n            {\n                \"$$asn$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"asns\":[{\"$$asn$$\":\"\"}]}}"
                 },
                 {
                     "name": "cidr",
-                    "script": "{\n    \"data\": {\n        \"ipv4_prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ],\n\"ipv6_prefixes\": [\n            {\n                \"$$prefix$$\": \"\"\n            }\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"ipv4_prefixes\":[{\"$$prefix$$\":\"\"}],\"ipv6_prefixes\":[{\"$$prefix$$\":\"\"}]}}"
                 },
                 {
                     "name": "email",
-                    "script": "{\n    \"data\": {\n        \"asns\": [\n            {\n                \"email_contacts\": [\n                    \"$$\"\n                ]\n            }\n        ],\n        \"ipv4_prefixes\": [\n            {\n                \"email_contacts\": [\n                    \"$$\"\n                ]\n            }\n        ],\n        \"ipv6_prefixes\": [\n            {\n                \"email_contacts\": [\n                    \"$$\"\n                ]\n            }\n        ]\n    }\n}\n"
+                    "script": "{\"data\":{\"asns\":[{\"email_contacts\":[\"$$\"]}],\"ipv4_prefixes\":[{\"email_contacts\":[\"$$\"]}],\"ipv6_prefixes\":[{\"email_contacts\":[\"$$\"]}]}}"
                 }
             ],
             "inputTypes": [
