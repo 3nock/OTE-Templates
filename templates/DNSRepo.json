@@ -1,0 +1,80 @@
+{
+    "authentication": {
+        "authHeader": "",
+        "authType": "QUERY",
+        "link": "https://dnsrepo.noc.org/?apiaccess",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "name": "Enock N. M.",
+        "social": "enock.n.michael@gmail"
+    },
+    "endpoints": [
+        {
+            "description": "For full db search, you need to specify to add the search variable to your API call. \n\nVariable: &search=[SEARCH TERM]",
+            "extractors": [
+                {
+                    "name": "ip",
+                    "script": "{\"ipv4\":[\"$$\"],\"ipv6\":[\"$$\"]}"
+                },
+                {
+                    "name": "ipv4",
+                    "script": "{\"ipv4\":[\"$$\"]}"
+                },
+                {
+                    "name": "ipv6",
+                    "script": "{\"ipv6\":[\"$$\"]}"
+                },
+                {
+                    "name": "mailserver",
+                    "script": "{\"mx\":[\"$$\"]}"
+                },
+                {
+                    "name": "nameserver",
+                    "script": "{\"ns\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://dnsrepo.noc.org/api/?apikey={{key}}&search={{input}}",
+            "name": "Full db search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "For an IPv4 lookup, to find all domains behind an IP, you need to add the ip variable to your API call.\n\nVariable: &ip=[IPv4]",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ipv4"
+            ],
+            "link": "https://dnsrepo.noc.org/api/?apikey={{key}}&ip={{input}}",
+            "name": "IPv4 lookup",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "For an domain lookup, and to find the DNS history for it, you need to add the domain variable to your API call.\nVariable: &domain=[domain]",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://dnsrepo.noc.org/api/?apikey={{key}}&domain={{input}}",
+            "name": "Domain lookup and history",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "The DNSRepo API gives you ulimited access to our database. You can do a search on all records or look at the IP history of a domain name. We currently support 4 types of access: Full DB search, IPv4 lookup, Domain lookup and history and a reverse IP search.",
+        "documentation": "https://dnsrepo.noc.org/?apiaccess",
+        "link": "https://dnsrepo.noc.org/",
+        "name": "DNSRepo"
+    }
+}

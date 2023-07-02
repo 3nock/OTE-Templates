@@ -6,8 +6,6 @@ OTE Templates
 <p align="center">
     <a href="https://github.com/3nock/OTE-Templates/issues">
         <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat" /></a>
-    <a href="https://github.com/3nock/OTE-Templates/releases" alt="GitHub release">
-        <img src="https://img.shields.io/github/release/3nock/OTE-Templates.svg" /></a>
     <a href="https://telegram.me/SpiderSuite" alt="Telegram">
         <img src="https://img.shields.io/badge/chat-%20on%20Telegram-blue.svg" /></a>
     <a href="https://twitter.com/intent/follow?screen_name=spider_suite" alt="Twitter">

@@ -1,0 +1,125 @@
+{
+    "authentication": {
+        "authHeader": "X-API-Key",
+        "authType": "HEADER",
+        "link": "https://app.netlas.io/plans/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "name": "Enock N. M.",
+        "social": "enock.n.michael@gmail"
+    },
+    "endpoints": [
+        {
+            "description": "Get documents by given query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://app.netlas.io/api/domains/?q={{input}}",
+            "name": "Domains Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Count documents by given query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://app.netlas.io/api/domains_count/?q={{input}}",
+            "name": "Domains Count",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get documents by given query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://app.netlas.io/api/certs/?q={{input}}",
+            "name": "Certificates Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Count documents by given query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://app.netlas.io/api/certs_count/?q={{input}}",
+            "name": "Certificates Count",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get documents by given query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://app.netlas.io/api/whois_ip/?q={{input}}",
+            "name": "Whois IP Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Count documents by given query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://app.netlas.io/api/whois_ip_count/?q={{input}}",
+            "name": "Whois Ip Count",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get documents by given query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://app.netlas.io/api/whois_domains/?q={{input}}",
+            "name": "Whois Domains Search",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Get documents by given query",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "search"
+            ],
+            "link": "https://app.netlas.io/api/whois_domains/?q={{input}}",
+            "name": "Whois Domains Count",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Discover, Research and Monitor any Assets Available Online Internet intelligence apps that provide accurate technical information on IP addresses, domain names, websites, web applications, IoT devices, and other online assets.",
+        "documentation": "https://netlas-api.readthedocs.io/en/latest/index.html",
+        "link": "https://netlas.io/",
+        "name": "Netlas"
+    }
+}

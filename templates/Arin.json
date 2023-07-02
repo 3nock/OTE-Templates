@@ -116,7 +116,7 @@
             "resquestType": "GET"
         },
         {
-            "description": "Lists the ASNs associated with a given POC",
+            "description": "Lists the ASNs associated with a given POC. e.g. ZG39-ARIN",
             "extractors": [
             ],
             "inputTypes": [
@@ -129,7 +129,7 @@
             "resquestType": "GET"
         },
         {
-            "description": "Lists the networks associated with a given POC",
+            "description": "Lists the networks associated with a given POC. e.g. ZG39-ARIN",
             "extractors": [
             ],
             "inputTypes": [
@@ -142,7 +142,7 @@
             "resquestType": "GET"
         },
         {
-            "description": "Lists the organizations associated with a given POC",
+            "description": "Lists the organizations associated with a given POC. e.g. ZG39-ARIN",
             "extractors": [
             ],
             "inputTypes": [

@@ -1,0 +1,120 @@
+{
+    "authentication": {
+        "authHeader": "X-Access-Token",
+        "authType": "HEADER",
+        "link": "https://bevigil.com/osint/api-keys",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "name": "Enock N. M.",
+        "social": "enock.n.michael@gmail.com"
+    },
+    "endpoints": [
+        {
+            "description": "For a given app package ID (example: com.whatsapp), get a wordlist combining paths, filenames, rest_api, url parameters and endpoints. For a given package ID, get a wordlist created by grepping the parameters from the URLs in the source code of application",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "app package id"
+            ],
+            "link": "http://osint.bevigil.com/api/{{input}}/wordlist/",
+            "name": "Wordlist",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "For a given app package ID, get all unique hostnames including domains and subdomains hardcoded inside the application",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "app package id"
+            ],
+            "link": "http://osint.bevigil.com/api/{{input}}/hosts/",
+            "name": "Hosts",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "For a given package ID, get all s3 buckets from the source code of an APK. For a given keyword, get all S3 URLs for the associated input keyword",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "app package id"
+            ],
+            "link": "http://osint.bevigil.com/api/{{input}}/S3-buckets/",
+            "name": "S3 Buckets",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "For a given package ID, get all associated assets including rest_api, paths, hostnames, subdomains, S3 buckets, IP addresses, filenames, AWS urls, Azure containers etc",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "app package id"
+            ],
+            "link": "http://osint.bevigil.com/api/{{input}}/all-assets/",
+            "name": "All Assets",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "For a given hostname, get all apps which contain any reference to it",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "http://osint.bevigil.com/api/{{input}}/apps/",
+            "name": "Apps",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Find subdomains for a given domain",
+            "extractors": [
+                {
+                    "name": "subdomain",
+                    "script": "{\"subdomains\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "http://osint.bevigil.com/api/{{input}}/subdomains/",
+            "name": "Subdomains",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "For a given domain name, get all associated URLs",
+            "extractors": [
+                {
+                    "name": "url",
+                    "script": "{\"urls\":[\"$$\"]}"
+                }
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "http://osint.bevigil.com/api/{{input}}/urls/",
+            "name": "URLs",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "A powerful tool that provides access to millions of asset footprint data points including domain intel, cloud services, API information, and third party assets extracted from millions of mobile apps being continuously uploaded and scanned by users on bevigil.com",
+        "documentation": "https://bevigil.com/osint-api",
+        "link": "https://bevigil.com",
+        "name": "BeVigil"
+    }
+}

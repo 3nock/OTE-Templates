@@ -1,0 +1,367 @@
+{
+    "authentication": {
+        "authHeader": "apikey",
+        "authType": "HEADER",
+        "link": "https://www.deepinfo.com/pricing/",
+        "uses_id": false,
+        "uses_key": true
+    },
+    "author": {
+        "name": "Enock N. M.",
+        "social": "enock.n.michael@gmail.com"
+    },
+    "endpoints": [
+        {
+            "description": "You can reveal domains that are associated with each other.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/associated-domain-finder?domain={{input}}",
+            "name": "Associated Domain Finder API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can find all subdomains of a provided domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/subdomain-finder?domain={{input}}",
+            "name": "Subdomain Finder API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can find all sametime registered domains for a provided domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/sametime-domain-finder?domain={{input}}",
+            "name": "Sametime Registered Domain Finder API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can find all domains associated with a provided email address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "email"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/reverse-email?email={{input}}",
+            "name": "Reverse Whois Email API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can find all domains related to a provided nameserver (NS).",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "nameserver"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/reverse-ns?ns={{input}}",
+            "name": "Reverse NS API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can find all domains related to a provided IP address.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/reverse-ip?ip={{input}}",
+            "name": "Reverse IP API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can find all domains related to a provided mail server.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "mailserver"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/reverse-mx?mx={{input}}",
+            "name": "Reverse MX API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can detect all TLDs based on a provided domain.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/all-tlds?domain={{input}}",
+            "name": "All TLDs API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "You can get details of a provided domain",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/domain-detail?domain={{input}}",
+            "name": "Domain Detail API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API enables you to track impacts, affected products and meta info.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "cve"
+            ],
+            "link": "https://api.deepinfo.com/v1/discovery/vulnerability-detail?cve={{input}}",
+            "name": "Vulnerability Detail API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo Whois History Lookup API checks the domain history and reveals the previous records associated with a domain, including registration dates, registrants’ names, email addresses, phone numbers, etc.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/analyze/whois-history?domain={{input}}",
+            "name": "Whois History API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "This API returns historical DNS records of a particular domain or FQDN so that previously modified or passive DNS records will be simply discovered.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/analyze/dns-history/?domain={{input}}",
+            "name": "DNS History API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all domain count and download url.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.deepinfo.com/v1/feeds/all-domains",
+            "name": "Deep Feed All Domains API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all subdomain count and download url.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.deepinfo.com/v1/feeds/all-subdomains",
+            "name": "Deep Feed All Subomains API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns daily registered domain count and download url.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.deepinfo.com/v1/feeds/daily-registered-domains",
+            "name": "Daily Registered Domains API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns daily discovered subdomain count and download url.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.deepinfo.com/v1/feeds/daily-discovered-subdomains",
+            "name": "Daily Discovered Subdomains API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns daily updated domain count and download url.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.deepinfo.com/v1/feeds/daily-updated-domains",
+            "name": "Daily Updated Domains API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Returns all file lists with count.",
+            "extractors": [
+            ],
+            "inputTypes": [
+            ],
+            "link": "https://api.deepinfo.com/v1/feeds/latest",
+            "name": "Latest Feeds API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo Domain Whois Lookup API returns the current registration details of Domain. The Whois Lookup API provides much information about hostnames, including domain registrations, registrars, registration status, domain expiry date, etc.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/lookup/whois?domain={{input}}",
+            "name": "Domain Whois Lookup API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo IP Whois Lookup API returns the current registration details of IP address. The Whois Lookup API provides much information about hostnames, including domain registrations, registrars, registration status, domain expiry date, etc.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.deepinfo.com/v1/lookup/ip-whois?ip={{input}}",
+            "name": "IP Whois Lookup API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo hosted DNS Lookup API returns the current DNS records of FQDNs such as A, AAAA, MX, NS, SOA, TXT, etc. You can choose any type of existing DNS records provided. You should use commas to separate multiple record types. The maximum DNS types supported per single request is five. Even if more than one type is entered, one will be deducted from the quota.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/lookup/dns?domain={{input}}",
+            "name": "DNS Lookup API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo provides comprehensive information about SSL certificates and reveals associated domain names. Currently, you can access more than 2 billion certificate information using the SSL Lookup API.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain",
+                "ip"
+            ],
+            "link": "https://api.deepinfo.com/v1/lookup/ssl?target={{input}}",
+            "name": "SSL Lookup API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo Domain Availability Lookup API enables you to look over the existence of a specific domain name. You can check if the domain is available or not.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "domain"
+            ],
+            "link": "https://api.deepinfo.com/v1/lookup/domain-availability?domain={{input}}",
+            "name": "Domain Availability Lookup API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo Technology Lookup API allows you to automatically detect technology stack of any website.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.deepinfo.com/v1/lookup/technology?url={{input}}",
+            "name": "Technology Lookup API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo Screenshot API allows you to automatically view screenshots of any domain name in high quality within seconds.\nYou can also use query parameters to capture full page screenshots and mobile screenshots and accurately manage the viewport size.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.deepinfo.com/v1/lookup/screenshot/?url={{input}}",
+            "name": "Screenshot Lookup API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo Port Scan Lookup API scans all available ports to retrieve detailed information.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "ip"
+            ],
+            "link": "https://api.deepinfo.com/v1/lookup/port-scan?target={{input}}",
+            "name": "Port Scan Lookup API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        },
+        {
+            "description": "Deepinfo Web Data Lookup API allows you to automatically detect technology stack of any website with http headers, extract google adsense, google analytics, google tag manager and html source code.",
+            "extractors": [
+            ],
+            "inputTypes": [
+                "url"
+            ],
+            "link": "https://api.deepinfo.com/v1/lookup/webdata?url={{input}}",
+            "name": "Web Data Lookup API",
+            "postData": "",
+            "responseType": "JSON",
+            "resquestType": "GET"
+        }
+    ],
+    "info": {
+        "description": "Deepinfo provides relevant data and insights that empower cybersecurity professionals by providing access to an extensive database and reliable indicators. We have the data you need to understand what’s going on on the Internet, we are dealing with terabytes of data, hundreds of data sources, billions of lines of raw data.",
+        "documentation": "https://docs.deepinfo.com/reference/domain-search-api-1",
+        "link": "https://www.deepinfo.com/",
+        "name": "DeepInfo"
+    }
+}
