@@ -16,7 +16,11 @@ Templates are the driving force of the [OSINT Template Engine](https://github.co
 
 ## Contributions
 
-You can contribute by creating new templates or by modifying, improving and fixing existing templates. 
+You can contribute by [creating new templates](CREATE_TEMPLATE.md).
+
+You can contribute by [modifying, improving and fixing existing templates](MODIFY_TEMPLATE.md).
+
+You can contribute by [creating extractors for existing templates](WRITING_EXTRACTOR.md) 
 
 For More information see [contribution guide](CONTRIBUTING.md).
 

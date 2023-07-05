@@ -31,3 +31,7 @@ _Note_: Currently OTE only supports API results in form of json or xml. More sup
 
 - Enter the template's details i.e template name, link to its main site, link to its api documentation,summary description of the template.
 <center><img src="res/template_info_details.png"><center>
+
+### Creating an extractor
+
+Learn how to create an extractor [here](WRITING_EXTRACTOR.md).
