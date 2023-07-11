@@ -12,7 +12,11 @@ OTE Templates
         <img src="https://img.shields.io/twitter/follow/spider_suite?label=follow&style=social" /></a>
 </p>
 
-Templates are the driving force of the [OSINT Template Engine](https://github.com/3nock/OTE). This repository stores and houses various templates for the Engine. I hope that you also contribute by sending templates via pull requests or [Github issues]() to grow the list.
+Templates are the driving force of the [OSINT Template Engine](https://github.com/3nock/OTE). They represent the OSINT sources that provide the OSINT information through API endpoints.
+
+The template [structure](TEMPLATE_STRUCTURE.md) design is very simple, providing all the necessary information to query API endpoints provided by the OSINT sources that the templates represents.
+
+This repository houses all the available templates for the Engine. I hope that you also contribute by sending templates via pull requests or [Github issues](https://github.com/3nock/OTE-Templates/issues) to grow the list.
 
 ## Contributions
 
