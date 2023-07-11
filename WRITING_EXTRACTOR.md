@@ -8,15 +8,6 @@ To create an extractor choose the template for edit, go to endpoint you want to 
 - Creating From Explorer view
 <center><img src="res/extractor_from_explorer.gif"></center>
 
-- Creating from Extractor view's Template Edit
-<center><img src="res/extractor_from_extractor_template.gif"></center>
-
-- Creating from Extractor view's Endpoint Edit
-<center><img src="res/extractor_from_extractor_endpoint.gif"></center>
-
-- Creating from Extractor view's Extractor Edit
-<center><img src="res/extractor_from_extractor_extractor.gif"></center>
-
 _**NOTE 1: Extractors name should be the name of the data type that you are extracting**_
 
 e.g. 
@@ -248,16 +239,3 @@ Extractor script
 <result>
 ```
 _**It will extract the `data`'s xml elements values i.e. `<ip>1.1.1.1</ip>, <ip>2.2.2.2</ip>, <ip>3.3.3.3</ip>, <ip>4.4.4.4</ip>, <ip>5.5.5.5</ip>`**_
-_
-
-## Examples
-
-The following are examples of extractor designs for extracting data from different position of API results;
-
-- [Example 1](extractor_examples/example1.md)
-- [Example 2](extractor_examples/example1.md)
-- [Example 3](extractor_examples/example1.md)
-- [Example 4](extractor_examples/example1.md)
-- [Example 5](extractor_examples/example1.md)
-- [Example 6](extractor_examples/example1.md)
-- [Example 7](extractor_examples/example1.md)
